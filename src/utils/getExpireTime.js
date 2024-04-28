@@ -1,0 +1,5 @@
+const getTimeInSeconds = () => {
+  
+};
+
+export { getTimeInSeconds };

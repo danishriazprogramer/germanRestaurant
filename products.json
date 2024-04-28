@@ -1,0 +1,961 @@
+[
+    {
+      "id": "01",
+      "name": "Chicken Curry",
+      "description": "Hähnchenbrustfilet zubereitet in einer Currysauce mit Zwiebeln, Tomaten und Ingwer",
+      "unitPrice": 15.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "02",
+      "name": "Chicken Korma",
+      "description": "Saftiges Hühnchenbrustfilet zubereitet in einer milden Sauce aus Gewürzen, Sahne, Mandeln, Kokosraspeln und Cashewnüssen | Gericht wird mit Basmati-Reis serviert",
+      "unitPrice": 15.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "03",
+      "name": "Chicken Tikka Masala",
+      "description": "Ein im Tandoor gegrilltes mariniertes Hähnchenbrustfilet zubereitet in einer würzigen curry sauce",
+      "unitPrice": 15.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "04",
+      "name": "Chicken Madras",
+      "description": "Hähnchenbrustfilet zubereitet in Spezialsauce mit Peperoni, Zwiebeln, Tomaten, Knoblauch, Ingwer und frischem Curry",
+      "unitPrice": 15.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "05",
+      "name": "Chicken Mango Curry",
+      "description": "Hähnchenbrustfilet zubereitet in einer würzigen Sauce aus Sahne und frischen Mango stücken",
+      "unitPrice": 15.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "06",
+      "name": "Chicken Vindaloo",
+      "description": "Hünchenbrustfilet mit Kartoffeln zubereitet in einer sehr scharfen Chilisauce",
+      "unitPrice": 15.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "07",
+      "name": "Palak Chicken",
+      "description": "Hähnchenbrustfilet mit Spinat zubereitet in einer würzigen Sauce",
+      "unitPrice": 15.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "08",
+      "name": "Tandoori Chicken Tikka",
+      "description": "Im Tandoor am Spieß gegrilltes saftig mariniertes Hähnchenbrustfilet serviert mit Naan Brot und Reis",
+      "unitPrice": 17.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "09",
+      "name": "Haryali Chicken Tikka",
+      "description": "Hähnchenbrustfilet gegrillt in frischer Minze und Koriandermarinade mit Knoblauch mit Naan Brot und Reis",
+      "unitPrice": 17.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "10",
+      "name": "Tandoori Garnelen Tikka",
+      "description": "Speziell marinierte Riesengarnelen nach Art der Indus-Kultur welche am Spieß im Tandoor gegrillt werden. Gericht wird mit Basmati Reis, Brot und frischen Gemüse",
+      "unitPrice": 19.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "11",
+      "name": "Chicken Dum Biryani",
+      "description": "Hähnchenfleisch und Kartofflen zubereitet mit Zwiebeln, Tomaten, Ingwer, Knoblauch und indischen Gewürzen geschichtet mit Basmatireis mit Hari chutney",
+      "unitPrice": 15.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "12",
+      "name": "Butter Chicken",
+      "description": "Indisches Käse mit Spinat gebraten in Zwiebeln und Tomaten",
+      "unitPrice": 15.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "13",
+      "name": "Chicken Kebab 4 Stück",
+      "description": "gehacktes Hähnchenfleisch mit Zwiebeln, grünen Chilli und Ingwer mit einigen indischen Gewürzen mit Hari chutney",
+      "unitPrice": 10.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "14",
+      "name": "Chicken Dynamite 8 Stück",
+      "description": "frittiertes Hähnchenfleisch mariniert in Essig und einigen indischen Gewürzen",
+      "unitPrice": 10.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "15",
+      "name": "Malai Boti",
+      "description": "Hähnchenbrust mariniert mit indischen Gewürzen und Cream sauce, gegrillt im Tandoor",
+      "unitPrice": 14.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "16",
+      "name": "Lamm Korma",
+      "description": "Lammfleisch mit milder Sauce, Sahne, Mandeln, Kokosraspeln und Cashewkernen",
+      "unitPrice": 17.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "17",
+      "name": "Lamm Tikka Masala",
+      "description": "Ein im Tandoor gegrilltes mariniertes Lammfleisch zubereitet in einer würzige curry sauce",
+      "unitPrice": 17.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "18",
+      "name": "Tandoori Lamm Tikka",
+      "description": "Im Tandoor gegrilltes mariniertes Lammfleisch von der Keule Gericht wird mit Basmati Reis und Brot und frischen Gemüse",
+      "unitPrice": 19.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "19",
+      "name": "Lamm Curry",
+      "description": "Lammfleischstücke zubereitet in einer Currysauce mit Zwiebeln, Tomaten, Knoblauch und Ingwer",
+      "unitPrice": 17.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "20",
+      "name": "Lamm Palak",
+      "description": "Lammfleischstücke mit Spinat zubereitet in einer würzigen Sauce",
+      "unitPrice": 17.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "21",
+      "name": "Lamm Madras",
+      "description": "Lammfleischstücke zubereitet in Spezialsauce mit Peperoni, Zwiebeln, Tomaten, Knoblauch, Ingwer und frischem Curry",
+      "unitPrice": 17.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "22",
+      "name": "Lamm Vindaloo",
+      "description": "Lammfleisch mit Kartoffeln gekocht in einer sehr scharfen Chilisauce0",
+      "unitPrice": 17.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "23",
+      "name": "Mutton Biryani",
+      "description": "Lammfleisch zubereitet mit Zwiebeln, Tomaten, Ingwer, Knoblauch und indische Gewürze geschichtet im Basmatireis mit Hari chutney",
+      "unitPrice": 17.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "24",
+      "name": "Palak Paneer",
+      "description": "Indisches Käse mit Spinat gebraten in Zwiebeln und Tomaten",
+      "unitPrice": 14.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "25",
+      "name": "Paneer Tikka Masala",
+      "description": "mariniertes Paneer zubereitet mit frischen Gewürzen, Zwiebeln, grüne Paprika und Tomaten",
+      "unitPrice": 14.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "26",
+      "name": "Paneer Mango-Curry",
+      "description": "Paneer in milder Mango-Currysauce und Frischer Mango",
+      "unitPrice": 14.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "27",
+      "name": "Paneer Vindaloo",
+      "description": "ein scharfes Paneer-Curry gekocht mit indischen Gewürzen und Essig",
+      "unitPrice": 14.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "28",
+      "name": "Paneer Matter",
+      "description": "Paneer mit Erbsen und Gewürzen nach indischer Art gekocht",
+      "unitPrice": 13.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "29",
+      "name": "Paneer Biryani",
+      "description": "Paneer zubereitet mit Zwiebeln, Tomaten, Ingwer, Knoblauch und indische Gewürze geschichtet im Basmatireis serviert mit Hari chutney",
+      "unitPrice": 14.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "30",
+      "name": "Aloo Matter",
+      "description": "Kartoffeln mit Erbsen und Gewürzen nach indischer Art gekocht",
+      "unitPrice": 12.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "31",
+      "name": "Aloo Palak",
+      "description": "Kartoffeln mit Spinat und Gewürzen nach indischer Art gekocht",
+      "unitPrice": 12.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "32",
+      "name": "Sabzi Korma",
+      "description": "Frisches Gemüse mit milder Sauce , Sahne, Mandeln, Kokosraspeln und Cashewkernen",
+      "unitPrice": 12.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "33",
+      "name": "Veg Biryani",
+      "description": "Gemüse zubereitet mit Zwiebeln, Tomaten, Ingwer, Knoblauch und indische Gewürze geschichtet im Basmatireis servier mit hari chutney",
+      "unitPrice": 13.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "34",
+      "name": "Veg Biryani",
+      "description": "Frisches Gemüse zubereitet in einer pikanten Currysauce",
+      "unitPrice": 12.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "35",
+      "name": "Sabzi Mango Curry Vegetarisch",
+      "description": "frisches Gemüse zubereitet in einer würzigen Sauce aus Sahne, frischen Mangostücken und gemahlenen Mandeln",
+      "unitPrice": 13.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "36",
+      "name": "Aloo Chana Masala Vegan",
+      "description": "Ein Mix aus Kartoffeln und Kichererbsen zubereitet in einer Currysauce mit Zwiebeln, Ingwer und Knoblauch serviert mit 2x Bhaturay",
+      "unitPrice": 13.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "37",
+      "name": "Daal Makhni",
+      "description": "Indisches Käse mit Spinat gebraten in Zwiebeln und Tomaten",
+      "unitPrice": 12.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "38",
+      "name": "Tarka Daal",
+      "description": "Gebratene Linsen mit Zwiebeln und Knoblauch | Gericht wird mit Basmati Reis serviert",
+      "unitPrice": 11.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "39",
+      "name": "Anda Bhurji",
+      "description": "Eier zubereitet mit indischen Gewürzen",
+      "unitPrice": 9.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "40",
+      "name": "Aloo Tikki 4 Stück",
+      "description": "Salzkartoffeln mit Zwiebeln, grünem Chilli und grünem Koriander serviert mit Hari chutney",
+      "unitPrice": 9.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "41",
+      "name": "Samosas 2 Stück",
+      "description": "frittierte Teigtaschen gefüllt mit Gewürzen Kartoffeln und Erbsen serviert mit hari chutney",
+      "unitPrice": 5.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "42",
+      "name": "Veg Pakoras",
+      "description": "frittierte Zwiebeln, Kartoffeln, Spinat Kichererbsenteig serviert mit hari chutney",
+      "unitPrice": 5.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "43",
+      "name": "Paneer Pakora",
+      "description": "frittierter indischer Frischkäse in Kichererbsenmehlteig serviert mit hari chutney",
+      "unitPrice": 5.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "44",
+      "name": "Naan",
+      "description": "Knusprig gebackenes Fladenbrot aus dem Tandoor",
+      "unitPrice": 2.70,
+      "category": "Indian Food"
+    },
+    {
+      "id": "45",
+      "name": "Garlic Naan",
+      "description": "Ein im Tandoor gebackenes Fladenbrot gefüllt mit Butter und Knoblauch",
+      "unitPrice": 2.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "46",
+      "name": "Cheese Naan",
+      "description": "Knusprig gebackenes Fladenbrot aus dem Tandoor mit Käse",
+      "unitPrice": 4.70,
+      "category": "Indian Food"
+    },
+    {
+      "id": "47",
+      "name": "Butter Naan",
+      "description": "Fladenbrot aus Weizenmehl mit Butter",
+      "unitPrice": 2.90,
+      "category": "Indian Food"
+    },
+    {
+      "id": "48",
+      "name": "Aloo Paratha",
+      "description": "ein in Butter gebratenes Roti gefüllt mit Kartoffeln und Gewürzen",
+      "unitPrice": 4.50,
+      "category": "Indian Food"
+    },
+    {
+      "id": "49",
+      "name": "Roti",
+      "description": "ein aus Vollkormehl zubereites Fladenbrot gebacken im Tandoor",
+      "unitPrice": 2.90,
+      "category": "Indian Food"
+    }
+,
+    {
+      "name": "Fleischsauce (100% RindHackfleisch Sauce und Tomaten)",
+      "description": "0",
+      "unitPrice": 10.50,
+      "category": "pasta"
+    },
+    {
+      "name": "Alla Panna",
+      "description": "100% Putenschinken, Ei in Sahnesauce",
+      "unitPrice": 10.50,
+      "category": "pasta"
+    },
+    {
+      "name": "Casa",
+      "description": "100% Putenschinken, Champignons, Paprika in Sahnesauce",
+      "unitPrice": 11.50,
+      "category": "pasta"
+    },
+    {
+      "name": "San Marino",
+      "description": "Hähnchenbrustfilet, Champignons, in Curry-Sahnesauce",
+      "unitPrice": 11.50,
+      "category": "pasta"
+    },
+    {
+      "name": "Pavarotti",
+      "description": "Garnelen, Spinat, Knoblauch in Tomaten-Sahnesauce",
+      "unitPrice": 11.50,
+      "category": "pasta"
+    },
+    {
+      "name": "Kentucky al Forno",
+      "description": "Penne mit Hähnchenbrustfleisch, Broccoli, fr. Paprika, fr. Tomaten und Knoblauch in Tomaten-Sahnesauce",
+      "unitPrice": 11.50,
+      "category": "pasta"
+    },
+    {
+      "name": "Vegetaria al Forno",
+      "description": "Penne mit fr. Champignons, Broccoli, fr. Spinat, fr. Tomaten und Knoblauch in Tomaten-Sahnesauce",
+      "unitPrice": 11.50,
+      "category": "pasta"
+    },
+    {
+      "name": "Hackfleisch Lasagne",
+      "description": "geschichtete Teigblätter mit Hackfleischsauce und mit Käse überbacken",
+      "unitPrice": 10.50,
+      "category": "pasta"
+    },
+    {
+      "name": "Vegetarische Tortelini",
+      "description": "Gemüse mit Tomaten-Sahnesauce, mit Käse überbacken",
+      "unitPrice": 11.50,
+      "category": "pasta"
+    }
+  ,
+    {
+      "name": "Cheese Burger Light",
+      "description": "Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+      "unitPrice": 7.70,
+      "category": "Burger"
+    },
+    {
+      "name": "Chilli Cheese Burger",
+      "description": "Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo, Jalapenos und Scharfer Käsesauce",
+      "unitPrice": 7.70,
+      "category": "Burger"
+    },
+    {
+      "name": "BBQ Burger",
+      "description": "Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, saftige Tomaten, Röstzwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere BBQ Sauce",
+      "unitPrice": 7.70,
+      "category": "Burger"
+    },
+    {
+      "name": "Crunch Burger",
+      "description": "Brioche Bun, Crunchy Chicken, Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+      "unitPrice": 7.70,
+      "category": "Burger"
+    },
+    {
+      "name": "Double Decker Burger",
+      "description": "Brioche Bun, 2x 125g reines Rindfleisch, 2x Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+      "unitPrice": 9.30,
+      "category": "Burger"
+    },
+    {
+      "name": "Veg Party Burger",
+      "description": "Brioche Bun, Veggie Patty, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+      "unitPrice": 7.70,
+      "category": "Burger"
+    },
+    {
+      "name": "Iron Man Burger",
+      "description": "Brioche Bun, 125g Rindfleischpatty, Crunchy Chicken Patty, 2x Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+      "unitPrice": 9.30,
+      "category": "Burger"
+    },
+    {
+      "name": "Mexico Burger",
+      "description": "Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, knusprige Nachos, Jalapenos, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und hausgemachter Salsasauce",
+      "unitPrice": 8.20,
+      "category": "Burger"
+    },
+    {
+      "name": "Double Crunch Burger",
+      "description": "Brioche Bun, 2x Crunchy Chicken Patty, 2x Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+      "unitPrice": 9.30,
+      "category": "Burger"
+    },
+    {
+      "name": "Coleslow Burger",
+      "description": "Brioche Bun, 125 g reines Rindfleisch, Cheddar-Käse, Tomaten, rote Zwiebeln, Gewürzgurken, knackiger Lolo Rosso Salat, Burgersauce, Coleslow Salat",
+      "unitPrice": 8.40,
+      "category": "Burger"
+    },
+    {
+      "name": "Chicken Nuggets Burger",
+      "description": "Brioche Bun, leckere Chicken Nuggets, Currysauce, knackiger Lolo Rosso Salat, Cheddarkäse",
+      "unitPrice": 7.90,
+      "category": "Burger"
+    },
+    {
+      "name": "Mighty Zinger Burger",
+      "description": "Brioche Bun, 2 scharfe Chicken Dynamite Streifen, Remouladensauce, Jalapeños, knackiger Lolo Rosso Salat, Cheddarkäse",
+      "unitPrice": 8.20,
+      "category": "Burger"
+    }
+,
+    {
+      "name": "Schnitzel „Wiener Art”",
+      "description": "mit Zitronenscheibe",
+      "unitPrice": 11.50,
+      "category": "Schnitzel"
+    },
+    {
+      "name": "Champignons Schnitzel",
+      "description": "mit frischen Champignons und Sahnesauce",
+      "unitPrice": 12.30,
+      "category": "Schnitzel"
+    },
+    {
+      "name": "Hawaii Schnitzel",
+      "description": "mit Ananas, Schinken und Käse überbacken",
+      "unitPrice": 12.30,
+      "category": "Schnitzel"
+    },
+    {
+      "name": "Zwiebel Champignons Schnitzel",
+      "description": "mit gebratenen roten Zwiebeln & Champignons",
+      "unitPrice": 12.30,
+      "category": "Schnitzel"
+    },
+    {
+      "name": "Rahmschnitzel",
+      "description": "mit leckerer Rahmsauce",
+      "unitPrice": 12.30,
+      "category": "Schnitzel"
+    },
+    {
+      "name": "Broccoli Schnitzel",
+      "description": "mit Broccoli, Sahne und Hollandaise",
+      "unitPrice": 12.30,
+      "category": "Schnitzel"
+    },
+    {
+      "name": "Jäger Schnitzel",
+      "description": "mit leckerer Jägersauce",
+      "unitPrice": 12.30,
+      "category": "Schnitzel"
+    },
+    {
+      "name": "Schnitzel Bolognese",
+      "description": "mit Käse überbacken",
+      "unitPrice": 12.80,
+      "category": "Schnitzel"
+    },
+    {
+      "name": "Schnitzel Lover",
+      "description": "mit Paprika und Champignons in Curry-Sahnesauce",
+      "unitPrice": 12.80,
+      "category": "Schnitzel"
+    }
+  
+  
+
+,
+  {
+    "name": "Chicken Wrap",
+    "description": "mit hausgemachter Sauce, Salat, Tomaten, Gurken, roten Zwiebeln und saftigen Chicken",
+    "unitPrice": 9.90,
+    "category": "Wrap"
+  },
+  {
+    "name": "Döner Wrap",
+    "description": "mit hausgemachter Sauce Salat, Tomaten, Gurken, roten Zwiebeln und saftigen Dönerfleisch",
+    "unitPrice": 9.90,
+    "category": "Wrap"
+  },
+  {
+    "name": "Crispy Cheese Wrap",
+    "description": "mit Burger Sauce, Salat, Tomaten, Gurken, roten Zwiebeln, Käse, Crispy Chicken, Mayo und Ketchup",
+    "unitPrice": 9.90,
+    "category": "Wrap"
+  },
+  {
+    "name": "Cheese Burger Wrap",
+    "description": "mit Burger Sauce, Salat, Tomaten, Gurken, roten Zwiebeln, Rindfleisch, Käse, Mayo und Ketchup",
+    "unitPrice": 9.90,
+    "category": "Wrap"
+  },
+  {
+    "name": "Spicy Chicken Wrap",
+    "description": "mit hausgemachter Sauce, Salat, Tomaten, Gurken, roten Zwiebeln, Jalapenos, Chicken Nuggets und Chilli Sauce",
+    "unitPrice": 9.90,
+    "category": "Wrap"
+  }
+,
+    {
+      "name": "Mix Salate",
+      "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Karotten und Oliven",
+      "unitPrice": 8.80,
+      "category": "Salad"
+    },
+    {
+      "name": "World Island Salat",
+      "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Oliven, Karotten, Thunfisch und Käse",
+      "unitPrice": 10.50,
+      "category": "Salad"
+    },
+    {
+      "name": "Classic Salat",
+      "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Oliven, Karotten, Fetakäse und Peproni",
+      "unitPrice": 10.50,
+      "category": "Salad"
+    },
+    {
+      "name": "Italia Salat",
+      "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Oliven, Karotten, Thunfisch, Käse, Schinken und Ei",
+      "unitPrice": 10.50,
+      "category": "Salad"
+    },
+    {
+      "name": "Garnele Salat",
+      "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Karotten, Oliven und mit Knoblauch verfeinerte gebratenen Garnelen",
+      "unitPrice": 10.50,
+      "category": "Salad"
+    },
+    {
+      "name": "Cesar Salat",
+      "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Karotten, Oliven, gebratenen Hähnchenfilet und Ananas",
+      "unitPrice": 10.50,
+      "category": "Salad"
+    },
+    {
+      "name": "Caprese Salat",
+      "description": "Tomaten, Mozzarellakugeln und frischer Basilikum",
+      "unitPrice": 10.50,
+      "category": "Salad"
+    }
+,
+  {
+    "name": "Pommes",
+    "unitPrice": 3.70,
+    "category": "Beilagen"
+  },
+  {
+    "name": "Kroketten",
+    "unitPrice": 3.70,
+    "category": "Beilagen"
+  },
+  {
+    "name": "Wedges",
+    "unitPrice": 3.70,
+    "category": "Beilagen"
+  },
+  {
+    "name": "Curly Fries",
+    "unitPrice": 4.30,
+    "category": "Beilagen"
+  },
+  {
+    "name": "Beilagen Salat",
+    "description": "mit Joghurt oder Essig-Öl",
+    "unitPrice": 4.30,
+    "category": "Beilagen"
+  }
+,
+    {
+      "name": "Ungefüllte Pizza Brötchen 8 Stück",
+      "description": "mit leckere Aioli Sauce",
+      "unitPrice": 5.10,
+      "category": "Pizza Brötchen"
+    },
+    {
+      "name": "Gefüllte Pizza Brötchen 8 Stück",
+      "description": "mit Käse gefüllte und überbackene Pizza Brötchen",
+      "unitPrice": 7.30,
+      "category": "Pizza Brötchen"
+    },
+    {
+      "name": "Pizza Brötchen 8 Stück mit Salami und Käse",
+      "unitPrice": 7.30,
+      "category": "Pizza Brötchen"
+    },
+    {
+      "name": "Pizza Brötchen 8 Stück mit Schinken und Käse",
+      "unitPrice": 7.30,
+      "category": "Pizza Brötchen"
+    },
+    {
+      "name": "Pizza Brötchen 8 Stück mit Thunfisch, rote Zwiebeln und Käse",
+      "unitPrice": 8.40,
+      "category": "Pizza Brötchen"
+    },
+    {
+      "name": "Pizza Brötchen 8 Stück mit Sucuk und Fetakäse",
+      "unitPrice": 8.40,
+      "category": "Pizza Brötchen"
+    },
+    {
+      "name": "Pizza Brötchen 8 Stück mit 3 Zutaten nach Wahl und Käse",
+      "unitPrice": 8.40,
+      "category": "Pizza Brötchen"
+    }
+,
+
+  {
+    "name": "Kids Pizza",
+    "description": "Tomatensauce, Käse und bis zu 3 Extra Zutaten frei",
+    "category": "Kid Pizza"
+  }
+
+  
+,
+    {
+      "name": "Kids Menü",
+      "description": "6 Nuggets mit Pommes. Zu jedem Kidsmenü erhalten Sie eine Capri Sun (Multi Vitamin/Orange) gratis.",
+      "unitPrice": 7.30,
+      "category": "Kids Menu"
+    },
+    {
+      "name": "Kids Wings",
+      "description": "6 Chicken Wings mit Pommes. Zu jedem Kidsmenü erhalten Sie eine Capri Sun (Multi Vitamin/Orange) gratis.",
+      "unitPrice": 7.30,
+      "category": "Kids Menu"
+    }
+,
+    {
+      "name": "Chilli Cheese Fries",
+      "description": "Pommes mit Cheesesauce und Jalapenos",
+      "unitPrice": 6.90,
+      "category": "Finger Food"
+    },
+    {
+      "name": "Mini Frühlingsrollen 10 Stück",
+      "unitPrice": 6.90,
+      "category": "Finger Food"
+    },
+    {
+      "name": "Chicken Nuggets 10 Stück",
+      "unitPrice": 7.90,
+      "category": "Finger Food"
+    },
+    {
+      "name": "Chicken Wings 9 Stück",
+      "unitPrice": 7.90,
+      "category": "Finger Food"
+    },
+    {
+      "name": "Chilli Cheese Nuggets 6 Stück",
+      "unitPrice": 6.80,
+      "category": "Finger Food"
+    },
+    {
+      "name": "Crispy Chicken Stripes 6 Stück",
+      "unitPrice": 6.90,
+      "category": "Finger Food"
+    },
+    {
+      "name": "Onion Rings 7 Stück",
+      "unitPrice": 6.90,
+      "category": "Finger Food"
+    },
+    {
+      "name": "Mozzarella Sticks 6 Stück",
+      "unitPrice": 7.90,
+      "category": "Finger Food"
+    },
+    {
+      "name": "Mix Finger Food",
+      "description": "3x Mozzarella Sticks, 3x Chicken Nuggets, 3x Chilli Cheese Nuggets, 3x Frühlingsrollen, Pommes frites",
+      "unitPrice": 10.90,
+      "category": "Finger Food"
+    }
+ ,
+    {
+      "name": "Tiramisu",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Gulab Jamun 3 Stück",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Schoko Muffin",
+      "unitPrice": 2.90,
+      "category": "Dessert"
+    },
+    {
+      "name": "Blueberry Muffin",
+      "unitPrice": 2.90,
+      "category": "Dessert"
+    },
+    {
+      "name": "Oreo Donut",
+      "unitPrice": 3.10,
+      "category": "Dessert"
+    },
+    {
+      "name": "Manoeis",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Mango Eis mit Mangostücken und Wafer",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Pistaeis",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Pista Eis mit Pistazien und Wafer",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Schokoeis",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Schoko Eis, Choco Chip, Wafer",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Vanilleeis",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Vanilla Eis, Choco Chip, Wafer",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Erdbeereis",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Erbeer Eis, Choco Chip, Wafer",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Oreo Eis",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "name": "Oreo Eis, Nutella, Wafer",
+      "unitPrice": 3.50,
+      "category": "Dessert"
+    }
+,
+  {
+    "name": "Mayo",
+    "unitPrice": 0.40
+  },
+  {
+    "name": "Ketchup",
+    "unitPrice": 0.40
+  },
+  {
+    "name": "Süß Sauer",
+    "unitPrice": 0.60
+  },
+  {
+    "name": "BBQ",
+    "unitPrice": 0.60
+  },
+  {
+    "name": "Aioli Sauce",
+    "unitPrice": 1.60
+  },
+  {
+    "name": "Joghurt",
+    "unitPrice": 1.60
+  },
+  {
+    "name": "Essig-Öl",
+    "unitPrice": 1.60
+  },
+  {
+    "name": "Mango Chatny",
+    "unitPrice": 1.60
+  },
+  {
+    "name": "Hari Chutny",
+    "unitPrice": 1.60
+  },
+  {
+    "name": "Joghurt mit Minze, Koriander, Grun chilli und Gurken",
+    "unitPrice": 1.60
+  }
+,
+    {
+      "name": "Mayo",
+      "unitPrice": 0.40,
+      "category": "Dips"
+    },
+    {
+      "name": "Ketchup",
+      "unitPrice": 0.40,
+      "category": "Dips"
+    },
+    {
+      "name": "Süß Sauer",
+      "unitPrice": 0.60,
+      "category": "Dips"
+    },
+    {
+      "name": "BBQ",
+      "unitPrice": 0.60,
+      "category": "Dips"
+    },
+    {
+      "name": "Aioli Sauce",
+      "unitPrice": 1.60,
+      "category": "Dips"
+    },
+    {
+      "name": "Joghurt",
+      "unitPrice": 1.60,
+      "category": "Dips"
+    },
+    {
+      "name": "Essig-Öl",
+      "unitPrice": 1.60,
+      "category": "Dips"
+    },
+    {
+      "name": "Mango Chatny",
+      "unitPrice": 1.60,
+      "category": "Dips"
+    },
+    {
+      "name": "Hari Chutny",
+      "unitPrice": 1.60,
+      "category": "Dips"
+    },
+    {
+      "name": "Joghurt mit Minze, Koriander, Grun chilli und Gurken",
+      "unitPrice": 1.60,
+      "category": "Dips"
+    }
+,
+    {
+      "name": "Iced Espresso",
+      "description": "Espresso Shot, Eis",
+      "unitPrice": 2.50,
+      "category": "Iced Coffee"
+    },
+    {
+      "name": "Iced Latte",
+      "description": "Espresso Shot, Milch, Zucker, Sahne, Eiscreme Kaffee",
+      "unitPrice": 5.90,
+      "category": "Iced Coffee"
+    },
+    {
+      "name": "Iced Mocha",
+      "description": "Shot, Milch, Eis, Schokosirup",
+      "unitPrice": 5.90,
+      "category": "Iced Coffee"
+    },
+    {
+      "name": "Cold Brew",
+      "description": "Kaffee Shot, Milch, Karamel",
+      "unitPrice": 3.90,
+      "category": "Iced Coffee"
+    },
+    {
+      "name": "Iced Kaffee",
+      "description": "Instand Kaffee, Zucker, Wasser, Sahne",
+      "unitPrice": 3.50,
+      "category": "Iced Coffee"
+    },
+    {
+      "name": "Frappé",
+      "description": "Frothy Kaffee, Milch, Zucker, garniert mit Eiscreme",
+      "unitPrice": 5.90,
+      "category": "Iced Coffee"
+    },
+    {
+      "name": "Banana Milk Coffee",
+      "description": "Kaffee Shot, Manana Smoothie",
+      "unitPrice": 5.90,
+      "category": "Iced Coffee"
+    }
+  ]

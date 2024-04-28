@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs'); %>
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <%- include('../partials/sidebar.ejs'); %>
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <%- include('../partials/topbar.ejs'); %>
+          <main class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card bg-white p-3 rounded shadow">
+                  <h2 class="fw-bold mb-4">Update Product</h2>
+                  <form method="post" action="/api/admin/editProduct"
+                    id="updateProductForm"
+                  >
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label" for="productName">Product Name</label>
+                          <input
+                            type="text"
+                            value="<%= data.name %>"
+                            id="productName"
+                            class="form-control"
+                            name="name"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label" for="price">Price €</label>
+                          <input
+                            type="number"
+                            value="<%= data.unitPrice %>"
+                            name="<%= data.unitPrice %>"
+                            id="price"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label" for="discount">Discount €</label>
+                          <input
+                            type="number"
+                            value="<%= data.discount %>"
+                            name="<%= data.discount %>"
+                            id="discount"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label" for="category">Category €</label>
+                          <input
+                          type="text"
+                          value="<%= data.category %>"
+                          name="<%= data.category %>"
+                          id="category"
+                          class="form-control"
+                        />
+                          <!-- <label class="form-label" for="category">Category</label>
+                           -->
+                          <!-- <select id="category" class="form-control">
+                                <option value="pizza" <% if (data.category === 'pizza') { %> selected <% } %>>Pizza</option>
+                                <option value="burger" <% if (data.category === 'burger') { %> selected <% } %>>Burger</option>
+                                <option value="fries" <% if (data.category === 'fries') { %> selected <% } %>>Fries</option>
+                            </select> -->
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3 image-upload-container">
+                          <label for="formFile" class="form-label">Image</label>
+                          <div class="d-flex align-items-center">
+                              <input
+                                class="form-control m-3"
+                                value="<%= data.imageUrl %>"
+                                name="img"
+                                type="file"
+                                id="formFile"
+                              />
+                              <img src="/uploads/products/<%= data.imageUrl %>" alt="<%= data.name %>" width="50" height="50">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label
+                            class="form-label"
+                            value="<%= data.size %>"
+                            name="size"
+                            for="size"
+                            >Size</label
+                          >
+                          <select id="size" class="form-control">
+                                <option value="sm" <% if (data.size === 'sm') { %> selected <% } %>>Small</option>
+                                <option value="md" <% if (data.size === 'md') { %> selected <% } %>>Medium</option>
+                                <option value="lg" <% if (data.size === 'lg') { %> selected <% } %>>Large</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label
+                            class="form-label"
+                            value="<%= data.popular %>"
+                            name="popular"
+                            for="popular"
+                            >Popular</label
+                          >
+                          <select id="popular" class="form-control">
+                            <option value="true" <% if (data.popular === 'true') { %> selected <% } %>>True</option>
+                            <option value="false" <% if (data.popular === 'false') { %> selected <% } %>>False</option>
+                        </select>
+
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="description">Description</label>
+                          <textarea
+                            name="popular"
+                            id="description"
+                            cols="30"
+                            rows="10"
+                            class="form-control"
+                          > <%= data.description %></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <input
+                            type="submit"
+                            value="Update Product"
+                            class="btn btn-primary"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+        <%- include('../partials/footer.ejs'); %>
+      </div>
+    </div>
+    <%- include('../partials/scripts.ejs'); %>
+    <script>
+    const updateProductForm = document.querySelector('#updateProductForm');
+
+      updateProductForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        const name = document.querySelector('#productName').value;
+        console.log("🚀 ~ name:", name)
+        const unitPrice = document.querySelector('#price').value;
+        const discount = document.querySelector('#discount').value;
+        const imageFile = document.querySelector('#formFile').files[0];
+        const description = document.querySelector('#description').value;
+        const category = document.querySelector('#category').value;
+        const popular = document.querySelector('#popular').value;
+
+        const formData = new FormData();
+        console.log("🚀 ~ formData:", formData)
+        formData.append('name', name);
+        formData.append('unitPrice', unitPrice);
+        formData.append('discount', discount);
+        formData.append('img', imageFile);
+        formData.append('description', description);
+        formData.append('category', category);
+        formData.append('popular', popular);
+
+        try {
+          const response = await fetch('http://localhost:8080/api/admin/editProduct/<%= data.id %>', {
+            method: 'PUT',
+            body: formData,
+          });
+
+          const data = await response.json();
+          if (data.statusCode === 200) {
+            Swal.fire({
+              title: `Success`,
+              text: `${data?.message}`,
+              icon: 'success',
+            });
+          } else {
+            Swal.fire({
+              title: `Issue Occurred`,
+              text: `${data?.message}`,
+              icon: 'error',
+            });
+          }
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+          Swal.fire({
+            title: `Failed`,
+            text: `An error occurred while processing your request`,
+            icon: 'error',
+          });
+        }
+      });        
+    </script>
+  </body>
+</html>
