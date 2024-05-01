@@ -6,6 +6,10 @@ const productSchema = new Schema(
       type: String,
       //required: [true, 'Product name required'],
     },
+    unitId: {
+      type: String,
+      //required: [true, 'Product name required'],
+    },
     unitPrice: {
       type: Number,
       //required: [true, 'Unit Price required'],

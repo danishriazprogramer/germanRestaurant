@@ -37,3 +37,123 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>
+
+
+
+<script>
+
+
+
+    const productContainers = document.querySelectorAll(".foodCart"); // Use querySelectorAll to select all elements with class foodCart
+    const tabs = document.querySelectorAll('.nav-link');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const tabName = this.textContent.trim(); // Get the tab name
+
+            // Example API call
+            fetch(`http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(tabName)}`)
+            .then(response => response.json())
+            .then(data => {
+                // Handle API response
+                console.log('API response:', data);
+
+                // Loop through each product container
+                productContainers.forEach(productContainer => {
+                    // Clear existing content inside each product container
+                    productContainer.innerHTML = '';
+
+                    // Append new elements based on response data
+                    data.data.forEach(product => {
+                        const card = document.createElement('div');
+                        card.classList.add('col-md-6', 'col-xl-4');
+                        card.innerHTML = `
+                            <div class="card mb-3">
+                                <div class="row g-0" id="${product.unitId}"" >
+                                <div class="row g-0">
+                                    <div class="col-lg-4 d-flex justify-content-center p-2">
+                                        <img src="/uploads/products/${product.imageUrl}" class="img-fluid rounded-3 w-100" alt="${product.name}">
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${product.name}</h5>
+                                            <p class="card-text clamp-line-3">${product.description}</p>
+                                            <div class="card_bottom">
+                                             <h6>${product.unitPrice} €</h6>
+                                             <button class="btn btn-primary addToCart" onclick="addToCart('${product.unitId}')" id="clickMe">Add To Cart</button>
+                                             </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        productContainer.appendChild(card); // Append card to the current product container
+                    });
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        const productContainers = document.querySelectorAll(".foodCartActive");
+        const tabName = "Indian Food";
+    
+        fetch(`http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(tabName)}`)
+            .then(response => response.json())
+            .then(data => {
+                // Handle API response
+                console.log('API response:', data);
+    
+                // Loop through each product container
+                productContainers.forEach(productContainer => {
+                    // Clear existing content inside each product container
+                    productContainer.innerHTML = '';
+    
+                    // Append new elements based on response data
+                    data.data.forEach(product => {
+                        const card = document.createElement('div');
+                        card.classList.add('col-md-6', 'col-xl-4');
+                        card.innerHTML = `
+                            <div class="card mb-3">
+                                <div class="row g-0" id="${product.unitId}" >
+                                    <div class="col-lg-4 d-flex justify-content-center p-2">
+                                        <img src="/uploads/products/${product.imageUrl}" class="img-fluid rounded-3 w-100" alt="${product.name}">
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${product.name}</h5>
+                                            <p class="card-text clamp-line-3">${product.description}</p>
+                                            <div class="card_bottom">
+                                                <h6>${product.unitPrice} €</h6>
+                                                <button class="btn btn-primary addToCart" onclick="addToCart('${product.unitId}')" id="clickMe">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        productContainer.appendChild(card); // Append card to the current product container
+                    });
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error))
+    
+})    
+
+
+function addToCart(productName) {
+    // Here you can implement your logic to add the product to the cart
+
+    let id = document.getElementById(productName)
+    //id =id.parentElement()
+     
+    console.log("🚀 ~ addToCart the product by id is", id)
+    console.log('Added ' + productName + ' to cart.');
+    // Optionally, you can provide UI feedback to the user
+    alert('Added ' + productName + ' to cart.');
+  }
+
+</script>

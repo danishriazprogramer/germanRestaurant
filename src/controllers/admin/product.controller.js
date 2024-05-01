@@ -179,6 +179,17 @@ const changeStatus = async (req, res) => {
   res.status(200).json(new ApiResponse(200, 'Update Order Successfully'));
 }
 
+// async  function abc(){
+// let data = await Product.find()
+// console.log("🚀 ~ abc ~ data:", data)
+
+// data.forEach(data1=>{
+//   data1.unitId = data1._id;
+//    data1.save()
+// })
+// }
+// abc()
+
 export { createProduct, allProducts, singleProduct, updateProduct, deleteProduct, getOrders, changeStatus, getCategoires };
 
 

@@ -125,7 +125,7 @@ const addToCart = async (req,res)=>{
   try {
   //console.log("the body of order is:",req.body)
   let {order,orderToken} = req.body;
-  console.log("🚀 ~ addToCart ~ order:", order)
+  console.log("🚀 ~ addToCart ~ order:", req.body)
   let totalQuantity = 1;
   let orders = []
   const secretKey = 'hsigfsdgsfdiuuo8uw4656';
@@ -149,7 +149,8 @@ const addToCart = async (req,res)=>{
      totalQuantity: totalQuantity
     };
     
-l    
+
+    const expiresIn = '5000000000000000000000000h';
     const token = JWT.sign(payload, secretKey, { expiresIn });
     
    // console.log('Generated JWT:', token);
