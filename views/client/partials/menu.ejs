@@ -126,10 +126,7 @@
 
 
 <script>
-
-
-
-    const productContainers = document.querySelectorAll(".foodCart"); // Use querySelectorAll to select all elements with class foodCart
+    const productContainers = document.querySelectorAll(".foodCart");
     const tabs = document.querySelectorAll('.nav-link');
 
     tabs.forEach(tab => {
@@ -140,10 +137,8 @@
             fetch(`http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(tabName)}`)
             .then(response => response.json())
             .then(data => {
-                // Handle API response
                 console.log('API response:', data);
 
-                // Loop through each product container
                 productContainers.forEach(productContainer => {
                     // Clear existing content inside each product container
                     productContainer.innerHTML = '';
@@ -206,7 +201,7 @@
                             <div class="card mb-3">
                                 <div class="row g-0" id="${product.unitId}" >
                                     <div class="col-lg-4 d-flex justify-content-center p-2">
-                                        <img src="/uploads/products/${product.imageUrl}" class="img-fluid rounded-3 w-100" alt="${product.name}">
+                                        <img src="/uploads/products/${product.imageUrl}" class="img-fluid rounded-3 menu_image" alt="${product.name}">
                                     </div>
                                     <div class="col-lg-8">
                                         <div class="card-body">
@@ -239,14 +234,33 @@ function addToCart(productId) {
     let price = id.querySelector('.card_bottom h6').textContent.trim();
     let imageSrc = id.querySelector('.img-fluid').getAttribute('src');
     let order =  {
-        "id" :productId,
+        "productId" :productId,
         "productName": title,
         "description": description,
         "Price": price,
+        "Quenty": 1,
         "imageSrc": imageSrc,
     };
+    function getAllCookies() {
+        const cookies = document.cookie.split('; ');
+        const cookieMap = {};
+
+        cookies.forEach(cookie => {
+            const [name, value] = cookie.split('=');
+            cookieMap[name] = decodeURIComponent(value);
+        });
+
+        return cookieMap;
+    }
+
+    // Example usage:
+    const orderToken = getAllCookies();
+    console.log("🚀 ~ addToCart ~ allCookies:", orderToken);
+    if(orderToken===undefined){
+        orderToken=""
+    }
     let payload = {
-        "orderToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmRlcnMiOlt7ImlkIjoiNjYxZGUyZWY2Y2RiMjYzMGI0ZjU4N2RjIiwicHJvZHVjdE5hbWUiOiJQYWxhayBDaGlja2VuIiwiZGVzY3JpcHRpb24iOiJIw6RobmNoZW5icnVzdGZpbGV0IG1pdCBTcGluYXQgenViZXJlaXRldCBpbiBlaW5lciB3w7xyemlnZW4gU2F1Y2UiLCJQcmljZSI6IjE1LjUg4oKsIiwiaW1hZ2VTcmMiOiIvdXBsb2Fkcy9wcm9kdWN0cy9pbWctMTcxNDIyNTg3Njc5OC02MjY1MjE0NzguanBnIn1dLCJ0b3RhbFF1YW50aXR5IjoxLCJpYXQiOjE3MTQ1MDI3NzMsImV4cCI6MTczMjUwMjc3M30.TozZZMOQwsMhV7cm4FQj_zBIcXSHxaiZmObKzUCAEPk",
+        "orderToken": orderToken,
         "order": order
     };
 
@@ -267,9 +281,12 @@ function addToCart(productId) {
     .then(response => response.json())
     .then(data => {
         console.log('Response from server:', data);
-        console.log('Added ' + productName + ' to cart.');
-        // Optionally, you can provide UI feedback to the user
-        alert('Added ' + data + ' to cart.');
+       Swal.fire({
+        title: 'Added to Cart',
+        text: data?.message,
+        icon:'success',
+        confirmButtonText: 'OK'
+       })
     })
     .catch(error => {
         console.error('Error:', error);

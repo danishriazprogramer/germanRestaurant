@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>Joker Palace -  Restaurant </title>
+<title>Joker Palace - Restaurant </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -29,76 +29,139 @@
 <!-- Custom Stylesheet -->
 <link href="/assets/css/style.css" rel="stylesheet">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <header class="container-xxl position-relative p-0">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-      <a href="" class="navbar-brand p-0">
-          <!-- <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1> -->
-          <img src="/assets/img/logo.webp" alt="Logo">
-      </a>
-      <div class="d-flex gap-3 align-items-center">
-          <div class="d-flex gap-3 d-lg-none">
-              <div class="cart">
-                  <div class="cart__count">0</div>
-                  <a href="/api/cart"><i class="fas fa-shopping-cart"></i>
-                  </a>
-              </div>
-              <div class="cart">
-                  <div class="cart__count">0</div>
-                  <i class="fas fa-heart"></i>
-              </div>
-          </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-              <span class="fa fa-bars"></span>
-          </button>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto py-0 pe-4">
-              <a href="/api/client" class="nav-item nav-link active">Home</a>
-              <a href="about.html" class="nav-item nav-link">About</a>
-              <a href="/api/menu" class="nav-item nav-link">Menu</a>
-              <!-- <div class="nav-item dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                          <div class="dropdown-menu m-0">
-                              <a href="booking.html" class="dropdown-item">Booking</a>
-                              <a href="team.html" class="dropdown-item">Our Team</a>
-                              <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                          </div>
-                      </div> -->
-              <a href="contact.html" class="nav-item nav-link">Contact</a>
-          </div>
-          <div class="d-none d-lg-flex align-items-center gap-3">
-              <div class="cart">
-                  <div class="cart__count">0</div>
-                  
-                  <a href="/api/cart" class="nav-item nav-link"><i class="fas fa-shopping-cart"></i></a>
-                  
-              </div>
-              <div class="cart">
-                  <div class="cart__count">0</div>
-                  <i class="fas fa-heart"></i>
-              </div>
-          </div>
-      </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+            <!-- <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1> -->
+            <img src="/assets/img/logo.webp" alt="Logo">
+        </a>
+        <div class="d-flex gap-3 align-items-center">
+            <div class="d-flex gap-3 d-lg-none">
+                <div class="cart">
+                    <div class="cart__count">0</div>
+                    <a href="/api/cart"><i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+                <div class="cart">
+                    <div class="cart__count">0</div>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0 pe-4">
+                <a href="/api/client" class="nav-item nav-link">Home</a>
+                <a href="/api/menu" class="nav-item nav-link">Menu</a>
+                <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
+            </div>
+            <div class="d-none d-lg-flex align-items-center gap-3">
+                <div class="cart" onclick="getCart()">
+                    <div class="cart__count">0</div>
 
-<script>
-     const data = {
-    title: 'foo',
-    body: 'bar',
-    userId: 1
-  };
-  
-   axios.post('http://localhost:8080/api/user/webhook', data)
-    .then(response => {
-      console.log(response.data);
-      // Once the webhook response is received and processed, send the response to the client
-    //  res.send("The addData is runing");
-    })
-    .catch(error => {
-      console.log(error);
-      // If an error occurs while sending the webhook request, handle the error and send an appropriate response
-      //res.status(500).send("Error occurred while sending data to webhook");
-    });
+                    <div><i class="fas fa-shopping-cart"></i></div>
 
-</script>
+                </div>
+                <div class="cart">
+                    <div class="cart__count">0</div>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+
+        // const data = {
+        //     title: 'foo',
+        //     body: 'bar',
+        //     userId: 1
+        // };
+
+        // axios.post('http://localhost:8080/api/user/webhook', data)
+        //     .then(response => {
+        //         console.log(response.data);
+        //     })
+        //     .catch(error => {
+        //         console.log(error);
+        //     });
+
+        function getAllCookies() {
+            const cookies = document.cookie.split('; ');
+            const cookieMap = {};
+
+            cookies.forEach(cookie => {
+                const [name, value] = cookie.split('=');
+                cookieMap[name] = decodeURIComponent(value);
+            });
+
+            return cookieMap;
+        }
+
+        const orderToken = getAllCookies();
+        if (orderToken.order === undefined) {
+            orderToken.order = ""
+        }
+
+        const url = 'http://localhost:8080/api/user/getCart';
+        const payload = {
+            "orderToken": orderToken.order,
+        };
+        const payloadJSON = JSON.stringify(payload);
+
+        const getCart = async () => {
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: payloadJSON
+                });
+                const data = await response.json();
+                const allOrders = data?.orders;
+
+                const container = document.getElementById("food-container");
+
+                container.innerHTML = '';
+
+                allOrders.forEach(order => {
+                    const productHTML = `
+                <div class="product row">
+                    <div class="col-md-3">
+                        <img class="cart-img" src="${order.imageSrc}">
+                    </div>
+                    <div class="col-md-8 info">
+                        <div class="row">
+                            <div class="col-md-5 product-name">
+                                <a href="#">${order.productName}</a>
+                            </div>
+                            <div class="col-md-4 quantity">
+                                <label for="quantity">Quantity:</label>
+                                <input id="quantity" type="number" value="${order.Quenty}" class="form-control quantity-input">
+                            </div>
+                            <div class="col-md-3 price">
+                                <span>${order.Price}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+                    // Append product HTML to container
+                    container.innerHTML += productHTML;
+                });
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        };
+
+
+        getCart();
+
+    </script>

@@ -5,8 +5,8 @@ import JWT from "jsonwebtoken"
 import cookiesParser from "cookie-parser"
 const createOrder = async (req, res) => {
   try {
-    const {email,phone,address,city,username,paymentMethod,productDetails} = req.body;
-    
+    const { email, phone, address, city, username, paymentMethod, productDetails } = req.body;
+
     const newOrder = await Order.create(Order);
 
     res.status(201).json(new ApiResponse(201, newOrder, 'Order generate successfully'));
@@ -121,46 +121,44 @@ const getSingleOrders = async (req, res) => {
 };
 
 
-const addToCart = async (req,res)=>{
+const addToCart = async (req, res) => {
   try {
-  //console.log("the body of order is:",req.body)
-  let {order,orderToken} = req.body;
-  console.log("🚀 ~ addToCart ~ order:", req.body)
-  let totalQuantity = 1;
-  let orders = []
-  const secretKey = 'hsigfsdgsfdiuuo8uw4656';
-  if(orderToken != ""){
-    let tokenDecode = JWT.decode(orderToken)
-    console.log("🚀 ~ addToCart ~ tokenDecode:", tokenDecode)
-    tokenDecode.orders.forEach(element => {
-      if(element.productId === order.productId ){
-        res.status(200).json(new ApiResponse(200,'FOOD IS ALREADY ADDED'));
-      }
-      totalQuantity = totalQuantity +  parseInt(element.Quenty)
-      console.log("🚀 ~ addToCart ~ element:", element)
-      orders.push(element)
-    });
-  }  
-  
-  orders.push(order)
-  //console.log("THE Decode Token is:",tokenDecode)
-  const payload = {
-     orders: orders,
-     totalQuantity: totalQuantity
+    let { order, orderToken } = req.body;
+    console.log("🚀 ~ addToCart ~ orderToken:", orderToken);
+    orderToken = orderToken.order;
+    console.log("🚀 ~ addToCart ~ orderToken:", orderToken);
+    let totalQuantity = 1;
+    let orders = []
+    const secretKey = 'hsigfsdgsfdiuuo8uw4656';
+    if (orderToken != "") {
+      let tokenDecode = JWT.decode(orderToken)
+      console.log("🚀 ~ addToCart ~ tokenDecode:", tokenDecode)
+      tokenDecode.orders.forEach(element => {
+        if (element.productId === order.productId) {
+          res.status(200).json(new ApiResponse(200, 'FOOD IS ALREADY ADDED'));
+        }
+        totalQuantity = totalQuantity + parseInt(element.Quenty)
+        console.log("🚀 ~ addToCart ~ element:", element)
+        orders.push(element)
+      });
+    }
+
+    orders.push(order)
+    const payload = {
+      orders: orders,
+      totalQuantity: totalQuantity
     };
-    
+
 
     const expiresIn = '5000000000000000000000000h';
     const token = JWT.sign(payload, secretKey, { expiresIn });
-    
-   // console.log('Generated JWT:', token);
 
     res.cookie("order", token);
-    res.status(200).json(new ApiResponse(200,'Order addtocart',token));
-    
-    
+    res.status(200).json(new ApiResponse(200, token, 'Order Add to Cart',));
+
+
   } catch (error) {
-    console.log("The error is",error)
+    console.log("The error is", error)
   }
 }
 
@@ -184,24 +182,24 @@ const addToCart = async (req,res)=>{
 //       orders.push(element)
 //     });
 //   }  
-  
+
 //   orders.push(order)
 //   //console.log("THE Decode Token is:",tokenDecode)
 //   const payload = {
 //      orders: orders,
 //      totalQuantity: totalQuantity
 //     };
-    
+
 //     const expiresIn = '5000h';
-    
+
 //     const token = JWT.sign(payload, secretKey, { expiresIn });
-    
+
 //    // console.log('Generated JWT:', token);
 
 //     res.cookie("order", token);
 //     res.status(200).json(new ApiResponse(200,'Order addtocart',token));
-    
-    
+
+
 //   } catch (error) {
 //     console.log("The error is",error)
 //   }
@@ -209,9 +207,9 @@ const addToCart = async (req,res)=>{
 
 // getCart
 
-const getCart = async(req,res)=>{
-let orderToken = JWT.decode(req.body.orderToken)
-   console.log("🚀 ~ getCart ~ orderToken:", orderToken)
-   res.send(orderToken)
+const getCart = async (req, res) => {
+  let orderToken = JWT.decode(req.body.orderToken)
+  console.log("🚀 ~ getCart ~ orderToken:", orderToken)
+  res.send(orderToken)
 }
-export { createOrder, editOrder, deleteOrder, getOrders, getSingleOrders,addToCart,getCart };
+export { createOrder, editOrder, deleteOrder, getOrders, getSingleOrders, addToCart, getCart };

@@ -1,52 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap Tab Product Cart</title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <%- include('partials/head.ejs'); %>
 </head>
+
 <body>
+  <div class="container-xxl bg-white p-0">
+      <main class="page">
+        <section class="shopping-cart dark">
+          <div class="container">
+            <div class="block-heading">
+              <h2>Food Cart</h2>
+              <p>Savor the flavors of the city streets with our gourmet food cart, serving up delicious bites crafted
+                with locally
+                sourced ingredients.</p>
+            </div>
+            <div class="content">
+              <div class="row">
+                <div class="col-md-12 col-lg-8">
+                  <div id="food-container" class="items">
+                    <div class="product">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <img class="cart-img" src="assets/img/image.jpg">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="info">
+                            <div class="row">
+                              <div class="col-md-5 product-name">
+                                <div class="product-name">
+                                  <a href="#">Lorem Ipsum dolor</a>
+                                  <div class="product-info">
+                                    <div>Display: <span class="value">5 inch</span></div>
+                                    <div>RAM: <span class="value">4GB</span></div>
+                                    <div>Memory: <span class="value">32GB</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4 quantity">
+                                <label for="quantity">Quantity:</label>
+                                <input id="quantity" type="number" value="1" class="form-control quantity-input">
+                              </div>
+                              <div class="col-md-3 price">
+                                <span>$120</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                  <div class="summary">
+                    <h3>Summary</h3>
+                    <div class="summary-item"><span class="text">Subtotal</span><span class="price">$360</span></div>
+                    <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
+                    <div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
+                    <div class="summary-item"><span class="text">Total</span><span class="price">$360</span></div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block"  data-bs-toggle="modal" data-bs-target="#checkoutModal">Checkout</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <%- include('./partials/footer.ejs'); %>
 
-<!-- Nav tabs -->
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="product1-tab" data-toggle="tab" href="#product1" role="tab" aria-controls="product1" aria-selected="true">Product 1</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="product2-tab" data-toggle="tab" href="#product2" role="tab" aria-controls="product2" aria-selected="false">Product 2</a>
-  </li>
-</ul>
-
-<!-- Tab panes -->
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="product1" role="tabpanel" aria-labelledby="product1-tab">
-    <h2>Product 1</h2>
-    <p>Description of Product 1</p>
-    <button class="btn btn-primary" onclick="addToCart('Product 1')">Add to Cart</button>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
   </div>
-  <div class="tab-pane fade" id="product2" role="tabpanel" aria-labelledby="product2-tab">
-    <h2>Product 2</h2>
-    <p>Description of Product 2</p>
-    <button class="btn btn-primary" onclick="addToCart('Product 2')">Add to Cart</button>
+ 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Checkout</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="checkoutForm">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" name="phone">
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Full Address</label>
+              <input type="text" class="form-control" id="address" name="address">
+            </div>
+  
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script>
-  function addToCart(productName) {
-    // Here you can implement your logic to add the product to the cart
-    console.log('Added ' + productName + ' to cart.');
-    // Optionally, you can provide UI feedback to the user
-    alert('Added ' + productName + ' to cart.');
-  }
-</script>
 
 </body>
-</html>
 
+<!-- jQuery and jQuery Validation -->
+<%- include('./partials/scripts.ejs'); %>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    $(document).ready(function () {
+      $('#checkoutForm').validate({
+        rules: {
+          email: {
+            required: true,
+            email: true
+          },
+          phone: {
+            required: true,
+            minlength: 10
+          },
+          address: {
+            required: true
+          }
+        },
+        messages: {
+          email: {
+            required: "Please enter your email address",
+            email: "Please enter a valid email address"
+          },
+          phone: {
+            required: "Please enter your phone number",
+            minlength: "Phone number must be at least 10 characters long"
+          },
+          address: {
+            required: "Please enter your full address"
+          }
+        },
+        errorElement: 'div',
+        errorPlacement: function (error, element) {
+          error.addClass('invalid-feedback');
+          element.closest('.mb-3').append(error);
+        },
+        highlight: function (element, errorClass, validClass) {
+          $(element).addClass('is-invalid').removeClass('is-valid');
+        },
+        unhighlight: function (element, errorClass, validClass) {
+          $(element).removeClass('is-invalid').addClass('is-valid');
+        },
+        submitHandler: function (form) {
+          $('#checkoutModal').modal('hide');
+          Swal.fire({
+            title: 'Success!',
+            text: 'Order Place Successfully',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          })
+        }
+      });
+    });
+  </script>
+
+  
+
+</body>
+
+</html>
