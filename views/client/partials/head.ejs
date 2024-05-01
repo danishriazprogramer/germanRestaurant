@@ -61,12 +61,12 @@
                 <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
             </div>
             <div class="d-none d-lg-flex align-items-center gap-3">
-                <div class="cart" onclick="getCart()">
-                    <div class="cart__count">0</div>
+                <a href="/api/cart" class="cart">
+                    <div class="cart__count" id="cart__count">0</div>
 
                     <div><i class="fas fa-shopping-cart"></i></div>
 
-                </div>
+                </a>
                 <div class="cart">
                     <div class="cart__count">0</div>
                     <i class="fas fa-heart"></i>
@@ -74,94 +74,3 @@
             </div>
         </div>
     </nav>
-
-    <script>
-
-        // const data = {
-        //     title: 'foo',
-        //     body: 'bar',
-        //     userId: 1
-        // };
-
-        // axios.post('http://localhost:8080/api/user/webhook', data)
-        //     .then(response => {
-        //         console.log(response.data);
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     });
-
-        function getAllCookies() {
-            const cookies = document.cookie.split('; ');
-            const cookieMap = {};
-
-            cookies.forEach(cookie => {
-                const [name, value] = cookie.split('=');
-                cookieMap[name] = decodeURIComponent(value);
-            });
-
-            return cookieMap;
-        }
-
-        const orderToken = getAllCookies();
-        if (orderToken.order === undefined) {
-            orderToken.order = ""
-        }
-
-        const url = 'http://localhost:8080/api/user/getCart';
-        const payload = {
-            "orderToken": orderToken.order,
-        };
-        const payloadJSON = JSON.stringify(payload);
-
-        const getCart = async () => {
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: payloadJSON
-                });
-                const data = await response.json();
-                const allOrders = data?.orders;
-
-                const container = document.getElementById("food-container");
-
-                container.innerHTML = '';
-
-                allOrders.forEach(order => {
-                    const productHTML = `
-                <div class="product row">
-                    <div class="col-md-3">
-                        <img class="cart-img" src="${order.imageSrc}">
-                    </div>
-                    <div class="col-md-8 info">
-                        <div class="row">
-                            <div class="col-md-5 product-name">
-                                <a href="#">${order.productName}</a>
-                            </div>
-                            <div class="col-md-4 quantity">
-                                <label for="quantity">Quantity:</label>
-                                <input id="quantity" type="number" value="${order.Quenty}" class="form-control quantity-input">
-                            </div>
-                            <div class="col-md-3 price">
-                                <span>${order.Price}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-
-                    // Append product HTML to container
-                    container.innerHTML += productHTML;
-                });
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        };
-
-
-        getCart();
-
-    </script>

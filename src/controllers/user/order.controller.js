@@ -123,25 +123,29 @@ const getSingleOrders = async (req, res) => {
 
 const addToCart = async (req, res) => {
   try {
+    console.log("🚀 ~ addToCart ~ req:", req.body);
     let { order, orderToken } = req.body;
-    console.log("🚀 ~ addToCart ~ orderToken:", orderToken);
-    orderToken = orderToken.order;
-    console.log("🚀 ~ addToCart ~ orderToken:", orderToken);
+    //console.log("🚀 ~ addToCart ~ body:", req.body);
+    //console.log("🚀 ~ addToCart ~ orderToken:", orderToken);
+
     let totalQuantity = 1;
     let orders = []
+    let alreadyAdded = false;
     const secretKey = 'hsigfsdgsfdiuuo8uw4656';
     if (orderToken != "") {
       let tokenDecode = JWT.decode(orderToken)
-      console.log("🚀 ~ addToCart ~ tokenDecode:", tokenDecode)
       tokenDecode.orders.forEach(element => {
         if (element.productId === order.productId) {
-          res.status(200).json(new ApiResponse(200, 'FOOD IS ALREADY ADDED'));
+          alreadyAdded = true
+          console.log("the alllreadyadded is ruing ")
+        } else {
+          totalQuantity = totalQuantity + parseInt(element.Quenty)
+          orders.push(element)
         }
-        totalQuantity = totalQuantity + parseInt(element.Quenty)
-        console.log("🚀 ~ addToCart ~ element:", element)
-        orders.push(element)
+
       });
     }
+
 
     orders.push(order)
     const payload = {
@@ -154,8 +158,10 @@ const addToCart = async (req, res) => {
     const token = JWT.sign(payload, secretKey, { expiresIn });
 
     res.cookie("order", token);
-    res.status(200).json(new ApiResponse(200, token, 'Order Add to Cart',));
-
+    if (alreadyAdded) {
+      res.status(200).json(new ApiResponse(200, token, 'Food is already Added'));
+    }
+    res.status(201).json(new ApiResponse(201, token, 'Order Add to Cart'));
 
   } catch (error) {
     console.log("The error is", error)

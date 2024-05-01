@@ -9,8 +9,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714225507309-533556490.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T13:45:07.340Z"
-  }
+    "$date": "2024-04-29T20:37:17.855Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587d6"
 },
 {
   "_id": {
@@ -23,8 +26,11 @@
   "category": "pizza",
   "imageUrl": "img-1713755083044-125598077.jpg",
   "updatedAt": {
-    "$date": "2024-04-22T03:04:43.089Z"
-  }
+    "$date": "2024-04-29T20:37:17.856Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587d7"
 },
 {
   "_id": {
@@ -37,8 +43,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714225677039-268682266.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T13:47:57.050Z"
-  }
+    "$date": "2024-04-29T20:37:17.856Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587d8"
 },
 {
   "_id": {
@@ -50,9 +59,12 @@
   "unitPrice": 15.5,
   "category": "pizza",
   "updatedAt": {
-    "$date": "2024-04-22T03:01:11.902Z"
+    "$date": "2024-04-29T20:37:17.856Z"
   },
-  "imageUrl": "img-1713754871872-773203101.jpg"
+  "imageUrl": "img-1713754871872-773203101.jpg",
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587d9"
 },
 {
   "_id": {
@@ -65,8 +77,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714225744960-161108481.jpeg",
   "updatedAt": {
-    "$date": "2024-04-27T13:49:05.039Z"
-  }
+    "$date": "2024-04-29T20:37:17.856Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587da"
 },
 {
   "_id": {
@@ -79,8 +94,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714225840724-610974663.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T13:50:40.766Z"
-  }
+    "$date": "2024-04-29T20:37:17.856Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587db"
 },
 {
   "_id": {
@@ -93,8 +111,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714225876798-626521478.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T13:51:16.824Z"
-  }
+    "$date": "2024-04-29T20:37:17.856Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587dc"
 },
 {
   "_id": {
@@ -107,8 +128,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714225973044-166194211.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T13:52:53.118Z"
-  }
+    "$date": "2024-04-29T20:37:17.856Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587dd"
 },
 {
   "_id": {
@@ -121,8 +145,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226022533-916125819.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T13:53:42.574Z"
-  }
+    "$date": "2024-04-29T20:37:17.856Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587de"
 },
 {
   "_id": {
@@ -135,8 +162,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226074848-242157578.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T13:54:34.871Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587df"
 },
 {
   "_id": {
@@ -149,8 +179,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226124722-345236010.webp",
   "updatedAt": {
-    "$date": "2024-04-27T13:55:24.760Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587e0"
 },
 {
   "_id": {
@@ -163,8 +196,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226170246-595354556.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T13:56:10.270Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587e1"
 },
 {
   "_id": {
@@ -177,8 +213,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226210481-56186176.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T13:56:50.530Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587e2"
 },
 {
   "_id": {
@@ -191,8 +230,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226335008-190348226.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T13:58:55.157Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587e3"
 },
 {
   "_id": {
@@ -205,8 +247,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226371753-946824646.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T13:59:31.780Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587e4"
 },
 {
   "_id": {
@@ -219,8 +264,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226404470-91899494.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:00:04.500Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587e5"
 },
 {
   "_id": {
@@ -233,8 +281,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226430070-524189280.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:00:30.118Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587e6"
 },
 {
   "_id": {
@@ -247,8 +298,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226475553-908573565.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:01:15.607Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587e7"
 },
 {
   "_id": {
@@ -261,8 +315,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226501197-141581146.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:01:41.227Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587e8"
 },
 {
   "_id": {
@@ -275,8 +332,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226525066-642026062.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:02:05.107Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587e9"
 },
 {
   "_id": {
@@ -289,8 +349,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226551139-199074948.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:02:31.148Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587ea"
 },
 {
   "_id": {
@@ -303,8 +366,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226585761-122468655.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:03:05.797Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587eb"
 },
 {
   "_id": {
@@ -317,8 +383,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226608858-714764429.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:03:28.882Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587ec"
 },
 {
   "_id": {
@@ -331,8 +400,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226645129-662115812.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:04:05.166Z"
-  }
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587ed"
 },
 {
   "_id": {
@@ -345,8 +417,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226785168-63811667.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:06:25.196Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587ee"
 },
 {
   "_id": {
@@ -359,8 +434,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226889357-557948257.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:08:09.394Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587ef"
 },
 {
   "_id": {
@@ -373,8 +451,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714226928926-363133759.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:08:48.964Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587f0"
 },
 {
   "_id": {
@@ -387,8 +468,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227002926-300766994.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:10:02.956Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587f1"
 },
 {
   "_id": {
@@ -401,8 +485,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227268673-436738414.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:14:28.690Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587f2"
 },
 {
   "_id": {
@@ -415,8 +502,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227309274-515650231.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:15:09.317Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587f3"
 },
 {
   "_id": {
@@ -429,8 +519,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227334058-650612271.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:15:34.115Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587f4"
 },
 {
   "_id": {
@@ -443,8 +536,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227359819-283328821.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:15:59.858Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587f5"
 },
 {
   "_id": {
@@ -457,8 +553,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227384147-73155640.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:16:24.177Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587f6"
 },
 {
   "_id": {
@@ -471,8 +570,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227532528-27329846.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:18:52.562Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587f7"
 },
 {
   "_id": {
@@ -485,8 +587,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227558288-651195490.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:19:18.513Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587f8"
 },
 {
   "_id": {
@@ -499,8 +604,11 @@
   "category": "pizza",
   "imageUrl": "img-1713754968967-926725453.jpg",
   "updatedAt": {
-    "$date": "2024-04-22T03:02:49.049Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587f9"
 },
 {
   "_id": {
@@ -513,8 +621,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227614155-987022324.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:20:14.204Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587fa"
 },
 {
   "_id": {
@@ -527,8 +638,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227651734-562420825.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:20:51.769Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587fb"
 },
 {
   "_id": {
@@ -541,8 +655,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227683964-578824270.webp",
   "updatedAt": {
-    "$date": "2024-04-27T14:21:24.004Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587fc"
 },
 {
   "_id": {
@@ -555,8 +672,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227739855-549602102.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:22:19.912Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587fd"
 },
 {
   "_id": {
@@ -569,8 +689,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227765034-691370089.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:22:45.050Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587fe"
 },
 {
   "_id": {
@@ -583,8 +706,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227796758-36197687.webp",
   "updatedAt": {
-    "$date": "2024-04-27T14:23:16.818Z"
-  }
+    "$date": "2024-04-29T20:37:17.858Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587ff"
 },
 {
   "_id": {
@@ -597,8 +723,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227821004-153477504.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:23:41.049Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58800"
 },
 {
   "_id": {
@@ -611,8 +740,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227851732-592086044.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:24:11.802Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58801"
 },
 {
   "_id": {
@@ -625,8 +757,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227873770-580690401.webp",
   "updatedAt": {
-    "$date": "2024-04-27T14:24:33.787Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58802"
 },
 {
   "_id": {
@@ -639,8 +774,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227894402-530335965.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:24:54.449Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58803"
 },
 {
   "_id": {
@@ -653,8 +791,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227915487-831066821.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:25:15.532Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58804"
 },
 {
   "_id": {
@@ -667,8 +808,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227938338-155668194.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:25:38.383Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58805"
 },
 {
   "_id": {
@@ -681,8 +825,11 @@
   "category": "Indian Food",
   "imageUrl": "img-1714227964403-347106060.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:26:04.447Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58806"
 },
 {
   "_id": {
@@ -694,8 +841,11 @@
   "category": "pasta",
   "imageUrl": "img-1714228232473-409959566.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:30:32.489Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58807"
 },
 {
   "_id": {
@@ -707,8 +857,11 @@
   "category": "pasta",
   "imageUrl": "img-1714228330034-330308603.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:32:10.052Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58808"
 },
 {
   "_id": {
@@ -720,8 +873,11 @@
   "category": "pasta",
   "imageUrl": "img-1714228488053-604059893.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:34:48.108Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58809"
 },
 {
   "_id": {
@@ -733,8 +889,11 @@
   "category": "pasta",
   "imageUrl": "img-1714228753287-723241027.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:39:13.308Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5880a"
 },
 {
   "_id": {
@@ -746,8 +905,11 @@
   "category": "pasta",
   "imageUrl": "img-1714228886042-144916895.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:41:26.085Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5880b"
 },
 {
   "_id": {
@@ -759,8 +921,11 @@
   "category": "pasta",
   "imageUrl": "img-1714228926545-198805175.png",
   "updatedAt": {
-    "$date": "2024-04-27T14:42:06.605Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5880c"
 },
 {
   "_id": {
@@ -772,8 +937,11 @@
   "category": "pasta",
   "imageUrl": "img-1714228950009-726826510.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:42:30.065Z"
-  }
+    "$date": "2024-04-29T20:37:17.859Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5880d"
 },
 {
   "_id": {
@@ -785,8 +953,11 @@
   "category": "pasta",
   "imageUrl": "img-1714228978651-122963618.jpg",
   "updatedAt": {
-    "$date": "2024-04-27T14:42:58.696Z"
-  }
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5880e"
 },
 {
   "_id": {
@@ -798,305 +969,539 @@
   "category": "pasta",
   "imageUrl": "img-1714229699747-648194845.webp",
   "updatedAt": {
-    "$date": "2024-04-27T14:54:59.773Z"
-  }
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5880f"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58810"
   },
   "name": "Cheese Burger Light",
-  "description": "Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+  "description": " Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
   "unitPrice": 7.7,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714266437279-367678904.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58810"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58811"
   },
   "name": "Chilli Cheese Burger",
-  "description": "Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo, Jalapenos und Scharfer Käsesauce",
+  "description": " Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo, Jalapenos und Scharfer Käsesauce",
   "unitPrice": 7.7,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714266754418-518562893.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58811"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58812"
   },
   "name": "BBQ Burger",
-  "description": "Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, saftige Tomaten, Röstzwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere BBQ Sauce",
+  "description": " Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, saftige Tomaten, Röstzwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere BBQ Sauce",
   "unitPrice": 7.7,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714266793344-981501118.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58812"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58813"
   },
   "name": "Crunch Burger",
-  "description": "Brioche Bun, Crunchy Chicken, Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+  "description": " Brioche Bun, Crunchy Chicken, Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
   "unitPrice": 7.7,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714266835425-410000574.webp",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58813"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58814"
   },
   "name": "Double Decker Burger",
-  "description": "Brioche Bun, 2x 125g reines Rindfleisch, 2x Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+  "description": " Brioche Bun, 2x 125g reines Rindfleisch, 2x Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
   "unitPrice": 9.3,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714266859664-399175043.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58814"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58815"
   },
   "name": "Veg Party Burger",
-  "description": "Brioche Bun, Veggie Patty, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+  "description": " Brioche Bun, Veggie Patty, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
   "unitPrice": 7.7,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714266881371-892491450.webp",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58815"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58816"
   },
   "name": "Iron Man Burger",
-  "description": "Brioche Bun, 125g Rindfleischpatty, Crunchy Chicken Patty, 2x Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+  "description": " Brioche Bun, 125g Rindfleischpatty, Crunchy Chicken Patty, 2x Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
   "unitPrice": 9.3,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714266905383-820307771.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58816"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58817"
   },
   "name": "Mexico Burger",
-  "description": "Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, knusprige Nachos, Jalapenos, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und hausgemachter Salsasauce",
+  "description": " Brioche Bun, 125g reines Rindfleisch, Cheddar-Käse, knusprige Nachos, Jalapenos, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und hausgemachter Salsasauce",
   "unitPrice": 8.2,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714266932555-93987844.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58817"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58818"
   },
   "name": "Double Crunch Burger",
-  "description": "Brioche Bun, 2x Crunchy Chicken Patty, 2x Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
+  "description": " Brioche Bun, 2x Crunchy Chicken Patty, 2x Cheddar-Käse, saftige Tomaten, rote Zwiebeln, würzige Gurken, knackiger Salat, Ketchup, Mayo und leckere Burgersauce",
   "unitPrice": 9.3,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714266955938-795019628.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58818"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58819"
   },
   "name": "Coleslow Burger",
-  "description": "Brioche Bun, 125 g reines Rindfleisch, Cheddar-Käse, Tomaten, rote Zwiebeln, Gewürzgurken, knackiger Lolo Rosso Salat, Burgersauce, Coleslow Salat",
+  "description": " Brioche Bun, 125 g reines Rindfleisch, Cheddar-Käse, Tomaten, rote Zwiebeln, Gewürzgurken, knackiger Lolo Rosso Salat, Burgersauce, Coleslow Salat",
   "unitPrice": 8.4,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714267073660-320064009.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58819"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5881a"
   },
   "name": "Chicken Nuggets Burger",
-  "description": "Brioche Bun, leckere Chicken Nuggets, Currysauce, knackiger Lolo Rosso Salat, Cheddarkäse",
+  "description": " Brioche Bun, leckere Chicken Nuggets, Currysauce, knackiger Lolo Rosso Salat, Cheddarkäse",
   "unitPrice": 7.9,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714267098524-741800684.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5881a"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5881b"
   },
   "name": "Mighty Zinger Burger",
-  "description": "Brioche Bun, 2 scharfe Chicken Dynamite Streifen, Remouladensauce, Jalapeños, knackiger Lolo Rosso Salat, Cheddarkäse",
+  "description": " Brioche Bun, 2 scharfe Chicken Dynamite Streifen, Remouladensauce, Jalapeños, knackiger Lolo Rosso Salat, Cheddarkäse",
   "unitPrice": 8.2,
-  "category": "Burger"
+  "category": "Burger",
+  "imageUrl": "img-1714267121469-354427304.png",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5881b"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5881c"
   },
   "name": "Schnitzel „Wiener Art”",
-  "description": "mit Zitronenscheibe",
+  "description": " mit Zitronenscheibe",
   "unitPrice": 11.5,
-  "category": "Schnitzel"
+  "category": "Schnitzel",
+  "imageUrl": "img-1714267142515-132031891.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5881c"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5881d"
   },
   "name": "Champignons Schnitzel",
-  "description": "mit frischen Champignons und Sahnesauce",
+  "description": " mit frischen Champignons und Sahnesauce",
   "unitPrice": 12.3,
-  "category": "Schnitzel"
+  "category": "Schnitzel",
+  "imageUrl": "img-1714267169303-330558680.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5881d"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5881e"
   },
   "name": "Hawaii Schnitzel",
-  "description": "mit Ananas, Schinken und Käse überbacken",
+  "description": " mit Ananas, Schinken und Käse überbacken",
   "unitPrice": 12.3,
-  "category": "Schnitzel"
+  "category": "Schnitzel",
+  "imageUrl": "img-1714267230501-912333562.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5881e"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5881f"
   },
   "name": "Zwiebel Champignons Schnitzel",
-  "description": "mit gebratenen roten Zwiebeln & Champignons",
+  "description": " mit gebratenen roten Zwiebeln & Champignons",
   "unitPrice": 12.3,
-  "category": "Schnitzel"
+  "category": "Schnitzel",
+  "imageUrl": "img-1714267277565-442203259.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5881f"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58820"
   },
   "name": "Rahmschnitzel",
-  "description": "mit leckerer Rahmsauce",
+  "description": " mit leckerer Rahmsauce",
   "unitPrice": 12.3,
-  "category": "Schnitzel"
+  "category": "Schnitzel",
+  "imageUrl": "img-1714267318044-277995214.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58820"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58821"
   },
   "name": "Broccoli Schnitzel",
-  "description": "mit Broccoli, Sahne und Hollandaise",
+  "description": " mit Broccoli, Sahne und Hollandaise",
   "unitPrice": 12.3,
-  "category": "Schnitzel"
+  "category": "Schnitzel",
+  "imageUrl": "img-1714267341367-21786952.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.860Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58821"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58822"
   },
   "name": "Jäger Schnitzel",
-  "description": "mit leckerer Jägersauce",
+  "description": " mit leckerer Jägersauce",
   "unitPrice": 12.3,
-  "category": "Schnitzel"
+  "category": "Schnitzel",
+  "imageUrl": "img-1714267366673-973307458.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.861Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58822"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58823"
   },
   "name": "Schnitzel Bolognese",
-  "description": "mit Käse überbacken",
+  "description": " mit Käse überbacken",
   "unitPrice": 12.8,
-  "category": "Schnitzel"
+  "category": "Schnitzel",
+  "imageUrl": "img-1714267402815-602235961.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.861Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58823"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58824"
   },
   "name": "Schnitzel Lover",
-  "description": "mit Paprika und Champignons in Curry-Sahnesauce",
+  "description": " mit Paprika und Champignons in Curry-Sahnesauce",
   "unitPrice": 12.8,
-  "category": "Schnitzel"
+  "category": "Schnitzel",
+  "imageUrl": "img-1714267441075-615382313.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.861Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58824"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58825"
   },
   "name": "Chicken Wrap",
-  "description": "mit hausgemachter Sauce, Salat, Tomaten, Gurken, roten Zwiebeln und saftigen Chicken",
+  "description": " mit hausgemachter Sauce, Salat, Tomaten, Gurken, roten Zwiebeln und saftigen Chicken",
   "unitPrice": 9.9,
-  "category": "Wrap"
+  "category": "Wrap",
+  "imageUrl": "img-1714267463103-906204090.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.861Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58825"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58826"
   },
   "name": "Döner Wrap",
-  "description": "mit hausgemachter Sauce Salat, Tomaten, Gurken, roten Zwiebeln und saftigen Dönerfleisch",
+  "description": " mit hausgemachter Sauce Salat, Tomaten, Gurken, roten Zwiebeln und saftigen Dönerfleisch",
   "unitPrice": 9.9,
-  "category": "Wrap"
+  "category": "Wrap",
+  "imageUrl": "img-1714267485321-592083207.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.861Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58826"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58827"
   },
   "name": "Crispy Cheese Wrap",
-  "description": "mit Burger Sauce, Salat, Tomaten, Gurken, roten Zwiebeln, Käse, Crispy Chicken, Mayo und Ketchup",
+  "description": " mit Burger Sauce, Salat, Tomaten, Gurken, roten Zwiebeln, Käse, Crispy Chicken, Mayo und Ketchup",
   "unitPrice": 9.9,
-  "category": "Wrap"
+  "category": "Wrap",
+  "imageUrl": "img-1714267507521-540447471.webp",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.865Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58827"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58828"
   },
   "name": "Cheese Burger Wrap",
-  "description": "mit Burger Sauce, Salat, Tomaten, Gurken, roten Zwiebeln, Rindfleisch, Käse, Mayo und Ketchup",
+  "description": " mit Burger Sauce, Salat, Tomaten, Gurken, roten Zwiebeln, Rindfleisch, Käse, Mayo und Ketchup",
   "unitPrice": 9.9,
-  "category": "Wrap"
+  "category": "Wrap",
+  "imageUrl": "img-1714267534919-986749396.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.865Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58828"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58829"
   },
   "name": "Spicy Chicken Wrap",
-  "description": "mit hausgemachter Sauce, Salat, Tomaten, Gurken, roten Zwiebeln, Jalapenos, Chicken Nuggets und Chilli Sauce",
+  "description": " mit hausgemachter Sauce, Salat, Tomaten, Gurken, roten Zwiebeln, Jalapenos, Chicken Nuggets und Chilli Sauce",
   "unitPrice": 9.9,
-  "category": "Wrap"
+  "category": "Wrap",
+  "imageUrl": "img-1714267555809-243291531.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.865Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58829"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5882a"
   },
   "name": "Mix Salate",
-  "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Karotten und Oliven",
+  "description": " Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Karotten und Oliven",
   "unitPrice": 8.8,
-  "category": "Salad"
+  "category": "Salad",
+  "imageUrl": "img-1714267597949-649388003.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.865Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5882a"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5882b"
   },
   "name": "World Island Salat",
-  "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Oliven, Karotten, Thunfisch und Käse",
+  "description": " Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Oliven, Karotten, Thunfisch und Käse",
   "unitPrice": 10.5,
-  "category": "Salad"
+  "category": "Salad",
+  "imageUrl": "img-1714267655595-870824131.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.865Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5882b"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5882c"
   },
   "name": "Classic Salat",
-  "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Oliven, Karotten, Fetakäse und Peproni",
+  "description": " Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Oliven, Karotten, Fetakäse und Peproni",
   "unitPrice": 10.5,
-  "category": "Salad"
+  "category": "Salad",
+  "imageUrl": "img-1714267679588-282017492.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.865Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5882c"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5882d"
   },
   "name": "Italia Salat",
-  "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Oliven, Karotten, Thunfisch, Käse, Schinken und Ei",
+  "description": " Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Oliven, Karotten, Thunfisch, Käse, Schinken und Ei",
   "unitPrice": 10.5,
-  "category": "Salad"
+  "category": "Salad",
+  "imageUrl": "img-1714267700824-861157929.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.865Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5882d"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5882e"
   },
   "name": "Garnele Salat",
-  "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Karotten, Oliven und mit Knoblauch verfeinerte gebratenen Garnelen",
+  "description": " Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Karotten, Oliven und mit Knoblauch verfeinerte gebratenen Garnelen",
   "unitPrice": 10.5,
-  "category": "Salad"
+  "category": "Salad",
+  "imageUrl": "img-1714267721943-804978890.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.865Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5882e"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5882f"
   },
   "name": "Cesar Salat",
-  "description": "Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Karotten, Oliven, gebratenen Hähnchenfilet und Ananas",
+  "description": " Eisbergsalat, rote Zwiebeln, Gurken, Tomaten, Paprika, Mais, Karotten, Oliven, gebratenen Hähnchenfilet und Ananas",
   "unitPrice": 10.5,
-  "category": "Salad"
+  "category": "Salad",
+  "imageUrl": "img-1714267742110-571776331.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.865Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5882f"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58830"
   },
   "name": "Caprese Salat",
-  "description": "Tomaten, Mozzarellakugeln und frischer Basilikum",
+  "description": " Tomaten, Mozzarellakugeln und frischer Basilikum",
   "unitPrice": 10.5,
-  "category": "Salad"
+  "category": "Salad",
+  "imageUrl": "img-1714267763667-537428479.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.865Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58830"
 },
 {
   "_id": {
@@ -1104,7 +1509,15 @@
   },
   "name": "Pommes",
   "unitPrice": 3.7,
-  "category": "Beilagen"
+  "category": "Beilagen",
+  "description": " ",
+  "imageUrl": "img-1714267785076-676900591.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.865Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58831"
 },
 {
   "_id": {
@@ -1112,7 +1525,15 @@
   },
   "name": "Kroketten",
   "unitPrice": 3.7,
-  "category": "Beilagen"
+  "category": "Beilagen",
+  "description": " ",
+  "imageUrl": "img-1714267804353-730805114.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58832"
 },
 {
   "_id": {
@@ -1120,7 +1541,15 @@
   },
   "name": "Wedges",
   "unitPrice": 3.7,
-  "category": "Beilagen"
+  "category": "Beilagen",
+  "description": " ",
+  "imageUrl": "img-1714267877209-679240553.jpeg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58833"
 },
 {
   "_id": {
@@ -1128,34 +1557,63 @@
   },
   "name": "Curly Fries",
   "unitPrice": 4.3,
-  "category": "Beilagen"
+  "category": "Beilagen",
+  "description": " ",
+  "imageUrl": "img-1714267897793-221220038.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58834"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58835"
   },
   "name": "Beilagen Salat",
-  "description": "mit Joghurt oder Essig-Öl",
+  "description": " mit Joghurt oder Essig-Öl",
   "unitPrice": 4.3,
-  "category": "Beilagen"
+  "category": "Beilagen",
+  "imageUrl": "img-1714267923409-424216864.webp",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58835"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58836"
   },
   "name": "Ungefüllte Pizza Brötchen 8 Stück",
-  "description": "mit leckere Aioli Sauce",
+  "description": " mit leckere Aioli Sauce",
   "unitPrice": 5.1,
-  "category": "Pizza Brötchen"
+  "category": "Pizza Brötchen",
+  "imageUrl": "img-1714267944382-540489539.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58836"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58837"
   },
   "name": "Gefüllte Pizza Brötchen 8 Stück",
-  "description": "mit Käse gefüllte und überbackene Pizza Brötchen",
+  "description": " mit Käse gefüllte und überbackene Pizza Brötchen",
   "unitPrice": 7.3,
-  "category": "Pizza Brötchen"
+  "category": "Pizza Brötchen",
+  "imageUrl": "img-1714267982245-994677317.png",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58837"
 },
 {
   "_id": {
@@ -1163,7 +1621,15 @@
   },
   "name": "Pizza Brötchen 8 Stück mit Salami und Käse",
   "unitPrice": 7.3,
-  "category": "Pizza Brötchen"
+  "category": "Pizza Brötchen",
+  "description": " ",
+  "imageUrl": "img-1714268038430-347256681.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58838"
 },
 {
   "_id": {
@@ -1171,7 +1637,15 @@
   },
   "name": "Pizza Brötchen 8 Stück mit Schinken und Käse",
   "unitPrice": 7.3,
-  "category": "Pizza Brötchen"
+  "category": "Pizza Brötchen",
+  "description": " ",
+  "imageUrl": "img-1714268066062-914869463.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58839"
 },
 {
   "_id": {
@@ -1179,7 +1653,15 @@
   },
   "name": "Pizza Brötchen 8 Stück mit Thunfisch, rote Zwiebeln und Käse",
   "unitPrice": 8.4,
-  "category": "Pizza Brötchen"
+  "category": "Pizza Brötchen",
+  "description": " ",
+  "imageUrl": "img-1714268112178-154897521.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5883a"
 },
 {
   "_id": {
@@ -1187,7 +1669,15 @@
   },
   "name": "Pizza Brötchen 8 Stück mit Sucuk und Fetakäse",
   "unitPrice": 8.4,
-  "category": "Pizza Brötchen"
+  "category": "Pizza Brötchen",
+  "description": " ",
+  "imageUrl": "img-1714268144205-348424265.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5883b"
 },
 {
   "_id": {
@@ -1195,42 +1685,79 @@
   },
   "name": "Pizza Brötchen 8 Stück mit 3 Zutaten nach Wahl und Käse",
   "unitPrice": 8.4,
-  "category": "Pizza Brötchen"
+  "category": "Pizza Brötchen",
+  "description": " ",
+  "imageUrl": "img-1714268170881-113537835.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5883c"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5883d"
   },
   "name": "Kids Pizza",
-  "description": "Tomatensauce, Käse und bis zu 3 Extra Zutaten frei",
-  "category": "Kid Pizza"
+  "description": " Tomatensauce, Käse und bis zu 3 Extra Zutaten frei",
+  "category": "Kid Pizza",
+  "imageUrl": "img-1714268193409-367201340.jpg",
+  "unitPrice": null,
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5883d"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5883e"
   },
   "name": "Kids Menü",
-  "description": "6 Nuggets mit Pommes. Zu jedem Kidsmenü erhalten Sie eine Capri Sun (Multi Vitamin/Orange) gratis.",
+  "description": " 6 Nuggets mit Pommes. Zu jedem Kidsmenü erhalten Sie eine Capri Sun (Multi Vitamin/Orange) gratis.",
   "unitPrice": 7.3,
-  "category": "Kids Menu"
+  "category": "Kids Menu",
+  "imageUrl": "img-1714268215929-767489854.webp",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5883e"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5883f"
   },
   "name": "Kids Wings",
-  "description": "6 Chicken Wings mit Pommes. Zu jedem Kidsmenü erhalten Sie eine Capri Sun (Multi Vitamin/Orange) gratis.",
+  "description": " 6 Chicken Wings mit Pommes. Zu jedem Kidsmenü erhalten Sie eine Capri Sun (Multi Vitamin/Orange) gratis.",
   "unitPrice": 7.3,
-  "category": "Kids Menu"
+  "category": "Kids Menu",
+  "imageUrl": "img-1714268966551-992568540.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5883f"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58840"
   },
   "name": "Chilli Cheese Fries",
-  "description": "Pommes mit Cheesesauce und Jalapenos",
+  "description": " Pommes mit Cheesesauce und Jalapenos",
   "unitPrice": 6.9,
-  "category": "Finger Food"
+  "category": "Finger Food",
+  "imageUrl": "img-1714269032846-513202396.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58840"
 },
 {
   "_id": {
@@ -1238,7 +1765,15 @@
   },
   "name": "Mini Frühlingsrollen 10 Stück",
   "unitPrice": 6.9,
-  "category": "Finger Food"
+  "category": "Finger Food",
+  "description": " ",
+  "imageUrl": "img-1714269057325-155972523.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58841"
 },
 {
   "_id": {
@@ -1246,7 +1781,15 @@
   },
   "name": "Chicken Nuggets 10 Stück",
   "unitPrice": 7.9,
-  "category": "Finger Food"
+  "category": "Finger Food",
+  "description": " ",
+  "imageUrl": "img-1714269080951-429807996.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58842"
 },
 {
   "_id": {
@@ -1254,7 +1797,15 @@
   },
   "name": "Chicken Wings 9 Stück",
   "unitPrice": 7.9,
-  "category": "Finger Food"
+  "category": "Finger Food",
+  "description": " ",
+  "imageUrl": "img-1714269109022-899271928.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58843"
 },
 {
   "_id": {
@@ -1262,7 +1813,15 @@
   },
   "name": "Chilli Cheese Nuggets 6 Stück",
   "unitPrice": 6.8,
-  "category": "Finger Food"
+  "category": "Finger Food",
+  "description": " ",
+  "imageUrl": "img-1714269133178-230274403.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.866Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58844"
 },
 {
   "_id": {
@@ -1270,7 +1829,15 @@
   },
   "name": "Crispy Chicken Stripes 6 Stück",
   "unitPrice": 6.9,
-  "category": "Finger Food"
+  "category": "Finger Food",
+  "description": " ",
+  "imageUrl": "img-1714269157555-524075312.png",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58845"
 },
 {
   "_id": {
@@ -1278,7 +1845,15 @@
   },
   "name": "Onion Rings 7 Stück",
   "unitPrice": 6.9,
-  "category": "Finger Food"
+  "category": "Finger Food",
+  "description": " ",
+  "imageUrl": "img-1714269193556-596981781.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58846"
 },
 {
   "_id": {
@@ -1286,16 +1861,31 @@
   },
   "name": "Mozzarella Sticks 6 Stück",
   "unitPrice": 7.9,
-  "category": "Finger Food"
+  "category": "Finger Food",
+  "description": " ",
+  "imageUrl": "img-1714269216223-303421775.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58847"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58848"
   },
   "name": "Mix Finger Food",
-  "description": "3x Mozzarella Sticks, 3x Chicken Nuggets, 3x Chilli Cheese Nuggets, 3x Frühlingsrollen, Pommes frites",
+  "description": " 3x Mozzarella Sticks, 3x Chicken Nuggets, 3x Chilli Cheese Nuggets, 3x Frühlingsrollen, Pommes frites",
   "unitPrice": 10.9,
-  "category": "Finger Food"
+  "category": "Finger Food",
+  "imageUrl": "img-1714269237708-17135956.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58848"
 },
 {
   "_id": {
@@ -1303,7 +1893,15 @@
   },
   "name": "Tiramisu",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714269275237-183123937.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58849"
 },
 {
   "_id": {
@@ -1311,7 +1909,15 @@
   },
   "name": "Gulab Jamun 3 Stück",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714269298632-698640509.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5884a"
 },
 {
   "_id": {
@@ -1319,7 +1925,15 @@
   },
   "name": "Schoko Muffin",
   "unitPrice": 2.9,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714269327228-151496855.webp",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5884b"
 },
 {
   "_id": {
@@ -1327,7 +1941,15 @@
   },
   "name": "Blueberry Muffin",
   "unitPrice": 2.9,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714269357519-529791365.webp",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5884c"
 },
 {
   "_id": {
@@ -1335,7 +1957,15 @@
   },
   "name": "Oreo Donut",
   "unitPrice": 3.1,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714269378297-210370114.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5884d"
 },
 {
   "_id": {
@@ -1343,7 +1973,15 @@
   },
   "name": "Mangoeis",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714269895081-675067755.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5884e"
 },
 {
   "_id": {
@@ -1351,7 +1989,15 @@
   },
   "name": "Mango Eis mit Mangostücken und Wafer",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714269971103-482757197.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5884f"
 },
 {
   "_id": {
@@ -1359,7 +2005,15 @@
   },
   "name": "Pistaeis",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714270046114-666164814.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58850"
 },
 {
   "_id": {
@@ -1367,7 +2021,15 @@
   },
   "name": "Pista Eis mit Pistazien und Wafer",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": "  ",
+  "imageUrl": "img-1714270119791-491786417.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58851"
 },
 {
   "_id": {
@@ -1375,7 +2037,15 @@
   },
   "name": "Schokoeis",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714270148782-54876477.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58852"
 },
 {
   "_id": {
@@ -1383,7 +2053,15 @@
   },
   "name": "Schoko Eis, Choco Chip, Wafer",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714270182000-941594457.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58853"
 },
 {
   "_id": {
@@ -1391,7 +2069,15 @@
   },
   "name": "Vanilleeis",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714270208273-39374466.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58854"
 },
 {
   "_id": {
@@ -1399,7 +2085,15 @@
   },
   "name": "Vanilla Eis, Choco Chip, Wafer",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714270237765-10078308.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58855"
 },
 {
   "_id": {
@@ -1407,7 +2101,15 @@
   },
   "name": "Erdbeereis",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714270258550-411968992.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58856"
 },
 {
   "_id": {
@@ -1415,7 +2117,15 @@
   },
   "name": "Erbeer Eis, Choco Chip, Wafer",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714270277655-991032313.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58857"
 },
 {
   "_id": {
@@ -1423,7 +2133,15 @@
   },
   "name": "Oreo Eis",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714270299821-380064244.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.867Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58858"
 },
 {
   "_id": {
@@ -1431,7 +2149,15 @@
   },
   "name": "Oreo Eis, Nutella, Wafer",
   "unitPrice": 3.5,
-  "category": "Dessert"
+  "category": "Dessert",
+  "description": " ",
+  "imageUrl": "img-1714270319971-152398316.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58859"
 },
 {
   "_id": {
@@ -1439,7 +2165,15 @@
   },
   "name": "Mayo",
   "unitPrice": 0.4,
-  "category": "Dips"
+  "category": "Dips",
+  "description": " ",
+  "imageUrl": "img-1714270343629-308972721.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58864"
 },
 {
   "_id": {
@@ -1447,7 +2181,15 @@
   },
   "name": "Ketchup",
   "unitPrice": 0.4,
-  "category": "Dips"
+  "category": "Dips",
+  "description": " ",
+  "imageUrl": "img-1714270363552-915737451.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58865"
 },
 {
   "_id": {
@@ -1455,7 +2197,15 @@
   },
   "name": "Süß Sauer",
   "unitPrice": 0.6,
-  "category": "Dips"
+  "category": "Dips",
+  "description": " ",
+  "imageUrl": "img-1714270389655-120348779.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58866"
 },
 {
   "_id": {
@@ -1463,7 +2213,15 @@
   },
   "name": "BBQ",
   "unitPrice": 0.6,
-  "category": "Dips"
+  "category": "Dips",
+  "description": " ",
+  "imageUrl": "img-1714270410768-821989435.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58867"
 },
 {
   "_id": {
@@ -1471,7 +2229,15 @@
   },
   "name": "Aioli Sauce",
   "unitPrice": 1.6,
-  "category": "Dips"
+  "category": "Dips",
+  "description": " ",
+  "imageUrl": "img-1714270431115-655931404.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58868"
 },
 {
   "_id": {
@@ -1479,7 +2245,15 @@
   },
   "name": "Joghurt",
   "unitPrice": 1.6,
-  "category": "Dips"
+  "category": "Dips",
+  "description": " ",
+  "imageUrl": "img-1714270452342-384009968.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58869"
 },
 {
   "_id": {
@@ -1487,7 +2261,15 @@
   },
   "name": "Essig-Öl",
   "unitPrice": 1.6,
-  "category": "Dips"
+  "category": "Dips",
+  "description": " ",
+  "imageUrl": "img-1714270474697-966286564.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5886a"
 },
 {
   "_id": {
@@ -1495,7 +2277,15 @@
   },
   "name": "Mango Chatny",
   "unitPrice": 1.6,
-  "category": "Dips"
+  "category": "Dips",
+  "description": " ",
+  "imageUrl": "img-1714270494998-957494780.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5886b"
 },
 {
   "_id": {
@@ -1503,7 +2293,15 @@
   },
   "name": "Hari Chutny",
   "unitPrice": 1.6,
-  "category": "Dips"
+  "category": "Dips",
+  "description": " ",
+  "imageUrl": "img-1714270514947-992097616.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5886c"
 },
 {
   "_id": {
@@ -1511,68 +2309,125 @@
   },
   "name": "Joghurt mit Minze, Koriander, Grun chilli und Gurken",
   "unitPrice": 1.6,
-  "category": "Dips"
+  "category": "Dips",
+  "description": " ",
+  "imageUrl": "img-1714270566618-464916885.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5886d"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5886e"
   },
   "name": "Iced Espresso",
-  "description": "Espresso Shot, Eis",
+  "description": " Espresso Shot, Eis",
   "unitPrice": 2.5,
-  "category": "Iced Coffee"
+  "category": "Iced Coffee",
+  "imageUrl": "img-1714270589109-714093475.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5886e"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f5886f"
   },
   "name": "Iced Latte",
-  "description": "Espresso Shot, Milch, Zucker, Sahne, Eiscreme Kaffee",
+  "description": " Espresso Shot, Milch, Zucker, Sahne, Eiscreme Kaffee",
   "unitPrice": 5.9,
-  "category": "Iced Coffee"
+  "category": "Iced Coffee",
+  "imageUrl": "img-1714270614023-561252750.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f5886f"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58870"
   },
   "name": "Iced Mocha",
-  "description": "Shot, Milch, Eis, Schokosirup",
+  "description": " Shot, Milch, Eis, Schokosirup",
   "unitPrice": 5.9,
-  "category": "Iced Coffee"
+  "category": "Iced Coffee",
+  "imageUrl": "img-1714270635884-684454153.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58870"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58871"
   },
   "name": "Cold Brew",
-  "description": "Kaffee Shot, Milch, Karamel",
+  "description": " Kaffee Shot, Milch, Karamel",
   "unitPrice": 3.9,
-  "category": "Iced Coffee"
+  "category": "Iced Coffee",
+  "imageUrl": "img-1714270659785-171029811.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58871"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58872"
   },
   "name": "Iced Kaffee",
-  "description": "Instand Kaffee, Zucker, Wasser, Sahne",
+  "description": " Instand Kaffee, Zucker, Wasser, Sahne",
   "unitPrice": 3.5,
-  "category": "Iced Coffee"
+  "category": "Iced Coffee",
+  "imageUrl": "img-1714270954999-730849773.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58872"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58873"
   },
   "name": "Frappé",
-  "description": "Frothy Kaffee, Milch, Zucker, garniert mit Eiscreme",
+  "description": " Frothy Kaffee, Milch, Zucker, garniert mit Eiscreme",
   "unitPrice": 5.9,
-  "category": "Iced Coffee"
+  "category": "Iced Coffee",
+  "imageUrl": "img-1714271012496-460492410.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58873"
 },
 {
   "_id": {
     "$oid": "661de2ef6cdb2630b4f58874"
   },
   "name": "Banana Milk Coffee",
-  "description": "Kaffee Shot, Manana Smoothie",
+  "description": " Kaffee Shot, Manana Smoothie",
   "unitPrice": 5.9,
-  "category": "Iced Coffee"
+  "category": "Iced Coffee",
+  "imageUrl": "img-1714271046707-333905647.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.868Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f58874"
 }]

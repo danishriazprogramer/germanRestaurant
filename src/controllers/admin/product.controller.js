@@ -42,18 +42,18 @@ const createProduct = async (req, res) => {
 
 const allProducts = async (req, res) => {
   try {
-    console.log("The catoury name is:",req.query.tabName)
-    if(req.query.tabName===undefined){
+    console.log("The catoury name is:", req.query.tabName)
+    if (req.query.tabName === undefined) {
       const products = await Product.find();
 
       res.status(200).json(new ApiResponse(200, products, 'Product Data'));
-    }else{
-      const products = await Product.find({"category":req.query.tabName});
+    } else {
+      const products = await Product.find({ "category": req.query.tabName });
 
-    res.status(200).json(new ApiResponse(200, products, 'Product Data'));
+      res.status(200).json(new ApiResponse(200, products, 'Product Data'));
     }
-    
-    
+
+
   } catch (err) {
     console.log(err);
     throw new ApiError(500, 'Some error occurred while getting products');
@@ -61,7 +61,7 @@ const allProducts = async (req, res) => {
 };
 
 const getCategoires = async (req, res) => {
-  try {    
+  try {
     const products = await Product.find();
 
     const categories = products.map(product => product.category);

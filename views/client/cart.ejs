@@ -19,38 +19,7 @@
             <div class="content">
               <div class="row">
                 <div class="col-md-12 col-lg-8">
-                  <div id="food-container" class="items">
-                    <div class="product">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <img class="cart-img" src="assets/img/image.jpg">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="info">
-                            <div class="row">
-                              <div class="col-md-5 product-name">
-                                <div class="product-name">
-                                  <a href="#">Lorem Ipsum dolor</a>
-                                  <div class="product-info">
-                                    <div>Display: <span class="value">5 inch</span></div>
-                                    <div>RAM: <span class="value">4GB</span></div>
-                                    <div>Memory: <span class="value">32GB</span></div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-md-4 quantity">
-                                <label for="quantity">Quantity:</label>
-                                <input id="quantity" type="number" value="1" class="form-control quantity-input">
-                              </div>
-                              <div class="col-md-3 price">
-                                <span>$120</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
+                  <div id="food-container" class="items">      
                   </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
@@ -112,6 +81,82 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <script>
+   function getAllCookies() {
+      const cookies = document.cookie.split('; ');
+      const cookieMap = {};
+
+      cookies.forEach(cookie => {
+        const [name, value] = cookie.split('=');
+        cookieMap[name] = decodeURIComponent(value);
+      });
+
+      return cookieMap;
+    }
+
+    window.onload = function () {
+      const orderToken = getAllCookies();
+      if (orderToken.order === undefined) {
+        orderToken.order = ""
+      }
+
+      const url = 'http://localhost:8080/api/user/getCart';
+      const payload = {
+        "orderToken": orderToken.order,
+      };
+      const payloadJSON = JSON.stringify(payload);
+
+      const getCart = async () => {
+        try {
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: payloadJSON
+          });
+          const data = await response.json();
+          const allOrders = data?.orders;
+
+          const container = document.getElementById("food-container");
+
+          container.innerHTML = '';
+
+          allOrders.forEach(order => {
+            const productHTML = `
+                    <div class="product row">
+                        <div class="col-md-3">
+                            <img class="cart-img" src="${order.imageSrc}">
+                        </div>
+                        <div class="col-md-8 info">
+                            <div class="row">
+                                <div class="col-md-5 product-name">
+                                    <a href="#">${order.productName}</a>
+                                </div>
+                                <div class="col-md-4 quantity">
+                                    <label for="quantity">Quantity:</label>
+                                    <input id="quantity" type="number" value="${order.Quenty}" class="form-control quantity-input">
+                                </div>
+                                <div class="col-md-3 price">
+                                    <span>${order.Price}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+            container.innerHTML += productHTML;
+          });
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      };
+
+      getCart();
+    };
+  </script>
+  
   <script>
     $(document).ready(function () {
       $('#checkoutForm').validate({
