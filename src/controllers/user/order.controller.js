@@ -5,7 +5,7 @@ import JWT from "jsonwebtoken"
 import cookiesParser from "cookie-parser"
 const createOrder = async (req, res) => {
   try {
-    const { email, phone, address, city, username, paymentMethod, productDetails } = req.body;
+    const { email, phone, address, paymentMethod, productDetails } = req.body;
 
     const newOrder = await Order.create(Order);
 

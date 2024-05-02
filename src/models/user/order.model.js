@@ -2,20 +2,16 @@ import { Schema, model } from 'mongoose';
 
 const orderSchema = new Schema(
   {
-    username: {
-      type: String,
-      required: [true, 'Username is required'],
-    }, 
     email: {
       type: String,
       trim: true,
       lowercase: true,
       required: [true, 'Email address is required'],
     },
-    orderStatus : {
+    orderStatus: {
       type: String,
-      enum :["NEW","ACCEPETEC","REJECTED","INPROCESS","COMPLETED"],
-      default :"NEW",        
+      enum: ["NEW", "ACCEPETEC", "REJECTED", "INPROCESS", "COMPLETED"],
+      default: "NEW",
     },
     address: {
       type: String,
@@ -27,9 +23,9 @@ const orderSchema = new Schema(
       required: [true, 'Payment method is required'],
       enum: ['Cash on Delivery', 'PayPal', 'Stripe'],
     },
-    contact: {
+    phone: {
       type: Number,
-      required: [true, 'Contact No. is required'],
+      required: [true, 'Phone No. is required'],
     },
     productDetails: [
       {
