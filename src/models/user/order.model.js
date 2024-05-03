@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import JWT from 'jsonwebtoken'; // Assuming you have JWT imported
 
 const orderSchema = new Schema(
   {
@@ -10,14 +11,13 @@ const orderSchema = new Schema(
     },
     orderStatus: {
       type: String,
-      enum: ["NEW", "ACCEPETEC", "REJECTED", "INPROCESS", "COMPLETED"],
+      enum: ["NEW", "ACCEPTED", "REJECTED", "IN_PROCESS", "COMPLETED"],
       default: "NEW",
     },
     address: {
       type: String,
       required: [true, 'Address is required'],
     },
-    location: String,
     paymentMethod: {
       type: String,
       required: [true, 'Payment method is required'],
@@ -29,27 +29,23 @@ const orderSchema = new Schema(
     },
     productDetails: [
       {
-        id: {
+        productId: {
           type: String,
-          required: [true, 'Id is required'],
+          //required: [true, 'Product ID is required'],
         },
-        name: {
+        productName: {
           type: String,
-          required: [true, 'Name is required'],
-        },
-        unitPrice: {
-          type: Number,
-          required: [true, 'Unit price is required'],
+          //required: [true, 'Product Name is required'],
         },
         quantity: {
           type: Number,
-          required: [true, 'Quantity is required'],
+          //required: [true, 'Quantity is required'],
           integer: true,
         },
         size: String,
-        grandPrice: {
-          type: Number,
-          required: [true, 'Grand Price is required'],
+        Price: {
+          type: String,
+          //required: [true, 'Price is required'],
         },
       },
     ],

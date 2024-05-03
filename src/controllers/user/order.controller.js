@@ -3,6 +3,8 @@ import { ApiError } from '../../utils/ApiError.js';
 import { ApiResponse } from '../../utils/ApiResponse.js';
 import JWT from "jsonwebtoken"
 import cookiesParser from "cookie-parser"
+
+import nodemailer from "nodemailer"
 const createOrder = async (req, res) => {
   try {
     const { email, phone, address, paymentMethod, productDetails } = req.body;
@@ -214,8 +216,109 @@ const addToCart = async (req, res) => {
 // getCart
 
 const getCart = async (req, res) => {
-  let orderToken = JWT.decode(req.body.orderToken)
-  console.log("🚀 ~ getCart ~ orderToken:", orderToken)
-  res.send(orderToken)
+  console.log("The order body is", req.body);
+  let orderToken = JWT.decode(req.body.orderToken);
+  console.log("🚀 ~ getCart ~ orderToken:", orderToken);
+  let obj
+  if (orderToken) {
+    let totalQuantity = 0;
+    let totalPrice = 0;
+
+    for (const item of orderToken.orders) {
+      totalQuantity += parseInt(item.Quenty); // Assuming Quenty is quantity
+      totalPrice += parseFloat(item.Price.slice(1)); // Assuming Price is a string like '$15'
+    }
+
+     obj = new Order({
+      email: req.body.email,
+      address: req.body.address,
+      phone: req.body.phone,
+      paymentMethod: req.body.paymentMethod,
+      productDetails: orderToken.orders, // Assuming orderToken has an array named orders
+      totalQuantity: totalQuantity,
+      totalPrice: totalPrice,
+    });
+
+    await obj.save();
+  }
+  res.send(obj);
+
+  function sendingEmails() {
+
+    return {
+        async sendingEmails(req, resp) {
+
+            const auth = nodeMailer.createTransport({
+                service: "gmail",
+                auth: {
+                    user: "danishriazprogramer@gmail.com",
+                    pass: "krqfoxprpntcqexy"
+                }
+            })
+
+            const mails = ["engineralihassan@gmail.com", "danishriazprogramer@gmail.com"];
+
+            for (i = 0; i < mails.length; i++) {
+
+                const message = {
+                    from: "danishriazprogramer@gmail.com",
+                    to: mails[i],
+                    subject: "Email testing for MarrayMe",
+                    html: "<h1>This is html tag</h1>"
+                }
+
+                auth.sendMail(message, (error, emailResp) => {
+                    if (error)
+                        throw error
+                    resp.send("emial succefull send");
+
+
+                })
+            }
+        }
+    }
 }
+
+
+async function sendEmail(to, subject, text) {
+  try {
+    // Create a transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'danishriazprogramer@gmail.com', // Your email username
+        pass: 'krqfoxprpntcqexy', // Your email password
+      },
+    });
+
+    // Send mail with defined transport object
+    let info = await transporter.sendMail({
+      from: 'danishriazprogramer@gmail.com', // sender address
+      to: to, // list of receivers
+      subject: subject, // Subject line
+      text: text, // plain text body
+      // html: '<b>Hello world?</b>', // html body (you can use this for HTML content)
+    });
+
+    console.log('Message sent: %s', info.messageId);
+    return info.messageId;
+  } catch (error) {
+    console.error('Error occurred while sending email:', error);
+    throw error; // Rethrow the error to handle it outside of this function
+  }
+}
+
+// Example usage
+sendEmail('danishriazprogramer@gmail.com', 'Test Subject', 'This is a test email from Node.js and hostinger server ')
+  .then(() => {
+    console.log('Email sent successfully');
+  })
+  .catch((error) => {
+    console.error('Failed to send email:', error);
+  });
+
+
+};
+
+
 export { createOrder, editOrder, deleteOrder, getOrders, getSingleOrders, addToCart, getCart };
