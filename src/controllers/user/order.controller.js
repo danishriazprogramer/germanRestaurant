@@ -158,8 +158,10 @@ const addToCart = async (req, res) => {
 
     const expiresIn = '5000000000000000000000000h';
     const token = JWT.sign(payload, secretKey, { expiresIn });
+    console.log("🚀 ~ addToCart ~ token:", token)
 
-    res.cookie("order", token);
+    //res.cookie("order", token);
+    res.cookie("order", token, { secure: true });
     if (alreadyAdded) {
       res.status(200).json(new ApiResponse(200, token, 'Food is already Added'));
     }
