@@ -242,42 +242,18 @@ const getCart = async (req, res) => {
     await obj.save();
   }
   res.send(obj);
-
-  function sendingEmails() {
-
-    return {
-        async sendingEmails(req, resp) {
-
-            const auth = nodeMailer.createTransport({
-                service: "gmail",
-                auth: {
-                    user: "danishriazprogramer@gmail.com",
-                    pass: "krqfoxprpntcqexy"
-                }
-            })
-
-            const mails = ["engineralihassan@gmail.com", "danishriazprogramer@gmail.com"];
-
-            for (i = 0; i < mails.length; i++) {
-
-                const message = {
-                    from: "danishriazprogramer@gmail.com",
-                    to: mails[i],
-                    subject: "Email testing for MarrayMe",
-                    html: "<h1>This is html tag</h1>"
-                }
-
-                auth.sendMail(message, (error, emailResp) => {
-                    if (error)
-                        throw error
-                    resp.send("emial succefull send");
+// Example usage
+sendEmail('danishriazprogramer@gmail.com', 'Test Subject', 'This is a test email from Node.js and hostinger server ')
+  .then(() => {
+    console.log('Email sent successfully');
+  })
+  .catch((error) => {
+    console.error('Failed to send email:', error);
+  });
 
 
-                })
-            }
-        }
-    }
-}
+};
+
 
 
 async function sendEmail(to, subject, text) {
@@ -308,17 +284,17 @@ async function sendEmail(to, subject, text) {
   }
 }
 
-// Example usage
-sendEmail('danishriazprogramer@gmail.com', 'Test Subject', 'This is a test email from Node.js and hostinger server ')
-  .then(() => {
-    console.log('Email sent successfully');
-  })
-  .catch((error) => {
-    console.error('Failed to send email:', error);
-  });
+const getOrdersOnUserSide = async (req, res) => {
 
+   try {
+     console.log("The order body is", req.body);
+     let orderToken = JWT.decode(req.body.orderToken);
+     console.log("🚀 getOrdersOnUserSide: body ", orderToken);
+    res.send(orderToken)
+   } catch (error) {
+    console.log("🚀 ~ getOrdersOnUserSide ~ error:", error)
+    
+   }
+}
 
-};
-
-
-export { createOrder, editOrder, deleteOrder, getOrders, getSingleOrders, addToCart, getCart };
+export { createOrder, editOrder, deleteOrder, getOrders, getSingleOrders, addToCart, getCart,getOrdersOnUserSide };

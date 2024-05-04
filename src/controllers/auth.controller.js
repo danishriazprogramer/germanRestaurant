@@ -1,6 +1,5 @@
 import bcrypt from 'bcrypt';
 import { User } from '../models/user.model.js';
-import { transporter } from '../senders/emailSend.js';
 import { generateOTP } from '../utils/otp.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { ApiError } from '../utils/ApiError.js';

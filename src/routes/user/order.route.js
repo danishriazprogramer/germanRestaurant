@@ -7,6 +7,7 @@ import {
   getSingleOrders,
   addToCart,
   getCart,
+  getOrdersOnUserSide,
 } from '../../controllers/user/order.controller.js';
 
 const router = new Router();
@@ -18,5 +19,7 @@ router.get('/getOrders', getOrders);
 router.get('/getOrders/:id', getSingleOrders);
 router.post('/addToCart', addToCart);
 router.post('/getCart', getCart);
+router.post('/getOrdersOnUserSide', getOrdersOnUserSide);
+
 
 export default router;

@@ -82,7 +82,13 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
   <script>
-   function getAllCookies() {
+   
+  </script>
+  
+  <script>
+    $(document).ready(function () {
+
+      function getAllCookies() {
       const cookies = document.cookie.split('; ');
       const cookieMap = {};
 
@@ -94,36 +100,41 @@
       return cookieMap;
     }
 
-    window.onload = function () {
+   
       const orderToken = getAllCookies();
+      console.log("🚀 ~ orderToken:", orderToken)
       if (orderToken.order === undefined) {
         orderToken.order = ""
       }
 
-      const url = 'http://jokerpalace.de:8080/api/user/getCart';
+      const url = 'http://localhost:8080/api/user/getOrdersOnUserSide';
       const payload = {
         "orderToken": orderToken.order,
       };
       const payloadJSON = JSON.stringify(payload);
 
       const getCart = async () => {
-        try {
-          const response = await fetch(url, {
+    try {
+        fetch(url, {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: payloadJSON
-          });
-          const data = await response.json();
-          const allOrders = data?.orders;
+        })
+        .then(response => response.json())
+        .then((data) => {
+            // Handle API response
+            console.log("API response:", data);
+            console.log("The get cart response", data);
 
-          const container = document.getElementById("food-container");
+            const allOrders = data?.orders;
 
-          container.innerHTML = '';
+            const container = document.getElementById("food-container");
+            container.innerHTML = '';
 
-          allOrders.forEach(order => {
-            const productHTML = `
+            data.orders.forEach(order => {
+                const productHTML = `
                     <div class="product row">
                         <div class="col-md-3">
                             <img class="cart-img" src="${order.imageSrc}">
@@ -131,11 +142,11 @@
                         <div class="col-md-8 info">
                             <div class="row">
                                 <div class="col-md-5 product-name">
-                                  <div class="product-name">
-                                    <div class="brand-color">${order.productName}</div>
-                                    <div class="product-info">
-                                      <p>${order?.description}</p>
-                                      </div>
+                                    <div class="product-name">
+                                        <div class="brand-color">${order.productName}</div>
+                                        <div class="product-info">
+                                            <p>${order?.description}</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 quantity">
@@ -149,126 +160,128 @@
                         </div>
                     </div>
                 `;
+                container.innerHTML += productHTML;
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
 
-            container.innerHTML += productHTML;
-          });
-        } catch (error) {
-          console.error('Error:', error);
-        }
-      };
 
       getCart();
-    };
-  </script>
-  
-  <script>
-    $(document).ready(function () {
-      $('#checkoutForm').validate({
-        rules: {
-          email: {
-            required: true,
-            email: true
-          },
-          phone: {
-            required: true,
-            minlength: 10
-          },
-          address: {
-            required: true
-          }
-        },
-        messages: {
-          email: {
-            required: "Please enter your email address",
-            email: "Please enter a valid email address"
-          },
-          phone: {
-            required: "Please enter your phone number",
-            minlength: "Phone number must be at least 10 characters long"
-          },
-          address: {
-            required: "Please enter your full address"
-          }
-        },
-        errorElement: 'div',
-        errorPlacement: function (error, element) {
-          error.addClass('invalid-feedback');
-          element.closest('.mb-3').append(error);
-        },
-        highlight: function (element, errorClass, validClass) {
-          $(element).addClass('is-invalid').removeClass('is-valid');
-        },
-        unhighlight: function (element, errorClass, validClass) {
-          $(element).removeClass('is-invalid').addClass('is-valid');
-        },
-       submitHandler: function (form) {
-          $('#checkoutModal').modal('hide');
+    
 
-          const formData = $(form).serialize();
-            function getAllCookies() {
-           const cookies = document.cookie.split("; ");
-           const cookieMap = {};
+      
+      // // $('#checkoutForm').validate({
+      // //   rules: {
+      // //     email: {
+      // //       required: true,
+      // //       email: true
+      // //     },
+      // //     phone: {
+      // //       required: true,
+      // //       minlength: 10
+      // //     },
+      // //     address: {
+      // //       required: true
+      // //     }
+      // //   },
+      // //   messages: {
+      // //     email: {
+      // //       required: "Please enter your email address",
+      // //       email: "Please enter a valid email address"
+      // //     },
+      // //     phone: {
+      // //       required: "Please enter your phone number",
+      // //       minlength: "Phone number must be at least 10 characters long"
+      // //     },
+      // //     address: {
+      // //       required: "Please enter your full address"
+      // //     }
+      // //   },
+      // //   errorElement: 'div',
+      // //   errorPlacement: function (error, element) {
+      // //     error.addClass('invalid-feedback');
+      // //     element.closest('.mb-3').append(error);
+      // //   },
+      // //   highlight: function (element, errorClass, validClass) {
+      // //     $(element).addClass('is-invalid').removeClass('is-valid');
+      // //   },
+      // //   unhighlight: function (element, errorClass, validClass) {
+      // //     $(element).removeClass('is-invalid').addClass('is-valid');
+      // //   },
+      // //  submitHandler: function (form) {
+      // //     $('#checkoutModal').modal('hide');
 
-           cookies.forEach((cookie) => {
-             const [name, value] = cookie.split("=");
-             cookieMap[name] = decodeURIComponent(value);
-           });
+      // //     const formData = $(form).serialize();
+      // //       function getAllCookies() {
+      // //      const cookies = document.cookie.split("; ");
+      // //      const cookieMap = {};
 
-           return cookieMap;
-         }
+      // //      cookies.forEach((cookie) => {
+      // //        const [name, value] = cookie.split("=");
+      // //        cookieMap[name] = decodeURIComponent(value);
+      // //      });
 
-         let orderToken = getAllCookies();
-         orderToken = orderToken.order || "";
+      // //      return cookieMap;
+      // //    }
 
-          const formDataObject = {};
+      // //    let orderToken = getAllCookies();
+      // //    orderToken = orderToken.order || "";
 
-          formData.split('&').forEach(function (item) {
-            const keyValue = item.split('=');
-            formDataObject[keyValue[0]] = decodeURIComponent(keyValue[1]);
-          });
+      // //     const formDataObject = {};
 
-          const payload = {
-            ...formDataObject , 
-            order: orderToken
-          }
+      // //     formData.split('&').forEach(function (item) {
+      // //       const keyValue = item.split('=');
+      // //       formDataObject[keyValue[0]] = decodeURIComponent(keyValue[1]);
+      // //     });
+
+      // //     const payload = {
+      // //       ...formDataObject , 
+      // //       order: orderToken
+      // //     }
           
 
-          const apiUrl = 'http://jokerpalace.de:8080/api/user/createOrder';
+      // //     const apiUrl = 'http://jokerpalace.de:8080/api/user/createOrder';
 
-          fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-          })
-            .then(response => {
-              if (!response.ok) {
-                throw new Error('Network response was not ok');
-              }
-              return response.json();
-            })
-            .then(data => {
-              console.log('API Response:', data);
-              Swal.fire({
-                title: 'Success!',
-                text: 'Order Placed Successfully',
-                icon: 'success',
-                confirmButtonText: 'OK'
-              });
-            })
-            .catch(error => {
-              console.error('Error:', error);
-              Swal.fire({
-                title: 'Error!',
-                text: 'Failed to place order. Please try again later.',
-                icon: 'error',
-                confirmButtonText: 'OK'
-              });
-            });
-        }
+      // //     fetch(apiUrl, {
+      // //       method: 'POST',
+      // //       headers: {
+      // //         'Content-Type': 'application/json'
+      // //       },
+      // //       body: JSON.stringify(payload)
+      // //     })
+      // //       .then(response => {
+      // //         if (!response.ok) {
+      // //           throw new Error('Network response was not ok');
+      // //         }
+      // //         return response.json();
+      // //       })
+      // //       .then(data => {
+      // //         console.log('API Response:', data);
+      // //         Swal.fire({
+      // //           title: 'Success!',
+      // //           text: 'Order Placed Successfully',
+      // //           icon: 'success',
+      // //           confirmButtonText: 'OK'
+      // //         });
+      // //       })
+      // //       .catch(error => {
+      // //         console.error('Error:', error);
+      // //         Swal.fire({
+      // //           title: 'Error!',
+      // //           text: 'Failed to place order. Please try again later.',
+      // //           icon: 'error',
+      // //           confirmButtonText: 'OK'
+      // //         });
+      // //       });
+      // //   }
 
-      });
+      // });
     });
   </script>
 
