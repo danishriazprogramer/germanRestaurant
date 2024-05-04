@@ -22,7 +22,9 @@
           <div class="container-fluid">
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Products Table</h6>
+                <h6 class="m-0 font-weight-bold text-primary">
+                  Products Table
+                </h6>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -75,7 +77,7 @@
 
     <script>
       $(document).ready(function () {
-        $('#dataTable').DataTable({
+        $("#dataTable").DataTable({
           paging: true, // Enable pagination
           searching: true, // Enable searching
           ordering: true, // Enable ordering
@@ -83,27 +85,27 @@
           responsive: true, // Enable responsive mode
           lengthChange: false, // Disable the page length option
           language: {
-            search: 'Search: ', // Change the search label
-            searchPlaceholder: 'Type keywords here...', // Change the search input placeholder
-            zeroRecords: 'No matching records found', // Message when no records found
-            infoEmpty: 'Showing 0 to 0 of 0 entries', // Message when no records to display
-            infoFiltered: '(filtered from _MAX_ total entries)', // Message when records are filtered
+            search: "Search: ", // Change the search label
+            searchPlaceholder: "Type keywords here...", // Change the search input placeholder
+            zeroRecords: "No matching records found", // Message when no records found
+            infoEmpty: "Showing 0 to 0 of 0 entries", // Message when no records to display
+            infoFiltered: "(filtered from _MAX_ total entries)", // Message when records are filtered
           },
         });
       });
     </script>
 
     <script>
-      const tableBody = document.getElementById('tableBody');
-      const url = 'http://jokerpalace.de:8080/api/admin/getProducts';
+      const tableBody = document.getElementById("tableBody");
+      const url = "http://localhost:8080/api/admin/getProducts";
 
       const getProducts = async () => {
         try {
           const response = await fetch(url);
           const data = await response.json();
           console.log(data);
-          tableBody.innerHTML = '';
-          data?.data?.forEach(product => {
+          tableBody.innerHTML = "";
+          data?.data?.forEach((product) => {
             const {
               imageUrl,
               name,

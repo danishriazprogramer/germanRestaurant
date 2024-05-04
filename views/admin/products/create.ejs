@@ -22,25 +22,43 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="productName">Product Name</label>
-                          <input type="text" id="productName" class="form-control" />
+                          <label class="form-label" for="productName"
+                            >Product Name</label
+                          >
+                          <input
+                            type="text"
+                            id="productName"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label class="form-label" for="price">Price €</label>
-                          <input type="number" id="price" class="form-control" />
+                          <input
+                            type="number"
+                            id="price"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="discount">Discount €</label>
-                          <input type="number" id="discount" class="form-control" />
+                          <label class="form-label" for="discount"
+                            >Discount €</label
+                          >
+                          <input
+                            type="number"
+                            id="discount"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="mb-3">
-                          <label class="form-label" for="category">Category</label>
+                          <label class="form-label" for="category"
+                            >Category</label
+                          >
                           <select id="category" class="form-control">
                             <option value="pizza">Pizza</option>
                             <option value="burger">Burger</option>
@@ -51,7 +69,11 @@
                       <div class="col-md-6">
                         <div class="mb-3">
                           <label for="formFile" class="form-label">Image</label>
-                          <input class="form-control" type="file" id="formFile" />
+                          <input
+                            class="form-control"
+                            type="file"
+                            id="formFile"
+                          />
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -75,7 +97,9 @@
                       </div>
                       <div class="col-md-12">
                         <div class="mb-3">
-                          <label class="form-label" for="description">Description</label>
+                          <label class="form-label" for="description"
+                            >Description</label
+                          >
                           <textarea
                             name=""
                             id="description"
@@ -107,46 +131,49 @@
     <%- include('../partials/scripts.ejs'); %>
 
     <script>
-      const createProductForm = document.querySelector('#createProductForm');
+      const createProductForm = document.querySelector("#createProductForm");
 
-      createProductForm.addEventListener('submit', async e => {
+      createProductForm.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const name = document.querySelector('#productName').value;
-        const unitPrice = document.querySelector('#price').value;
-        const discount = document.querySelector('#discount').value;
-        const imageFile = document.querySelector('#formFile').files[0];
-        const description = document.querySelector('#description').value;
-        const category = document.querySelector('#category').value;
-        const popular = document.querySelector('#popular').value;
+        const name = document.querySelector("#productName").value;
+        const unitPrice = document.querySelector("#price").value;
+        const discount = document.querySelector("#discount").value;
+        const imageFile = document.querySelector("#formFile").files[0];
+        const description = document.querySelector("#description").value;
+        const category = document.querySelector("#category").value;
+        const popular = document.querySelector("#popular").value;
 
         const formData = new FormData();
-        formData.append('name', name);
-        formData.append('unitPrice', unitPrice);
-        formData.append('discount', discount);
-        formData.append('img', imageFile);
-        formData.append('description', description);
-        formData.append('category', category);
-        formData.append('popular', popular);
+        formData.append("name", name);
+        formData.append("unitPrice", unitPrice);
+        formData.append("discount", discount);
+        formData.append("img", imageFile);
+        formData.append("description", description);
+        formData.append("category", category);
+        formData.append("popular", popular);
 
         try {
-          const response = await fetch('http://jokerpalace.de:8080/api/admin/addProduct', {
-            method: 'POST',
-            body: formData,
-          });
+          const response = await fetch(
+            "http://localhost:8080/api/admin/addProduct",
+            {
+              method: "POST",
+              body: formData,
+            }
+          );
 
           const data = await response.json();
           if (data.statusCode === 201) {
-            createProductForm.reset('');
+            createProductForm.reset("");
             Swal.fire({
               title: `Success`,
               text: `${data?.message}`,
-              icon: 'success',
+              icon: "success",
             });
           } else {
             Swal.fire({
               title: `Issue Occurred`,
               text: `${data?.message}`,
-              icon: 'error',
+              icon: "error",
             });
           }
           console.log(data);
@@ -155,7 +182,7 @@
           Swal.fire({
             title: `Failed`,
             text: `An error occurred while processing your request`,
-            icon: 'error',
+            icon: "error",
           });
         }
       });
