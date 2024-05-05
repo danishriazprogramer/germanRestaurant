@@ -87,28 +87,35 @@
   <script>
     $(document).ready(function () {
 
-      function getAllCookies() {
-      const cookies = document.cookie.split('; ');
-      const cookieMap = {};
+    //   function getAllCookies() {
+    //   const cookies = document.cookie.split('; ');
+    //   const cookieMap = {};
 
-      cookies.forEach(cookie => {
-        const [name, value] = cookie.split('=');
-        cookieMap[name] = decodeURIComponent(value);
-      });
+    //   cookies.forEach(cookie => {
+    //     const [name, value] = cookie.split('=');
+    //     cookieMap[name] = decodeURIComponent(value);
+    //   });
 
-      return cookieMap;
-    }
+    //   return cookieMap;
+    // }
 
    
-      const orderToken = getAllCookies();
-      console.log("🚀 ~ orderToken:", orderToken)
-      if (orderToken.order === undefined) {
-        orderToken.order = ""
-      }
+    //   const orderToken = getAllCookies();
+    //   console.log("🚀 ~ orderToken:", orderToken)
+    //   if (orderToken.order === undefined) {
+    //     orderToken.order = ""
+    //   }
+
+    function getOrder() {
+    let cartOrder = window.localStorage.getItem("order");
+    return cartOrder ? cartOrder : "";
+    }
+    let orderToken =  getOrder();
+    console.log("The get order from local storage is ", getOrder())
 
       const url = 'http://jokerpalace.de:8080/api/user/getOrdersOnUserSide';
       const payload = {
-        "orderToken": orderToken.order,
+        "orderToken": orderToken,
       };
       const payloadJSON = JSON.stringify(payload);
 
@@ -234,21 +241,26 @@
    //       const formData = $(form).serialize();
 
 
-               function getAllCookies() {
-      const cookies = document.cookie.split("; ");
-      const cookieMap = {};
+    //            function getAllCookies() {
+    //   const cookies = document.cookie.split("; ");
+    //   const cookieMap = {};
 
-      cookies.forEach((cookie) => {
-        const [name, value] = cookie.split("=");
-        cookieMap[name] = decodeURIComponent(value);
-      });
+    //   cookies.forEach((cookie) => {
+    //     const [name, value] = cookie.split("=");
+    //     cookieMap[name] = decodeURIComponent(value);
+    //   });
 
-      return cookieMap;
+    //   return cookieMap;
+    // }
+
+    // let orderToken = getAllCookies();
+    // orderToken = orderToken.order || "";
+    function getOrder() {
+    let cartOrder = window.localStorage.getItem("order");
+    return cartOrder ? cartOrder : "";
     }
-
-    let orderToken = getAllCookies();
-    orderToken = orderToken.order || "";
-
+    let orderToken =  getOrder();
+    console.log("The get order from local storage is ", getOrder())
 //          const formDataObject = {};
 
           // formData.split('&').forEach(function (item) {
@@ -267,6 +279,7 @@
              email :email,
              phone:phone,
              address:address, 
+             orderToken:orderToken,
           } 
           let payloadJSON = JSON.stringify(payload);
           console.log("🚀 ~ payloadJSON:", payloadJSON)

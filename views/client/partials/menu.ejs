@@ -543,20 +543,26 @@
       imageSrc: imageSrc,
     };
 
-    function getAllCookies() {
-      const cookies = document.cookie.split("; ");
-      const cookieMap = {};
+    // function getAllCookies() {
+    //   const cookies = document.cookie.split("; ");
+    //   const cookieMap = {};
 
-      cookies.forEach((cookie) => {
-        const [name, value] = cookie.split("=");
-        cookieMap[name] = decodeURIComponent(value);
-      });
+    //   cookies.forEach((cookie) => {
+    //     const [name, value] = cookie.split("=");
+    //     cookieMap[name] = decodeURIComponent(value);
+    //   });
 
-      return cookieMap;
+    //   return cookieMap;
+    // }
+
+    // let orderToken = getAllCookies();
+    // orderToken = orderToken.order || "";
+    function getOrder() {
+    let cartOrder = window.localStorage.getItem("order");
+    return cartOrder ? cartOrder : "";
     }
-
-    let orderToken = getAllCookies();
-    orderToken = orderToken.order || "";
+    let orderToken =  getOrder();
+    console.log("The get order from local storage is ", getOrder())
 
     let payload = {
       orderToken: orderToken,
@@ -567,33 +573,33 @@
 
     let url = "http://jokerpalace.de:8080/api/user/addToCart";
 
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: payloadJSON,
-    })
-      .then((response) => {
-        console.log("🚀 ~ addToCart ~ response:", response)
-        return response.json()
-      })
-      .then((data) => {
-        if (data?.statusCode === 201) {
-          let cartCount = getCartCount() + 1;
-           console.log("the token for save in local storege",data.token)
-          localStorage.setItem("order",data.token );
+fetch(url, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: payloadJSON,
+})
+  .then((response) => response.json()) // Parse response as JSON
+  .then((data) => {
+    console.log("Response data:", data);
+    if (data?.statusCode === 201) {
+      let cartCount = getCartCount() + 1;
+      localStorage.setItem("order", data.data);
+      updateCartCount(cartCount);
+    }
+    Swal.fire({
+      title: data?.message,
+      icon: "success",
+      confirmButtonText: "OK",
+    });
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 
-          updateCartCount(cartCount);
-        }
-        Swal.fire({
-          title: data?.message,
-          icon: "success",
-          confirmButtonText: "OK",
-        });
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
   }
+    console.log("🚀 ~ addToCart ~ getOrder():", getOrder())
+    console.log("🚀 ~ addToCart ~ getOrder:", getOrder)
+    console.log("🚀 ~ addToCart ~ getOrder:", getOrder)
 </script>
