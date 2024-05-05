@@ -3,6 +3,7 @@ import { ApiError } from '../../utils/ApiError.js';
 import { ApiResponse } from '../../utils/ApiResponse.js';
 import JWT from "jsonwebtoken"
 import cookiesParser from "cookie-parser"
+import path from "path"
 
 import nodemailer from "nodemailer"
 const createOrder = async (req, res) => {
@@ -244,6 +245,47 @@ const getCart = async (req, res) => {
     await obj.save();
   }
   res.send(obj);
+   const templatePath = path.join(__dirname, "email.html");
+   const templateString = fs.readFileSync(templatePath, "utf-8");
+
+   // Data to be injected into the template
+   const order = {
+     email: "user@example.com",
+     address: "123 Example St, City",
+     phone: "123-456-7890",
+     paymentMethod: "Credit Card",
+     productDetails: [
+       { name: "Product 1", Quenty: 2, Price: "$10" },
+       { name: "Product 2", Quenty: 1, Price: "$15" },
+       // Add more product details as needed
+     ],
+   };
+
+   // Compile the HTML template with EJS
+   const compiledTemplate = ejs.compile(templateString);
+
+   // Render the template with the order data
+   const html = compiledTemplate({ order: order });
+
+   // Define email options
+   const mailOptions = {
+     from: "your_email@example.com",
+     to: "admin@example.com",
+     subject: "Order Details",
+     html: html,
+   };
+
+   // Send email
+   transporter.sendMail(mailOptions, (error, info) => {
+     if (error) {
+       console.error("Error sending email:", error);
+     } else {
+       console.log("Email sent:", info.response);
+     }
+   });
+
+  // res.status(200).json(new ApiResponse(200, orderToken, 'Order Add to Cart'));
+
 // Example usage
 sendEmail('danishriazprogramer@gmail.com', 'Test Subject', 'This is a test email from Node.js and hostinger server ')
   .then(() => {
