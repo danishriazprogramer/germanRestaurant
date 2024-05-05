@@ -7,6 +7,7 @@ import path from "path"
 import fs from "fs"
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import ejs from 'ejs';
 
 function getDirname(importMetaUrl) {
     const __filename = fileURLToPath(importMetaUrl);
@@ -232,111 +233,101 @@ const addToCart = async (req, res) => {
 // getCart
 
 const getCart = async (req, res) => {
-  console.log("The order body is", req.body);
-  let orderToken = JWT.decode(req.body.orderToken);
-  console.log("🚀 ~ getCart ~ orderToken:", orderToken);
-  let obj
-  if (orderToken) {
+  // Your existing code here...
+
+  // Assuming you have defined these variables earlier in your code
+
+    //console.log("The order body is", req.body);
+    let orderToken = JWT.decode(req.body.orderToken);
+    console.log("🚀 getOrdersOnUserSide: body ", orderToken);
+
     let totalQuantity = 0;
-    let totalPrice = 0;
+    let totalPriceOfProduct = 0;
 
     for (const item of orderToken.orders) {
-      totalQuantity += parseInt(item.Quenty); // Assuming Quenty is quantity
-      totalPrice += parseFloat(item.Price); // Assuming Price is a string like '$15'
+      totalQuantity += parseInt(item.Quenty); 
+//      console.log("The Total quantaty",totalQuantity)
+      // Assuming Quenty is quantity
+      totalPriceOfProduct += parseFloat(item.Price); // Assuming Price is a string like '$15'
+  //    console.log("🚀 ~ getOrdersOnUserSide ~ totalPrice:", totalPriceOfProduct)
     }
 
-     obj = new Order({
-      email: req.body.email,
-      address: req.body.address,
-      phone: req.body.phone,
-      paymentMethod: req.body.paymentMethod,
-      productDetails: orderToken.orders, // Assuming orderToken has an array named orders
-      totalQuantity: totalQuantity,
-      totalPrice: totalPrice,
+    
+  const templatePath = path.join(__dirname, "email.html");
+  //console.log("🚀 ~ getCart ~ templatePath:", templatePath)
+  const templateString = fs.readFileSync(templatePath, "utf-8");
+  //console.log("🚀 ~ getCart ~ templateString:", templateString)
+
+  // Data to be injected into the template
+  const discountPercentage = 0.1; // 10% discount
+  let     total = totalPriceOfProduct.toFixed(2)
+  let  totalPriceAfterDiscount = totalPriceOfProduct * (1 - discountPercentage).toFixed(2)
+  
+       //totalPriceOfProduct = totalPriceOfProduct.toFixed(2)  
+
+  const order = {
+    email: req.body.email,
+    address: req.body.address,
+    phone: req.body.phone,
+    paymentMethod: "Cash on Delivery",
+    totalItem: totalQuantity,
+    Subtotal : totalPriceOfProduct,
+    discount : "10%", 
+    total:totalPriceAfterDiscount ,
+  };
+
+  // Compile the HTML template with EJS
+  const compiledTemplate = ejs.compile(templateString);
+
+  // Render the template with the order data
+  const html = compiledTemplate({ order: order,productDetails:orderToken  });
+  //console.log("🚀 ~ getCart ~ html:", html)
+
+  // Define email options
+  res.status(200).json(new ApiResponse(200, order, 'Order Placed Successfully'));
+  sendEmail('danishriazprogramer@gmail.com', 'Test Subject', html)
+    .then(() => {
+      console.log('Email sent successfully');
+    })
+    .catch((error) => {
+      console.error('Failed to send email:', error);
     });
-
-    await obj.save();
-  }
-  res.send(obj);
-   const templatePath = path.join(__dirname, "email.html");
-   console.log("🚀 ~ getCart ~ templatePath:", templatePath)
-   const templateString = fs.readFileSync(templatePath, "utf-8");
-   console.log("🚀 ~ getCart ~ templateString:", templateString)
-
-   // Data to be injected into the template
-   const order = {
-     email: "user@example.com",
-     address: "123 Example St, City",
-     phone: "123-456-7890",
-     paymentMethod: "Credit Card",
-     productDetails: [
-       { name: "Product 1", Quenty: 2, Price: "$10" },
-       { name: "Product 2", Quenty: 1, Price: "$15" },
-       // Add more product details as needed
-     ],
-   };
-
-   // Compile the HTML template with EJS
-   const compiledTemplate = ejs.compile(templateString);
-
-   // Render the template with the order data
-   const html = compiledTemplate({ order: order });
-
-   // Define email options
-   const mailOptions = {
-     from: "your_email@example.com",
-     to: "admin@example.com",
-     subject: "Order Details",
-     html: html,
-   };
-
-   // Send email
-   transporter.sendMail(mailOptions, (error, info) => {
-     if (error) {
-       console.error("Error sending email:", error);
-     } else {
-       console.log("Email sent:", info.response);
-     }
-   });
-
-  // res.status(200).json(new ApiResponse(200, orderToken, 'Order Add to Cart'));
-
-// Example usage
-sendEmail('danishriazprogramer@gmail.com', 'Test Subject', 'This is a test email from Node.js and hostinger server ')
-  .then(() => {
-    console.log('Email sent successfully');
-  })
-  .catch((error) => {
-    console.error('Failed to send email:', error);
-  });
-
-
 };
 
 
 
-async function sendEmail(to, subject, text) {
+
+
+
+
+async function sendEmail(to, subject, html) {
   try {
     // Create a transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-      service: 'gmail',
+    const auth = nodemailer.createTransport({
+      service: "gmail",
       auth: {
-        user: 'danishriazprogramer@gmail.com', // Your email username
-        pass: 'krqfoxprpntcqexy', // Your email password
-      },
-    });
+          user: "danishriazprogramer@gmail.com",
+          pass: "krqfoxprpntcqexy"
+      }
+  })
 
     // Send mail with defined transport object
-    let info = await transporter.sendMail({
-      from: 'danishriazprogramer@gmail.com', // sender address
-      to: to, // list of receivers
-      subject: subject, // Subject line
-      text: text, // plain text body
-      // html: '<b>Hello world?</b>', // html body (you can use this for HTML content)
-    });
+                const message = {
+                    from: "danishriazprogramer@gmail.com",
+                    to: to,
+                    subject: "Hi, Joker Palace You Recive New Order",
+                    html: html,
+                }
 
-    console.log('Message sent: %s', info.messageId);
-    return info.messageId;
+                auth.sendMail(message, (error, emailResp) => {
+                    if (error)
+                        throw error
+                    resp.send("emial succefull send");
+
+
+                })
+    //console.log('Message sent: %s', info.messageId);
+    //return info.messageId;
   } catch (error) {
     console.error('Error occurred while sending email:', error);
     throw error; // Rethrow the error to handle it outside of this function
@@ -388,3 +379,8 @@ const getOrdersOnUserSide = async (req, res) => {
 }
 
 export { createOrder, editOrder, deleteOrder, getOrders, getSingleOrders, addToCart, getCart,getOrdersOnUserSide };
+
+
+
+
+

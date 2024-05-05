@@ -27,28 +27,33 @@
 <body>
     <h2>Order Details</h2>
     <p><strong>User Information:</strong></p>
-    <p>Email: <%= email %></p>
-    <p>Address: <%= address %></p>
-    <p>Phone: <%= phone %></p>
-    <p>Payment Method: <%= paymentMethod %></p>
+    <p>Email: <%= order.email %></p>
+    <p>Address: <%= order.address %></p>
+    <p>Phone: <%= order.phone %></p>
+    <p>Payment Method: <%= order.paymentMethod %></p>
+    <p>totalItem: <%= order.totalItem %></p>
+    <p>Subtotal: <%= order.Subtotal %></p>
+    <p>total: <%= order.total %></p>
+    <p>Payment Method: <%= order.paymentMethod %></p>
 
     <h3>Products Ordered:</h3>
     <table>
         <thead>
             <tr>
                 <th>Product Name</th>
-                <th>Quantity</th>
                 <th>Price</th>
+                <th>Quantity</th>
             </tr>
         </thead>
         <tbody>
-            <% productDetails.forEach(function(product) { %>
-            <tr>
-                <td><%= product.name %></td>
-                <td><%= product.Quenty %></td>
-                <td><%= product.Price %></td>
-            </tr>
-            <% }); %>
+     
+   <% productDetails.orders.forEach(function(product) { %>
+    <tr>
+        <td><%= product.productName %></td>
+        <td><%= product.Price %></td>
+        <td><%= product.Quenty %></td>
+    </tr>
+    <% }); %>
         </tbody>
     </table>
 </body>

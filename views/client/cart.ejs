@@ -106,7 +106,7 @@
         orderToken.order = ""
       }
 
-      const url = 'http://localhost:8080/api/user/getOrdersOnUserSide';
+      const url = 'http://jokerpalace.de:8080/api/user/getOrdersOnUserSide';
       const payload = {
         "orderToken": orderToken.order,
       };
@@ -190,112 +190,124 @@
     
 
       
-      // // $('#checkoutForm').validate({
-      // //   rules: {
-      // //     email: {
-      // //       required: true,
-      // //       email: true
-      // //     },
-      // //     phone: {
-      // //       required: true,
-      // //       minlength: 10
-      // //     },
-      // //     address: {
-      // //       required: true
-      // //     }
-      // //   },
-      // //   messages: {
-      // //     email: {
-      // //       required: "Please enter your email address",
-      // //       email: "Please enter a valid email address"
-      // //     },
-      // //     phone: {
-      // //       required: "Please enter your phone number",
-      // //       minlength: "Phone number must be at least 10 characters long"
-      // //     },
-      // //     address: {
-      // //       required: "Please enter your full address"
-      // //     }
-      // //   },
-      // //   errorElement: 'div',
-      // //   errorPlacement: function (error, element) {
-      // //     error.addClass('invalid-feedback');
-      // //     element.closest('.mb-3').append(error);
-      // //   },
-      // //   highlight: function (element, errorClass, validClass) {
-      // //     $(element).addClass('is-invalid').removeClass('is-valid');
-      // //   },
-      // //   unhighlight: function (element, errorClass, validClass) {
-      // //     $(element).removeClass('is-invalid').addClass('is-valid');
-      // //   },
-      // //  submitHandler: function (form) {
-      // //     $('#checkoutModal').modal('hide');
+      $('#checkoutForm').validate({
+        rules: {
+          email: {
+            required: true,
+            email: true
+          },
+          phone: {
+            required: true,
+            minlength: 10
+          },
+          address: {
+            required: true
+          }
+        },
+        messages: {
+          email: {
+            required: "Please enter your email address",
+            email: "Please enter a valid email address"
+          },
+          phone: {
+            required: "Please enter your phone number",
+            minlength: "Phone number must be at least 10 characters long"
+          },
+          address: {
+            required: "Please enter your full address"
+          }
+        },
+        errorElement: 'div',
+        errorPlacement: function (error, element) {
+          error.addClass('invalid-feedback');
+          element.closest('.mb-3').append(error);
+        },
+        highlight: function (element, errorClass, validClass) {
+          $(element).addClass('is-invalid').removeClass('is-valid');
+        },
+        unhighlight: function (element, errorClass, validClass) {
+          $(element).removeClass('is-invalid').addClass('is-valid');
+        },
+       submitHandler: function (form) {
+          $('#checkoutModal').modal('hide');
 
-      // //     const formData = $(form).serialize();
-      // //       function getAllCookies() {
-      // //      const cookies = document.cookie.split("; ");
-      // //      const cookieMap = {};
+   //       const formData = $(form).serialize();
 
-      // //      cookies.forEach((cookie) => {
-      // //        const [name, value] = cookie.split("=");
-      // //        cookieMap[name] = decodeURIComponent(value);
-      // //      });
 
-      // //      return cookieMap;
-      // //    }
+               function getAllCookies() {
+      const cookies = document.cookie.split("; ");
+      const cookieMap = {};
 
-      // //    let orderToken = getAllCookies();
-      // //    orderToken = orderToken.order || "";
+      cookies.forEach((cookie) => {
+        const [name, value] = cookie.split("=");
+        cookieMap[name] = decodeURIComponent(value);
+      });
 
-      // //     const formDataObject = {};
+      return cookieMap;
+    }
 
-      // //     formData.split('&').forEach(function (item) {
-      // //       const keyValue = item.split('=');
-      // //       formDataObject[keyValue[0]] = decodeURIComponent(keyValue[1]);
-      // //     });
+    let orderToken = getAllCookies();
+    orderToken = orderToken.order || "";
 
-      // //     const payload = {
-      // //       ...formDataObject , 
-      // //       order: orderToken
-      // //     }
+//          const formDataObject = {};
+
+          // formData.split('&').forEach(function (item) {
+          //   const keyValue = item.split('=');
+          //   formDataObject[keyValue[0]] = decodeURIComponent(keyValue[1]);
+          // });
+        var email = document.getElementById("exampleInputEmail1").value 
+          console.log("🚀 ~ email:", email)
+
+          var phone = document.getElementById("phone").value 
+          console.log("🚀 ~ phone:", phone)
+
+          var address = document.getElementById("address").value 
+          console.log("🚀 ~ address:", address)
+          const payload = {
+             email :email,
+             phone:phone,
+             address:address, 
+          } 
+          let payloadJSON = JSON.stringify(payload);
+          console.log("🚀 ~ payloadJSON:", payloadJSON)
           
 
-      // //     const apiUrl = 'http://localhost:8080/api/user/createOrder';
+          const apiUrl = 'http://jokerpalace.de:8080/api/user/getCart';
 
-      // //     fetch(apiUrl, {
-      // //       method: 'POST',
-      // //       headers: {
-      // //         'Content-Type': 'application/json'
-      // //       },
-      // //       body: JSON.stringify(payload)
-      // //     })
-      // //       .then(response => {
-      // //         if (!response.ok) {
-      // //           throw new Error('Network response was not ok');
-      // //         }
-      // //         return response.json();
-      // //       })
-      // //       .then(data => {
-      // //         console.log('API Response:', data);
-      // //         Swal.fire({
-      // //           title: 'Success!',
-      // //           text: 'Order Placed Successfully',
-      // //           icon: 'success',
-      // //           confirmButtonText: 'OK'
-      // //         });
-      // //       })
-      // //       .catch(error => {
-      // //         console.error('Error:', error);
-      // //         Swal.fire({
-      // //           title: 'Error!',
-      // //           text: 'Failed to place order. Please try again later.',
-      // //           icon: 'error',
-      // //           confirmButtonText: 'OK'
-      // //         });
-      // //       });
-      // //   }
+          fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: payloadJSON,
+          })
+            // .then(response => {
+            //   if (!response.ok) {
+            //     throw new Error('Network response was not ok');
+            //   }
+            //   return response.json();
+            // })
+            .then(data => {
+              console.log('API Response:', data);
+              Swal.fire({
+                title: 'Success!',
+                text: 'Order Placed Successfully',
+                icon: 'success',
+                confirmButtonText: 'OK'
+              });
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              Swal.fire({
+                title: 'Error!',
+                text: 'Failed to place order. Please try again later.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+              });
+            });
+        }
 
-      // });
+      });
     });
   </script>
 

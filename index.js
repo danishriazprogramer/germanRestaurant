@@ -11,6 +11,15 @@ connectDataBase();
 app.listen(port,() => {
     console.log(`Server is running on => http://localhost`);
 });
+app.get("/", (req, res) => {
+    res.send("This is Testing root");
+  });
 
-
-
+// <% order.productDetails.forEach(function(product) { %>
+//     <tr>
+//         <td><%= product.productName %></td>
+//         <td><%= product.Price %></td>
+//         <td><%= product.Quenty %></td>
+//     </tr>
+//     <% }); %>
+   

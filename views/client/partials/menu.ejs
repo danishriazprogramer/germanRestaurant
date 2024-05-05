@@ -376,7 +376,7 @@
 
       // Example API call
       fetch(
-        `http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(
+        `http://jokerpalace.de:8080/api/admin/getProducts?tabName=${encodeURIComponent(
           tabName
         )}`
       )
@@ -464,7 +464,7 @@
     const tabName = "Indian Food";
 
     fetch(
-      `http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(
+      `http://jokerpalace.de:8080/api/admin/getProducts?tabName=${encodeURIComponent(
         tabName
       )}`
     )
@@ -565,7 +565,7 @@
 
     let payloadJSON = JSON.stringify(payload);
 
-    let url = "http://localhost:8080/api/user/addToCart";
+    let url = "http://jokerpalace.de:8080/api/user/addToCart";
 
     fetch(url, {
       method: "POST",
@@ -574,10 +574,16 @@
       },
       body: payloadJSON,
     })
-      .then((response) => response.json())
+      .then((response) => {
+        console.log("🚀 ~ addToCart ~ response:", response)
+        return response.json()
+      })
       .then((data) => {
         if (data?.statusCode === 201) {
           let cartCount = getCartCount() + 1;
+           console.log("the token for save in local storege",data.token)
+          localStorage.setItem("order",data.token );
+
           updateCartCount(cartCount);
         }
         Swal.fire({
