@@ -228,7 +228,7 @@ const getCart = async (req, res) => {
 
     for (const item of orderToken.orders) {
       totalQuantity += parseInt(item.Quenty); // Assuming Quenty is quantity
-      totalPrice += parseFloat(item.Price.slice(1)); // Assuming Price is a string like '$15'
+      totalPrice += parseFloat(item.Price); // Assuming Price is a string like '$15'
     }
 
      obj = new Order({
@@ -287,16 +287,47 @@ async function sendEmail(to, subject, text) {
 }
 
 const getOrdersOnUserSide = async (req, res) => {
+  try {
+    console.log("The order body is", req.body);
+    let orderToken = JWT.decode(req.body.orderToken);
+    console.log("🚀 getOrdersOnUserSide: body ", orderToken);
 
-   try {
-     console.log("The order body is", req.body);
-     let orderToken = JWT.decode(req.body.orderToken);
-     console.log("🚀 getOrdersOnUserSide: body ", orderToken);
-    res.send(orderToken)
-   } catch (error) {
-    console.log("🚀 ~ getOrdersOnUserSide ~ error:", error)
-    
-   }
+    let totalQuantity = 0;
+    let totalPriceOfProduct = 0;
+
+    for (const item of orderToken.orders) {
+      totalQuantity += parseInt(item.Quenty); 
+      console.log("The Total quantaty",totalQuantity)
+      // Assuming Quenty is quantity
+      totalPriceOfProduct += parseFloat(item.Price); // Assuming Price is a string like '$15'
+      console.log("🚀 ~ getOrdersOnUserSide ~ totalPrice:", totalPriceOfProduct)
+    }
+
+    // Add totalQuantity and totalPrice to the orderToken object
+    // orderToken.totalQuantity = totalQuantity;
+    // orderToken.totalPrice = totalPrice;
+
+    // Send the response with orderToken, totalPrice, and totalQuantity
+    const discountPercentage = 0.1; // 10% discount
+    let  totalPriceAfterDiscount = totalPriceOfProduct * (1 - discountPercentage)
+         totalPriceAfterDiscount = totalPriceAfterDiscount.toFixed(2)
+         totalPriceOfProduct = totalPriceOfProduct.toFixed(2)     
+    res.status(201).json({
+      statusCode: 201,
+      orderToken: orderToken,
+      totalPrice: totalPriceOfProduct,
+      totalQuantity: totalQuantity,
+      totalPriceAfterDiscount:totalPriceAfterDiscount,
+      discount:"10%",
+      message: 'Order generated successfully'
+    });
+  } catch (error) {
+    console.log("🚀 ~ getOrdersOnUserSide ~ error:", error);
+    res.status(500).json({
+      statusCode: 500,
+      message: 'Internal server error'
+    });
+  }
 }
 
 export { createOrder, editOrder, deleteOrder, getOrders, getSingleOrders, addToCart, getCart,getOrdersOnUserSide };

@@ -25,10 +25,9 @@
                 <div class="col-md-12 col-lg-4">
                   <div class="summary">
                     <h3>Summary</h3>
-                    <div class="summary-item"><span class="text">Subtotal</span><span class="price">$360</span></div>
-                    <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
-                    <div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
-                    <div class="summary-item"><span class="text">Total</span><span class="price">$360</span></div>
+                    <div class="summary-item"><span class="text">Subtotal</span><span class=" subtotal price"></span></div>
+                    <div class="summary-item"><span class="text">Discount</span><span class="discount price"></span></div>
+                    <div class="summary-item"><span class="text">Total</span><span class="total price"></span></div>
                     <button type="button" class="btn btn-primary btn-lg btn-block"  data-bs-toggle="modal" data-bs-target="#checkoutModal">Checkout</button>
                   </div>
                 </div>
@@ -126,14 +125,14 @@
         .then((data) => {
             // Handle API response
             console.log("API response:", data);
-            console.log("The get cart response", data);
+            console.log("The get cart response",  data.orderToken.orders);
 
             const allOrders = data?.orders;
 
             const container = document.getElementById("food-container");
             container.innerHTML = '';
 
-            data.orders.forEach(order => {
+            data.orderToken.orders.forEach(order => {
                 const productHTML = `
                     <div class="product row">
                         <div class="col-md-3">
@@ -162,6 +161,21 @@
                 `;
                 container.innerHTML += productHTML;
             });
+
+          let subtotalElement = document.querySelector('.subtotal');
+          let discountElement = document.querySelector('.discount'); // Second summary-item
+         // const shippingElement = document.querySelectorAll('.summary-item .price')[2]; // Third summary-item
+          let totalElement = document.querySelector('.total'); // Fourth summary-item
+
+          // Setting the values
+          subtotalElement.textContent = `€${data.totalPrice}`;
+          discountElement.textContent = `${data.discount}`;
+          totalElement.textContent = `€${data.totalPriceAfterDiscount}`;
+
+          // Calculate the total after applying discount and adding shipping
+          //const totalAfterDiscountAndShipping = totalPrice - discountPrice + totalElement;
+          //totalElement.textContent = `$${totalAfterDiscountAndShipping}`;
+
         })
         .catch(error => {
             console.error('Error:', error);

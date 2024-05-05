@@ -395,7 +395,7 @@
                 card.classList.add("col-md-6", "col-xl-4");
                 card.innerHTML = `
                             <div class="card mb-3">
-        <div class="row g-0" id="${product.unitId}">
+              <div class="row g-0" id="${product.unitId}">
             <div class="row g-0">
                 <div class="col-lg-4 d-flex justify-content-center p-2">
                     <img src="/uploads/products/${product.imageUrl}" class="img-fluid rounded-3 w-100" alt="${product.name}">
@@ -421,8 +421,8 @@
 `;
                 productContainer.appendChild(card); // Append card to the current product container
               }
-
-              const card = document.createElement("div");
+      else {
+        const card = document.createElement("div");
               card.classList.add("col-md-6", "col-xl-4");
               card.innerHTML = `
                             <div class="card mb-3">
@@ -436,6 +436,8 @@
                                             <h5 class="card-title">${product.name}</h5>
                                             <p class="card-text clamp-line-3">${product.description}</p>
                                             <div class="card_bottom">
+                                              <input type="text" value="${product.unitPrice}" class="Price" style="display: none;">
+
                                              <h6>${product.unitPrice} €</h6>
                                              <button class="btn btn-primary addToCart" onclick="addToCart('${product.unitId}')" id="clickMe">Add To Cart</button>
                                              </div>
@@ -446,6 +448,8 @@
                             </div>
                         `;
               productContainer.appendChild(card); // Append card to the current product container
+      }
+             
             });
           });
         })
@@ -489,6 +493,8 @@
                                             <h5 class="card-title">${product.name}</h5>
                                             <p class="card-text clamp-line-3">${product.description}</p>
                                             <div class="card_bottom">
+                                              <input type="text" value="${product.unitPrice}" class="Price" style="display: none;">
+
                                                 <h6>${product.unitPrice} €</h6>
                                                 <button class="btn btn-primary addToCart" onclick="addToCart('${product.unitId}')" id="clickMe">Add To Cart</button>
                                         </div>
@@ -526,7 +532,7 @@
 
     let title = id.querySelector(".card-title").textContent.trim();
     let description = id.querySelector(".card-text").textContent.trim();
-    let price = id.querySelector(".card_bottom h6").textContent.trim();
+    let price = id.querySelector(".Price").value;
     let imageSrc = id.querySelector(".img-fluid").getAttribute("src");
     let order = {
       productId: productId,
