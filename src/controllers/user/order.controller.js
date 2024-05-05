@@ -5,8 +5,18 @@ import JWT from "jsonwebtoken"
 import cookiesParser from "cookie-parser"
 import path from "path"
 import fs from "fs"
-const __dirname = path.__dirname;
-console.log("🚀 ~ __dirname:", __dirname)
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+function getDirname(importMetaUrl) {
+    const __filename = fileURLToPath(importMetaUrl);
+    return dirname(__filename);
+}
+
+// Example usage:
+const __dirname = getDirname(import.meta.url);
+console.log(__dirname);
+
 
 import nodemailer from "nodemailer"
 const createOrder = async (req, res) => {
@@ -251,6 +261,7 @@ const getCart = async (req, res) => {
    const templatePath = path.join(__dirname, "email.html");
    console.log("🚀 ~ getCart ~ templatePath:", templatePath)
    const templateString = fs.readFileSync(templatePath, "utf-8");
+   console.log("🚀 ~ getCart ~ templateString:", templateString)
 
    // Data to be injected into the template
    const order = {
