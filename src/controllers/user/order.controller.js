@@ -4,6 +4,9 @@ import { ApiResponse } from '../../utils/ApiResponse.js';
 import JWT from "jsonwebtoken"
 import cookiesParser from "cookie-parser"
 import path from "path"
+import fs from "fs"
+const __dirname = path.__dirname;
+console.log("🚀 ~ __dirname:", __dirname)
 
 import nodemailer from "nodemailer"
 const createOrder = async (req, res) => {
@@ -246,6 +249,7 @@ const getCart = async (req, res) => {
   }
   res.send(obj);
    const templatePath = path.join(__dirname, "email.html");
+   console.log("🚀 ~ getCart ~ templatePath:", templatePath)
    const templateString = fs.readFileSync(templatePath, "utf-8");
 
    // Data to be injected into the template

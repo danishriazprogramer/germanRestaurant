@@ -49,8 +49,8 @@ const orderSchema = new Schema(
         },
       },
     ],
-    totalQuantity: Number,
-    totalPrice: Number,
+    totalQuantity: String,
+    totalPrice: String,
   },
   {
     timestamps: true,

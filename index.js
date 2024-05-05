@@ -4,12 +4,12 @@ import { connectDataBase } from "./src/config/db.js";
 import { Product } from './src/models/admin/product.model.js';
 config();
 
-const port = process.env.PORT || 8088;
+const port = process.env.PORT;
 
 connectDataBase();
 
-app.listen(port, () => {
-    console.log(`Server is running on => http://localhost:${port}`);
+app.listen(() => {
+    console.log(`Server is running on => http://localhost`);
 });
 
 
