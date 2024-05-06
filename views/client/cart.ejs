@@ -95,7 +95,7 @@
     let orderToken =  getOrder();
     console.log("The get order from local storage is ", getOrder())
 
-      const url = 'https://jokerpalace.de/api/user/getOrdersOnUserSide';
+      const url = 'http://jokerpalace.de/api/user/getOrdersOnUserSide';
       const payload = {
         "orderToken": orderToken,
       };
@@ -267,7 +267,7 @@
           console.log("🚀 ~ payloadJSON:", payloadJSON)
           
 
-          const apiUrl = 'https://jokerpalace.de/api/user/getCart';
+          const apiUrl = 'http://jokerpalace.de/api/user/getCart';
 
           fetch(apiUrl, {
             method: 'POST',
