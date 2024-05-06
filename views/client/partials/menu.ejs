@@ -402,15 +402,20 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="card-body">
+                     <h1 class="category d-none ">${product.category}</h1>  
                         <h5 class="card-title">${product.name}</h5>
                         <p class="card-text clamp-line-3">${product.description}</p>
                         <div class="card_bottom">
-                            <select class="form-select mb-3" aria-label="Select size">
-                                <option value="Mini">${product.Mini} € - Mini</option>
-                                <option value="Medium">${product.Medium} € - Medium</option>
-                                <option value="Maxi">${product.Maxi} € - Maxi</option>
-                                <option value="Pan">${product.Pan} € - Pan</option>
-                            </select>
+                          <select id="sizeSelect" class="form-select mb-3" aria-label="Select size" onchange="handleSizeChange()">
+  <option value="Mini" data-size="Mini" data-price="${product.Mini}">${product.Mini} € - Mini</option>
+  <option value="Medium" data-size="Medium" data-price="${product.Medium}">${product.Medium} € - Medium</option>
+  <option value="Maxi" data-size="Maxi" data-price="${product.Maxi}">${product.Maxi} € - Maxi</option>
+  <option value="Pan" data-size="Pan" data-price="${product.Pan}">${product.Pan} € - Pan</option>
+</select>
+
+
+</select>
+
                             <button class="btn btn-primary addToCart" onclick="addToCart('${product.unitId}')" id="clickMe">Add To Cart</button>
                         </div>
                     </div>
@@ -427,6 +432,7 @@
               card.innerHTML = `
                             <div class="card mb-3">
                                 <div class="row g-0" id="${product.unitId}"" >
+                                  <h1 class="category ">${product.category}</h1>   
                                 <div class="row g-0">
                                     <div class="col-lg-4 d-flex justify-content-center p-2">
                                         <img src="/uploads/products/${product.imageUrl}" class="img-fluid rounded-3 w-100" alt="${product.name}">
@@ -438,7 +444,7 @@
                                             <div class="card_bottom">
                                               <input type="text" value="${product.unitPrice}" class="Price" style="display: none;">
 
-                                             <h6>${product.unitPrice} €</h6>
+                                              <h6>${product.unitPrice} €</h6>
                                              <button class="btn btn-primary addToCart" onclick="addToCart('${product.unitId}')" id="clickMe">Add To Cart</button>
                                              </div>
 
@@ -486,6 +492,8 @@
                             <div class="card mb-3">
                                 <div class="row g-0" id="${product.unitId}" >
                                     <div class="col-lg-4 d-flex justify-content-center p-2">
+                                      <h1 class="category d-none">${product.category}</h1>
+   
                                         <img src="/uploads/products/${product.imageUrl}" class="img-fluid rounded-3 menu_image" alt="${product.name}">
                                     </div>
                                     <div class="col-lg-8">
@@ -495,7 +503,7 @@
                                             <div class="card_bottom">
                                               <input type="text" value="${product.unitPrice}" class="Price" style="display: none;">
 
-                                                <h6>${product.unitPrice} €</h6>
+                                                
                                                 <button class="btn btn-primary addToCart" onclick="addToCart('${product.unitId}')" id="clickMe">Add To Cart</button>
                                         </div>
                                     </div>
@@ -528,21 +536,68 @@
   };
 
   function addToCart(productId) {
+    
     let id = document.getElementById(productId);
+    let category = id.querySelector(".category").textContent.trim();
+    let order 
+    let title 
+    let description 
+    let price 
+    let imageSrc 
+    if(category === "Pizza"){
+    console.log("🚀 ~ addToCart ~ category:", category)
+     title = id.querySelector(".card-title").textContent.trim();
+     description = id.querySelector(".card-text").textContent.trim();
+    //  price = id.querySelector(".Price").value
+     imageSrc = id.querySelector(".img-fluid").getAttribute("src");
+   // Get the select element
+//    let sizeSelect =  id.querySelector(".sizeSelect")
+//    const selectedOption = sizeSelect.options[sizeSelect.selectedIndex];
 
-    let title = id.querySelector(".card-title").textContent.trim();
-    let description = id.querySelector(".card-text").textContent.trim();
-    let price = id.querySelector(".Price").value;
-    let imageSrc = id.querySelector(".img-fluid").getAttribute("src");
-    let order = {
+//    const dataPriceValue = selectedOption.getAttribute('data-price');
+//    console.log(dataPriceValue);
+//    alert(dataPriceValue)
+//    // Get the value of the data-size attribute for the selected option
+//    const dataSizeValue = selectedOption.getAttribute('data-size');
+
+// // Log the value of the data-size attribute
+//    alert(dataSizeValue)
+//    console.log(dataSizeValue);
+
+
+     order = {
       productId: productId,
       productName: title,
       description: description,
       Price: price,
       Quenty: 1,
       imageSrc: imageSrc,
+      size :size,
+      category :category,
     };
+    
+    
 
+    }else {
+    
+    console.log("🚀 ~ addToCart ~ category:", category)
+     title = id.querySelector(".card-title").textContent.trim();
+     description = id.querySelector(".card-text").textContent.trim();
+     price = id.querySelector(".Price").value;
+     imageSrc = id.querySelector(".img-fluid").getAttribute("src");
+     order = {
+      productId: productId,
+      productName: title,
+      description: description,
+      Price: price,
+      Quenty: 1,
+      imageSrc: imageSrc,
+      category:category,
+    };
+  
+
+    }
+    
     // function getAllCookies() {
     //   const cookies = document.cookie.split("; ");
     //   const cookieMap = {};
@@ -599,7 +654,38 @@ fetch(url, {
   });
 
   }
-    console.log("🚀 ~ addToCart ~ getOrder():", getOrder())
-    console.log("🚀 ~ addToCart ~ getOrder:", getOrder)
-    console.log("🚀 ~ addToCart ~ getOrder:", getOrder)
+
+  // function handleSizeChange() {
+  // Get the select element by its ID
+  // let sizeSelect = document.querySelectorAll('.sizeSelect');
+  // alert(sizeSelect)
+
+  // console.log("🚀 ~ handleSizeChange ~ sizeSelect:", sizeSelect)
+
+  // Get the selected option using the selectedIndex property
+
+
+  // // Get the value of the selected option
+  // const selectedValue = selectedOption.value;
+
+  // // Get the value of the data-price attribute for the selected option
+  // const dataPriceValue = selectedOption.getAttribute('data-price');
+  // alert(dataPriceValue)
+  // // Get the value of the data-size attribute for the selected option
+  // const dataSizeValue = selectedOption.getAttribute('data-size');
+  
+  // // Log or use the values as needed
+  // console.log("Selected Value:", selectedValue);
+  // console.log("Data Price Value:", dataPriceValue);
+  // console.log("Data Size Value:", dataSizeValue);
+
+  // // You can now use the values for further processing or display
+// }
+
+const selectSize = document.querySelectorAll('.sizeSelect');
+console.log("🚀 ~ selectSize:", selectSize)
+
+
+
+
 </script>
