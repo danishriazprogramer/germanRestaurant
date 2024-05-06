@@ -1,32 +1,33 @@
-import { Order } from '../../models/user/order.model.js';
-import { ApiError } from '../../utils/ApiError.js';
-import { ApiResponse } from '../../utils/ApiResponse.js';
-import JWT from "jsonwebtoken"
-import cookiesParser from "cookie-parser"
-import path from "path"
-import fs from "fs"
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import ejs from 'ejs';
+import { Order } from "../../models/user/order.model.js";
+import { ApiError } from "../../utils/ApiError.js";
+import { ApiResponse } from "../../utils/ApiResponse.js";
+import JWT from "jsonwebtoken";
+import cookiesParser from "cookie-parser";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+import ejs from "ejs";
 
 function getDirname(importMetaUrl) {
-    const __filename = fileURLToPath(importMetaUrl);
-    return dirname(__filename);
+  const __filename = fileURLToPath(importMetaUrl);
+  return dirname(__filename);
 }
 
 // Example usage:
 const __dirname = getDirname(import.meta.url);
 console.log(__dirname);
 
-
-import nodemailer from "nodemailer"
+import nodemailer from "nodemailer";
 const createOrder = async (req, res) => {
   try {
     const { email, phone, address, paymentMethod, productDetails } = req.body;
 
     const newOrder = await Order.create(Order);
 
-    res.status(201).json(new ApiResponse(201, newOrder, 'Order generate successfully'));
+    res
+      .status(201)
+      .json(new ApiResponse(201, newOrder, "Order generate successfully"));
   } catch (err) {
     console.log(err);
     if (err instanceof ApiError) {
@@ -36,7 +37,13 @@ const createOrder = async (req, res) => {
     } else {
       return res
         .status(500)
-        .json(new ApiResponse(500, null, 'Some error occurred while generating order'));
+        .json(
+          new ApiResponse(
+            500,
+            null,
+            "Some error occurred while generating order"
+          )
+        );
     }
   }
 };
@@ -48,12 +55,14 @@ const editOrder = async (req, res) => {
 
     const updatedOrder = await Order.findByIdAndUpdate(id, updatedOrderData);
     if (!updatedOrder) {
-      throw new ApiError(404, 'Order not found');
+      throw new ApiError(404, "Order not found");
     }
 
     res
       .status(200)
-      .json(new ApiResponse(200, updatedOrder, `Order ${updatedOrder} successfully`));
+      .json(
+        new ApiResponse(200, updatedOrder, `Order ${updatedOrder} successfully`)
+      );
   } catch (error) {
     console.error(error);
     if (error instanceof ApiError) {
@@ -63,7 +72,9 @@ const editOrder = async (req, res) => {
     } else {
       return res
         .status(500)
-        .json(new ApiResponse(500, null, 'Some error occurred while updating order'));
+        .json(
+          new ApiResponse(500, null, "Some error occurred while updating order")
+        );
     }
   }
 };
@@ -74,12 +85,12 @@ const deleteOrder = async (req, res) => {
 
     const deletedOrder = await Order.findByIdAndDelete(id);
     if (!deletedOrder) {
-      throw new ApiError(404, 'Order not exist');
+      throw new ApiError(404, "Order not exist");
     }
 
     res
       .status(200)
-      .json(new ApiResponse(200, deletedOrder, 'Order deleted successfully'));
+      .json(new ApiResponse(200, deletedOrder, "Order deleted successfully"));
   } catch (error) {
     console.error(error);
     if (error instanceof ApiError) {
@@ -89,7 +100,9 @@ const deleteOrder = async (req, res) => {
     } else {
       return res
         .status(500)
-        .json(new ApiResponse(500, null, 'Some error occurred while deleting order'));
+        .json(
+          new ApiResponse(500, null, "Some error occurred while deleting order")
+        );
     }
   }
 };
@@ -98,7 +111,7 @@ const getOrders = async (req, res) => {
   try {
     const orders = await Order.find();
 
-    res.status(200).json(new ApiResponse(200, orders, 'All Orders Data'));
+    res.status(200).json(new ApiResponse(200, orders, "All Orders Data"));
   } catch (error) {
     console.error(error);
     if (error instanceof ApiError) {
@@ -108,7 +121,9 @@ const getOrders = async (req, res) => {
     } else {
       return res
         .status(500)
-        .json(new ApiResponse(500, null, 'Some error occurred while getting orders'));
+        .json(
+          new ApiResponse(500, null, "Some error occurred while getting orders")
+        );
     }
   }
 };
@@ -119,10 +134,10 @@ const getSingleOrders = async (req, res) => {
     const order = await Order.findById(id);
 
     if (!order) {
-      throw new ApiError(404, 'No such order exists');
+      throw new ApiError(404, "No such order exists");
     }
 
-    res.status(200).json(new ApiResponse(200, order, 'Order Data'));
+    res.status(200).json(new ApiResponse(200, order, "Order Data"));
   } catch (error) {
     console.error(error);
     if (error instanceof ApiError) {
@@ -132,11 +147,12 @@ const getSingleOrders = async (req, res) => {
     } else {
       return res
         .status(500)
-        .json(new ApiResponse(500, null, 'Some error  while getting single orders'));
+        .json(
+          new ApiResponse(500, null, "Some error  while getting single orders")
+        );
     }
   }
 };
-
 
 const addToCart = async (req, res) => {
   try {
@@ -146,46 +162,44 @@ const addToCart = async (req, res) => {
     //console.log("🚀 ~ addToCart ~ orderToken:", orderToken);
 
     let totalQuantity = 1;
-    let orders = []
+    let orders = [];
     let alreadyAdded = false;
-    const secretKey = 'hsigfsdgsfdiuuo8uw4656';
+    const secretKey = "hsigfsdgsfdiuuo8uw4656";
     if (orderToken != "") {
-      let tokenDecode = JWT.decode(orderToken)
-      tokenDecode.orders.forEach(element => {
+      let tokenDecode = JWT.decode(orderToken);
+      tokenDecode.orders.forEach((element) => {
         if (element.productId === order.productId) {
-          alreadyAdded = true
-          console.log("the alllreadyadded is ruing ")
+          alreadyAdded = true;
+          console.log("the alllreadyadded is ruing ");
         } else {
-          totalQuantity = totalQuantity + parseInt(element.Quenty)
-          orders.push(element)
+          totalQuantity = totalQuantity + parseInt(element.Quenty);
+          orders.push(element);
         }
-
       });
     }
 
-
-    orders.push(order)
+    orders.push(order);
     const payload = {
       orders: orders,
-      totalQuantity: totalQuantity
+      totalQuantity: totalQuantity,
     };
 
-
-    const expiresIn = '5000000000000000000000000h';
+    const expiresIn = "5000000000000000000000000h";
     const token = JWT.sign(payload, secretKey, { expiresIn });
-    console.log("🚀 ~ addToCart ~ token:", token)
+    console.log("🚀 ~ addToCart ~ token:", token);
 
     //res.cookie("order", token);
     res.cookie("order", token, { secure: true });
     if (alreadyAdded) {
-      res.status(200).json(new ApiResponse(200, token, 'Food is already Added'));
+      res
+        .status(200)
+        .json(new ApiResponse(200, token, "Food is already Added"));
     }
-    res.status(201).json(new ApiResponse(201, token, 'Order Add to Cart'));
-
+    res.status(201).json(new ApiResponse(201, token, "Order Add to Cart"));
   } catch (error) {
-    console.log("The error is", error)
+    console.log("The error is", error);
   }
-}
+};
 
 // const editCart = async (req,res)=>{
 //   try {
@@ -206,7 +220,7 @@ const addToCart = async (req, res) => {
 //       console.log("🚀 ~ addToCart ~ element:", element)
 //       orders.push(element)
 //     });
-//   }  
+//   }
 
 //   orders.push(order)
 //   //console.log("THE Decode Token is:",tokenDecode)
@@ -224,7 +238,6 @@ const addToCart = async (req, res) => {
 //     res.cookie("order", token);
 //     res.status(200).json(new ApiResponse(200,'Order addtocart',token));
 
-
 //   } catch (error) {
 //     console.log("The error is",error)
 //   }
@@ -237,22 +250,21 @@ const getCart = async (req, res) => {
 
   // Assuming you have defined these variables earlier in your code
 
-    //console.log("The order body is", req.body);
-    let orderToken = JWT.decode(req.body.orderToken);
-    console.log("🚀 getOrdersOnUserSide: body ", orderToken);
+  //console.log("The order body is", req.body);
+  let orderToken = JWT.decode(req.body.orderToken);
+  console.log("🚀 getOrdersOnUserSide: body ", orderToken);
 
-    let totalQuantity = 0;
-    let totalPriceOfProduct = 0;
+  let totalQuantity = 0;
+  let totalPriceOfProduct = 0;
 
-    for (const item of orderToken.orders) {
-      totalQuantity += parseInt(item.Quenty); 
-//      console.log("The Total quantaty",totalQuantity)
-      // Assuming Quenty is quantity
-      totalPriceOfProduct += parseFloat(item.Price); // Assuming Price is a string like '$15'
-  //    console.log("🚀 ~ getOrdersOnUserSide ~ totalPrice:", totalPriceOfProduct)
-    }
+  for (const item of orderToken.orders) {
+    totalQuantity += parseInt(item.Quenty);
+    //      console.log("The Total quantaty",totalQuantity)
+    // Assuming Quenty is quantity
+    totalPriceOfProduct += parseFloat(item.Price); // Assuming Price is a string like '$15'
+    //    console.log("🚀 ~ getOrdersOnUserSide ~ totalPrice:", totalPriceOfProduct)
+  }
 
-    
   const templatePath = path.join(__dirname, "email.html");
   //console.log("🚀 ~ getCart ~ templatePath:", templatePath)
   const templateString = fs.readFileSync(templatePath, "utf-8");
@@ -260,10 +272,11 @@ const getCart = async (req, res) => {
 
   // Data to be injected into the template
   const discountPercentage = 0.1; // 10% discount
-  let     total = totalPriceOfProduct.toFixed(2)
-  let  totalPriceAfterDiscount = totalPriceOfProduct * (1 - discountPercentage).toFixed(2)
-  
-       //totalPriceOfProduct = totalPriceOfProduct.toFixed(2)  
+  let total = totalPriceOfProduct.toFixed(2);
+  let totalPriceAfterDiscount =
+    totalPriceOfProduct * (1 - discountPercentage).toFixed(2);
+
+  //totalPriceOfProduct = totalPriceOfProduct.toFixed(2)
 
   const order = {
     email: req.body.email,
@@ -271,34 +284,30 @@ const getCart = async (req, res) => {
     phone: req.body.phone,
     paymentMethod: "Cash on Delivery",
     totalItem: totalQuantity,
-    Subtotal : totalPriceOfProduct,
-    discount : "10%", 
-    total:totalPriceAfterDiscount ,
+    Subtotal: totalPriceOfProduct,
+    discount: "10%",
+    total: totalPriceAfterDiscount,
   };
 
   // Compile the HTML template with EJS
   const compiledTemplate = ejs.compile(templateString);
 
   // Render the template with the order data
-  const html = compiledTemplate({ order: order,productDetails:orderToken  });
+  const html = compiledTemplate({ order: order, productDetails: orderToken });
   //console.log("🚀 ~ getCart ~ html:", html)
 
   // Define email options
-  res.status(200).json(new ApiResponse(200, order, 'Order Placed Successfully'));
-  sendEmail('danishriazprogramer@gmail.com', 'Test Subject', html)
+  res
+    .status(200)
+    .json(new ApiResponse(200, order, "Order Placed Successfully"));
+  sendEmail("jokers.palace786@gmail.com", "Test Subject", html)
     .then(() => {
-      console.log('Email sent successfully');
+      console.log("Email sent successfully");
     })
     .catch((error) => {
-      console.error('Failed to send email:', error);
+      console.error("Failed to send email:", error);
     });
 };
-
-
-
-
-
-
 
 async function sendEmail(to, subject, html) {
   try {
@@ -306,30 +315,27 @@ async function sendEmail(to, subject, html) {
     const auth = nodemailer.createTransport({
       service: "gmail",
       auth: {
-          user: "danishriazprogramer@gmail.com",
-          pass: "krqfoxprpntcqexy"
-      }
-  })
+        user: "danishriazprogramer@gmail.com",
+        pass: "krqfoxprpntcqexy",
+      },
+    });
 
     // Send mail with defined transport object
-                const message = {
-                    from: "danishriazprogramer@gmail.com",
-                    to: to,
-                    subject: "Hi, Joker Palace You Recive New Order",
-                    html: html,
-                }
+    const message = {
+      from: "danishriazprogramer@gmail.com",
+      to: to,
+      subject: "Hi, Joker Palace You Recive New Order",
+      html: html,
+    };
 
-                auth.sendMail(message, (error, emailResp) => {
-                    if (error)
-                        throw error
-                    resp.send("emial succefull send");
-
-
-                })
+    auth.sendMail(message, (error, emailResp) => {
+      if (error) throw error;
+      resp.send("emial succefull send");
+    });
     //console.log('Message sent: %s', info.messageId);
     //return info.messageId;
   } catch (error) {
-    console.error('Error occurred while sending email:', error);
+    console.error("Error occurred while sending email:", error);
     throw error; // Rethrow the error to handle it outside of this function
   }
 }
@@ -344,11 +350,14 @@ const getOrdersOnUserSide = async (req, res) => {
     let totalPriceOfProduct = 0;
 
     for (const item of orderToken.orders) {
-      totalQuantity += parseInt(item.Quenty); 
-      console.log("The Total quantaty",totalQuantity)
+      totalQuantity += parseInt(item.Quenty);
+      console.log("The Total quantaty", totalQuantity);
       // Assuming Quenty is quantity
       totalPriceOfProduct += parseFloat(item.Price); // Assuming Price is a string like '$15'
-      console.log("🚀 ~ getOrdersOnUserSide ~ totalPrice:", totalPriceOfProduct)
+      console.log(
+        "🚀 ~ getOrdersOnUserSide ~ totalPrice:",
+        totalPriceOfProduct
+      );
     }
 
     // Add totalQuantity and totalPrice to the orderToken object
@@ -357,30 +366,35 @@ const getOrdersOnUserSide = async (req, res) => {
 
     // Send the response with orderToken, totalPrice, and totalQuantity
     const discountPercentage = 0.1; // 10% discount
-    let  totalPriceAfterDiscount = totalPriceOfProduct * (1 - discountPercentage)
-         totalPriceAfterDiscount = totalPriceAfterDiscount.toFixed(2)
-         totalPriceOfProduct = totalPriceOfProduct.toFixed(2)     
+    let totalPriceAfterDiscount =
+      totalPriceOfProduct * (1 - discountPercentage);
+    totalPriceAfterDiscount = totalPriceAfterDiscount.toFixed(2);
+    totalPriceOfProduct = totalPriceOfProduct.toFixed(2);
     res.status(201).json({
       statusCode: 201,
       orderToken: orderToken,
       totalPrice: totalPriceOfProduct,
       totalQuantity: totalQuantity,
-      totalPriceAfterDiscount:totalPriceAfterDiscount,
-      discount:"10%",
-      message: 'Order generated successfully'
+      totalPriceAfterDiscount: totalPriceAfterDiscount,
+      discount: "10%",
+      message: "Order generated successfully",
     });
   } catch (error) {
     console.log("🚀 ~ getOrdersOnUserSide ~ error:", error);
     res.status(500).json({
       statusCode: 500,
-      message: 'Internal server error'
+      message: "Internal server error",
     });
   }
-}
+};
 
-export { createOrder, editOrder, deleteOrder, getOrders, getSingleOrders, addToCart, getCart,getOrdersOnUserSide };
-
-
-
-
-
+export {
+  createOrder,
+  editOrder,
+  deleteOrder,
+  getOrders,
+  getSingleOrders,
+  addToCart,
+  getCart,
+  getOrdersOnUserSide,
+};

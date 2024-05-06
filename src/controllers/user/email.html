@@ -52,7 +52,8 @@
           <td><%= product.productName %></td>
           <td><%= product.Price %></td>
           <td><%= product.Quenty %></td>
-          <% if (product.category === "Pizza") { %>
+          <td><%= product.size %></td>
+          <% if (product.size === "Pizza") { %>
           <td><%= product.size %></td>
           <% } else { %>
           <td></td>
