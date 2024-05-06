@@ -377,7 +377,7 @@
       const tabName = this.textContent.trim();
 
       fetch(
-        `http://jokerpalace.de:8080/api/admin/getProducts?tabName=${encodeURIComponent(
+        `https://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
           tabName
         )}`
       )
@@ -479,7 +479,7 @@
     const tabName = "Indian Food";
 
     fetch(
-      `http://jokerpalace.de:8080/api/admin/getProducts?tabName=${encodeURIComponent(
+      `https://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
         tabName
       )}`
     )
@@ -613,7 +613,7 @@
 
     let payloadJSON = JSON.stringify(payload);
 
-    let url = "http://jokerpalace.de:8080/api/user/addToCart";
+    let url = "https://jokerpalace.de/api/user/addToCart";
 
     fetch(url, {
       method: "POST",
