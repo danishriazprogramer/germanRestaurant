@@ -87,25 +87,7 @@
   <script>
     $(document).ready(function () {
 
-    //   function getAllCookies() {
-    //   const cookies = document.cookie.split('; ');
-    //   const cookieMap = {};
-
-    //   cookies.forEach(cookie => {
-    //     const [name, value] = cookie.split('=');
-    //     cookieMap[name] = decodeURIComponent(value);
-    //   });
-
-    //   return cookieMap;
-    // }
-
-   
-    //   const orderToken = getAllCookies();
-    //   console.log("🚀 ~ orderToken:", orderToken)
-    //   if (orderToken.order === undefined) {
-    //     orderToken.order = ""
-    //   }
-
+    
     function getOrder() {
     let cartOrder = window.localStorage.getItem("order");
     return cartOrder ? cartOrder : "";
@@ -157,7 +139,7 @@
                                 </div>
                                 <div class="col-md-4 quantity">
                                     <label for="quantity">Quantity:</label>
-                                    <input id="quantity" type="number" value="${order.Quenty}" class="form-control quantity-input">
+                                    <input id="quantity" type="number" disabled value="${order.Quenty}" class="form-control quantity-input">
                                 </div>
                                 <div class="col-md-3 price">
                                     <span>${order.Price}</span>
@@ -308,6 +290,31 @@
                 icon: 'success',
                 confirmButtonText: 'OK'
               });
+              // Retrieve the cart order from local storage
+let cartOrder = window.localStorage.getItem("order");
+
+// Check if the cart order exists
+if (cartOrder) {
+    // If it exists, remove it from local storage
+    window.localStorage.removeItem("order");
+    console.log("Order removed from local storage.");
+} else {
+    console.log("No order found in local storage.");
+}
+
+
+let cartCount = window.localStorage.getItem("cartCount");
+
+// Check if the cart cartCount exists
+if (cartCount) {
+    // If it exists, remove it from local storage
+    window.localStorage.removeItem("cartCount");
+    console.log("cartCount removed from local storage.");
+} else {
+    console.log("No cartCount found in local storage.");
+}
+
+
             })
             .catch(error => {
               console.error('Error:', error);
