@@ -189,7 +189,7 @@ const addToCart = async (req, res) => {
     console.log("🚀 ~ addToCart ~ token:", token);
 
     //res.cookie("order", token);
-    res.cookie("order", token, { secure: true });
+    //res.cookie("order", token, { secure: true });
     if (alreadyAdded) {
       res
         .status(200)
@@ -300,13 +300,13 @@ const getCart = async (req, res) => {
   res
     .status(200)
     .json(new ApiResponse(200, order, "Order Placed Successfully"));
-  sendEmail("jokers.palace786@gmail.com", "Test Subject", html)
-    .then(() => {
-      console.log("Email sent successfully");
-    })
-    .catch((error) => {
-      console.error("Failed to send email:", error);
-    });
+  // sendEmail("jokers.palace786@gmail.com", "Test Subject", html)
+  //   .then(() => {
+  //     console.log("Email sent successfully");
+  //   })
+  //   .catch((error) => {
+  //     console.error("Failed to send email:", error);
+  //   });
 };
 
 async function sendEmail(to, subject, html) {

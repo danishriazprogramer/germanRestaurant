@@ -15,6 +15,7 @@ import productRoutes from "./src/routes/admin/product.route.js";
 import orderRoutes from "./src/routes/user/order.route.js";
 import categoryRoutes from "./src/routes/admin/category.route.js";
 import { Product } from "./src/models/admin/product.model.js";
+import payment from "./src/routes/payment/payment.js";
 
 // App Middlewares
 app.use("/", express.static("public"));
@@ -69,6 +70,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/admin", productRoutes);
 app.use("/api/user", orderRoutes);
 app.use("/api/category", categoryRoutes);
+app.use("/payment", payment);
 
 // app.get("/", (req, res) => {
 //   res.send("Hello, world!");
@@ -107,6 +109,15 @@ app.post("/api/user/addData", async (req, res) => {
       res.status(500).send("Error occurred while sending data to webhook");
     });
 });
+
+app.get("/complete-order", (req, res) => {
+  res.send("Complete Order Successful");
+});
+
+app.get("/cancel-order", (req, res) => {
+  res.send("cancel Order");
+});
+
 export { app };
 
 // server {
