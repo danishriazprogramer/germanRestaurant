@@ -167,10 +167,10 @@ const addToCart = async (req, res) => {
     const secretKey = "hsigfsdgsfdiuuo8uw4656";
     if (orderToken != "") {
       let tokenDecode = JWT.decode(orderToken);
-      console.log("🚀 ~ addToCart ~ tokenDecode:", tokenDecode)
+      console.log("🚀 ~ addToCart ~ tokenDecode:", tokenDecode);
       tokenDecode.orders.forEach((element) => {
         if (element.productId === order.productId) {
-          order.
+          order.Quenty = parseInt(element.Quenty) + 1;
           alreadyAdded = true;
 
           console.log("the alllreadyadded is ruing ");
@@ -194,9 +194,7 @@ const addToCart = async (req, res) => {
     //res.cookie("order", token);
     //res.cookie("order", token, { secure: true });
     if (alreadyAdded) {
-      res
-        .status(200)
-        .json(new ApiResponse(200, token, "Food is already Added"));
+      res.status(200).json(new ApiResponse(200, token, "Quantity Updated"));
     }
     res.status(201).json(new ApiResponse(201, token, "Order Add to Cart"));
   } catch (error) {
