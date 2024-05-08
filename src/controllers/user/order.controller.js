@@ -169,15 +169,15 @@ const addToCart = async (req, res) => {
       let tokenDecode = JWT.decode(orderToken);
       console.log("🚀 ~ addToCart ~ tokenDecode:", tokenDecode);
       tokenDecode.orders.forEach((element) => {
-        if (element.productId === order.productId) {
-          order.Quenty = parseInt(element.Quenty) + 1;
-          alreadyAdded = true;
+        //if (element.productId === order.productId) {
+        //   order.Quenty = parseInt(element.Quenty) + 1;
+        //   alreadyAdded = true;
 
-          console.log("the alllreadyadded is ruing ");
-        } else {
-          totalQuantity = totalQuantity + parseInt(element.Quenty);
+        //   console.log("the alllreadyadded is ruing ");
+        // //} else {
+        //   totalQuantity = totalQuantity + parseInt(element.Quenty);
           orders.push(element);
-        }
+        //}
       });
     }
 
@@ -193,9 +193,10 @@ const addToCart = async (req, res) => {
 
     //res.cookie("order", token);
     //res.cookie("order", token, { secure: true });
-    if (alreadyAdded) {
-      res.status(200).json(new ApiResponse(200, token, "Quantity Updated"));
-    }
+    // if (alreadyAdded) {
+    //   res.status(200).json(new ApiResponse(200, token, "Quantity Updated"));
+    // }
+
     res.status(201).json(new ApiResponse(201, token, "Order Add to Cart"));
   } catch (error) {
     console.log("The error is", error);
