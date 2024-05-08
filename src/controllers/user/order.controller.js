@@ -158,7 +158,7 @@ const addToCart = async (req, res) => {
   try {
     console.log("🚀 ~ addToCart ~ req:", req.body);
     let { order, orderToken } = req.body;
-    //console.log("🚀 ~ addToCart ~ body:", req.body);
+    console.log("🚀 ~ addToCart ~ body:", req.body);
     //console.log("🚀 ~ addToCart ~ orderToken:", orderToken);
 
     let totalQuantity = 1;
@@ -167,9 +167,12 @@ const addToCart = async (req, res) => {
     const secretKey = "hsigfsdgsfdiuuo8uw4656";
     if (orderToken != "") {
       let tokenDecode = JWT.decode(orderToken);
+      console.log("🚀 ~ addToCart ~ tokenDecode:", tokenDecode)
       tokenDecode.orders.forEach((element) => {
         if (element.productId === order.productId) {
+          order.
           alreadyAdded = true;
+
           console.log("the alllreadyadded is ruing ");
         } else {
           totalQuantity = totalQuantity + parseInt(element.Quenty);
