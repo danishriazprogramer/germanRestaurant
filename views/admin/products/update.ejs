@@ -181,7 +181,7 @@
         formData.append('popular', popular);
 
         try {
-          const response = await fetch('http://jokerpalace.de/api/admin/editProduct/<%= data.id %>', {
+          const response = await fetch('http://jokerpalace.deapi/admin/editProduct/<%= data.id %>', {
             method: 'PUT',
             body: formData,
           });
