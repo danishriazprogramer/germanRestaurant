@@ -156,10 +156,11 @@ const getSingleOrders = async (req, res) => {
 
 const addToCart = async (req, res) => {
   try {
-    console.log("🚀 ~ addToCart ~ req:", req.body);
+//    console.log("🚀 ~ addToCart ~ req:", req.body);
     let { order, orderToken } = req.body;
-    console.log("🚀 ~ addToCart ~ body:", req.body);
+  //  console.log("🚀 ~ addToCart ~ body:", req.body);
     //console.log("🚀 ~ addToCart ~ orderToken:", orderToken);
+    console.log("The order object from user ",req.body.order)
 
     let totalQuantity = 1;
     let orders = [];
@@ -167,21 +168,46 @@ const addToCart = async (req, res) => {
     const secretKey = "hsigfsdgsfdiuuo8uw4656";
     if (orderToken != "") {
       let tokenDecode = JWT.decode(orderToken);
-      console.log("🚀 ~ addToCart ~ tokenDecode:", tokenDecode);
+      //console.log("🚀 ~ addToCart ~ tokenDecode:", tokenDecode);
       tokenDecode.orders.forEach((element) => {
-        //if (element.productId === order.productId) {
-        //   order.Quenty = parseInt(element.Quenty) + 1;
-        //   alreadyAdded = true;
 
-        //   console.log("the alllreadyadded is ruing ");
-        // //} else {
-        //   totalQuantity = totalQuantity + parseInt(element.Quenty);
-          orders.push(element);
-        //}
+         if(element.productId !== order.productId){
+         let prodcuPrice = (parseFloat(element.Price) *  element.Quenty).toFixed(2); 
+         let ProOrder = {
+          productName: element.productName,
+          productId:  element.productId ,
+          category: element.category,
+          description: element.description,
+          Price: element.Price,
+          prodcuPrice:prodcuPrice,
+          Quenty:  element.Quenty,
+          imageSrc: element.imageSrc,
+         } 
+
+          orders.push(ProOrder);
+
+         } 
+                 //}
       });
     }
+   
+    console.log("The Price and quantiry of order",order.Price,  " ",order.Quenty )
+   let newProdcuPrice = (parseFloat(order.Price) *  order.Quenty).toFixed(2); 
+       order.prodcuPrice = newProdcuPrice
 
+   console.log("the new order is ",order)
+  //  let newOrder = {
+  //         productId:  order.productId ,
+  //         category: order.category,
+  //         description: order.description,
+  //         Price: order.Price,
+  //         prodcuPrice: newProdcuPrice,
+  //         Quenty:  order.Quenty,
+  //         imageSrc: order.imageSrc,
+  //  }
+  
     orders.push(order);
+    console.log("The order objec becode decode",orders)
     const payload = {
       orders: orders,
       totalQuantity: totalQuantity,
@@ -189,7 +215,7 @@ const addToCart = async (req, res) => {
 
     const expiresIn = "5000000000000000000000000h";
     const token = JWT.sign(payload, secretKey, { expiresIn });
-    console.log("🚀 ~ addToCart ~ token:", token);
+    //console.log("🚀 ~ addToCart ~ token:", token);
 
     //res.cookie("order", token);
     //res.cookie("order", token, { secure: true });
@@ -248,38 +274,26 @@ const addToCart = async (req, res) => {
 // getCart
 
 const getCart = async (req, res) => {
-  // Your existing code here...
 
-  // Assuming you have defined these variables earlier in your code
-
-  //console.log("The order body is", req.body);
   let orderToken = JWT.decode(req.body.orderToken);
-  console.log("🚀 getOrdersOnUserSide: body ", orderToken);
+
 
   let totalQuantity = 0;
   let totalPriceOfProduct = 0;
 
   for (const item of orderToken.orders) {
     totalQuantity += parseInt(item.Quenty);
-    //      console.log("The Total quantaty",totalQuantity)
-    // Assuming Quenty is quantity
-    totalPriceOfProduct += parseFloat(item.Price); // Assuming Price is a string like '$15'
-    //    console.log("🚀 ~ getOrdersOnUserSide ~ totalPrice:", totalPriceOfProduct)
+    totalPriceOfProduct += (parseFloat(item.Price) * parseInt(item.Quenty)); // Assuming Price is a string like '$15'
   }
 
   const templatePath = path.join(__dirname, "email.html");
-  //console.log("🚀 ~ getCart ~ templatePath:", templatePath)
   const templateString = fs.readFileSync(templatePath, "utf-8");
-  //console.log("🚀 ~ getCart ~ templateString:", templateString)
 
-  // Data to be injected into the template
   const discountPercentage = 0.1; // 10% discount
-  let total = totalPriceOfProduct.toFixed(2);
+  let total = totalPriceOfProduct;
   let totalPriceAfterDiscount =
-    totalPriceOfProduct * (1 - discountPercentage).toFixed(2);
-
-  //totalPriceOfProduct = totalPriceOfProduct.toFixed(2)
-
+    totalPriceOfProduct * (1 - discountPercentage);
+    totalPriceAfterDiscount= totalPriceAfterDiscount
   const order = {
     email: req.body.email,
     address: req.body.address,
@@ -302,14 +316,15 @@ const getCart = async (req, res) => {
   res
     .status(200)
     .json(new ApiResponse(200, order, "Order Placed Successfully"));
-  // sendEmail("jokers.palace786@gmail.com", "Test Subject", html)
-  //   .then(() => {
-  //     console.log("Email sent successfully");
-  //   })
-  //   .catch((error) => {
-  //     console.error("Failed to send email:", error);
-  //   });
-};
+  sendEmail("danishriazprogramer@gmail.com", "Test Subject", html)
+    .then(() => {
+      console.log("Email sent successfully");
+    })
+    .catch((error) => {
+      console.error("Failed to send email:", error);
+    });
+
+  };
 
 async function sendEmail(to, subject, html) {
   try {
@@ -355,18 +370,10 @@ const getOrdersOnUserSide = async (req, res) => {
       totalQuantity += parseInt(item.Quenty);
       console.log("The Total quantaty", totalQuantity);
       // Assuming Quenty is quantity
-      totalPriceOfProduct += parseFloat(item.Price); // Assuming Price is a string like '$15'
-      console.log(
-        "🚀 ~ getOrdersOnUserSide ~ totalPrice:",
-        totalPriceOfProduct
-      );
+      totalPriceOfProduct += parseFloat(item.Price) * parseInt(item.Quenty).toFixed(2) ; // Assuming Price is a string like '$15'
+    
     }
 
-    // Add totalQuantity and totalPrice to the orderToken object
-    // orderToken.totalQuantity = totalQuantity;
-    // orderToken.totalPrice = totalPrice;
-
-    // Send the response with orderToken, totalPrice, and totalQuantity
     const discountPercentage = 0.1; // 10% discount
     let totalPriceAfterDiscount =
       totalPriceOfProduct * (1 - discountPercentage);
@@ -400,3 +407,11 @@ export {
   getCart,
   getOrdersOnUserSide,
 };
+
+
+
+  /// sudo certbot --nginx -d jokerpalace.de -d www.jokerpalace.de
+  //  app.use(cors({
+  //   // origin: true,
+  //   credentials: true
+  //   }));

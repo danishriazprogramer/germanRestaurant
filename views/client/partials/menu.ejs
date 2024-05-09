@@ -366,6 +366,29 @@
   </div>
 </section>
 
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalTitle">Product Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="productModalBody">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 <script>
   const productContainers = document.querySelectorAll(".foodCart");
   const tabs = document.querySelectorAll(".nav-link");
@@ -377,7 +400,7 @@
       const tabName = this.textContent.trim();
 
       fetch(
-        `http://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
+        `http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(
           tabName
         )}`
       )
@@ -479,7 +502,7 @@
     const tabName = "Indian Food";
 
     fetch(
-      `http://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
+      `http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(
         tabName
       )}`
     )
@@ -512,7 +535,7 @@
                                             <div class="card_bottom">
                                               <input type="text" value="${product.unitPrice}" class="Price" style="display: none;">
 
-                                                
+                                              <h6>${product.unitPrice} €</h6>
                                                 <button class="btn btn-primary addToCart" onclick="addToCart('${product.unitId}')" id="clickMe">Add To Cart</button>
                                         </div>
                                     </div>
@@ -545,6 +568,10 @@
   };
 
   function addToCart(productId) {
+
+
+ 
+
     let id = document.getElementById(productId);
     let category = id.querySelector(".category").textContent.trim();
     let order;
@@ -557,8 +584,8 @@
       title = id.querySelector(".card-title").textContent.trim();
       description = id.querySelector(".card-text").textContent.trim();
       imageSrc = id.querySelector(".img-fluid").getAttribute("src");
-
-      order = {
+         
+      product = {
         productId: productId,
         productName: title,
         description: description,
@@ -574,31 +601,157 @@
       description = id.querySelector(".card-text").textContent.trim();
       price = id.querySelector(".Price").value;
       imageSrc = id.querySelector(".img-fluid").getAttribute("src");
-      order = {
+      product = {
         productId: productId,
         productName: title,
+        category:category,
         description: description,
         Price: price,
         Quenty: 1,
         imageSrc: imageSrc,
         category: category,
       };
+
+
+      function openModal(product) {
+  // Clear previous content
+  document.getElementById("productModalBody").innerHTML = "";
+
+  // Create card element
+  const card = document.createElement("div");
+  card.classList.add("card", "mb-3");
+ 
+  // Create inner HTML for the card
+  card.innerHTML = `
+    <div class="row g-0" id="${product.productId}">
+        <h1 class="category d-none " id="category" >${product.category}</h1>   
+        <div class="row g-0">
+            <div class="col-lg-4 d-flex justify-content-center p-2">
+                <img src="${product.imageSrc}" id ="src"  class="img-fluid rounded-3 w-100" alt="${product.productName}">
+            </div>
+            <div class="col-lg-8">
+                <div class="card-body">
+                    <h5 class="card-title" id="proName" >${product.productName}</h5>
+                    <p class="card-text clamp-line-3" id="proDes">${product.description}</p>
+                    <div class="card_bottom">
+                        <input type="text" id="price" value="${product.Price}" class="Price" style="display: none;">
+                        <h6>${product.Price} €</h6>
+                        <button class="btn btn-primary addToCart" onclick="ProductAddToCart('${product.productId}')" >Add To Cart</button>
+                        <div class="col-md-4 quantity">
+                                    <label for="quantity">Quantity:</label>
+                                    <input id="quantity" type="number" value="1" min="1" class="form-control quantity-input">
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  `;
+
+  // Append card to modal body
+  document.getElementById("productModalBody").appendChild(card);
+
+  // Open modal
+  $('#productModal').modal('show');
+}
+
+// Function to handle click event on product card
+
+
+openModal(product);
+
+
+
+
     }
 
-    // function getAllCookies() {
-    //   const cookies = document.cookie.split("; ");
-    //   const cookieMap = {};
+  
+ // Function to open modal with product details
+ 
+}
 
-    //   cookies.forEach((cookie) => {
-    //     const [name, value] = cookie.split("=");
-    //     cookieMap[name] = decodeURIComponent(value);
-    //   });
 
-    //   return cookieMap;
-    // }
 
-    // let orderToken = getAllCookies();
-    // orderToken = orderToken.order || "";
+  //   // function getAllCookies() {
+  //   //   const cookies = document.cookie.split("; ");
+  //   //   const cookieMap = {};
+
+  //   //   cookies.forEach((cookie) => {
+  //   //     const [name, value] = cookie.split("=");
+  //   //     cookieMap[name] = decodeURIComponent(value);
+  //   //   });
+
+  //   //   return cookieMap;
+  //   // }
+
+  //   // let orderToken = getAllCookies();
+  //   // orderToken = orderToken.order || "";
+  //   function getOrder() {
+  //     let cartOrder = window.localStorage.getItem("order");
+  //     return cartOrder ? cartOrder : "";
+  //   }
+  //   let orderToken = getOrder();
+  //   console.log("The get order from local storage is ", getOrder());
+
+  //   let payload = {
+  //     orderToken: orderToken,
+  //     order: order,
+  //   };
+
+  //   let payloadJSON = JSON.stringify(payload);
+
+  //   let url = "http://localhost:8080/api/user/addToCart";
+
+  //   fetch(url, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: payloadJSON,
+  //   })
+  //     .then((response) => response.json()) // Parse response as JSON
+  //     .then((data) => {
+  //       console.log("Response data:", data);
+  //       if (data?.statusCode === 201) {
+  //         let cartCount = getCartCount() + 1;
+  //         localStorage.setItem("order", data.data);
+  //         updateCartCount(cartCount);
+  //       }
+  //       Swal.fire({
+  //         title: data?.message,
+  //         icon: "success",
+  //         confirmButtonText: "OK",
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+
+function ProductAddToCart(id){
+  var categoryValue = document.getElementById("category").innerHTML;
+  var proNameValue = document.getElementById("proName").innerHTML;
+  var proDesValue = document.getElementById("proDes").innerHTML;
+  var priceValue = document.getElementById("price").value;
+  var quantityValue = document.getElementById("quantity").value;
+  var src = document.getElementById("src").src;
+  
+console.log("🚀 ~ ProductAddToCart ~ id:", id)
+console.log("Category:", categoryValue);
+console.log("Product Name:", proNameValue);
+console.log("Product Description:", proDesValue);
+console.log("Price:", priceValue);
+console.log("Quantity:", quantityValue);
+
+   let productOrder ={
+        productId: id,
+        productName: proNameValue,
+        category:categoryValue,
+        description: proDesValue,
+        Price: priceValue,
+        Quenty: quantityValue,
+        imageSrc: src,  
+   }
+
     function getOrder() {
       let cartOrder = window.localStorage.getItem("order");
       return cartOrder ? cartOrder : "";
@@ -606,14 +759,15 @@
     let orderToken = getOrder();
     console.log("The get order from local storage is ", getOrder());
 
+
     let payload = {
       orderToken: orderToken,
-      order: order,
+      order: productOrder,
     };
 
     let payloadJSON = JSON.stringify(payload);
 
-    let url = "http://jokerpalace.de/api/user/addToCart";
+    let url = "http://localhost:8080/api/user/addToCart";
 
     fetch(url, {
       method: "POST",
@@ -639,5 +793,13 @@
       .catch((error) => {
         console.error("Error:", error);
       });
-  }
+
+
+}
+
+
 </script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

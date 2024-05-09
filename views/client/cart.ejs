@@ -99,7 +99,7 @@
     let orderToken =  getOrder();
     console.log("The get order from local storage is ", getOrder())
 
-      const url = 'http://jokerpalace.de/api/user/getOrdersOnUserSide';
+      const url = 'http://localhost:8080/api/user/getOrdersOnUserSide';
       const payload = {
         "orderToken": orderToken,
       };
@@ -146,7 +146,7 @@
                                     <input id="quantity" type="number" disabled value="${order.Quenty}" class="form-control quantity-input">
                                 </div>
                                 <div class="col-md-3 price">
-                                    <span>${order.Price}</span>
+                                    <span>${order.prodcuPrice}  € </span>
                                 </div>
                             </div>
                         </div>
@@ -161,9 +161,9 @@
           let totalElement = document.querySelector('.total'); // Fourth summary-item
 
           // Setting the values
-          subtotalElement.textContent = `€${data.totalPrice}`;
+          subtotalElement.textContent = `${data.totalPrice} €`;
           discountElement.textContent = `${data.discount}`;
-          totalElement.textContent = `€${data.totalPriceAfterDiscount}`;
+          totalElement.textContent = `${data.totalPriceAfterDiscount} €`;
 
           // Calculate the total after applying discount and adding shipping
           //const totalAfterDiscountAndShipping = totalPrice - discountPrice + totalElement;
@@ -271,7 +271,7 @@
           console.log("🚀 ~ payloadJSON:", payloadJSON)
           
 
-          const apiUrl = 'http://jokerpalace.de/api/user/getCart';
+          const apiUrl = 'http://localhost:8080/api/user/getCart';
 
           fetch(apiUrl, {
             method: 'POST',
@@ -348,7 +348,7 @@ if (cartCount) {
           let payloadJSON = JSON.stringify(payload);
           console.log("🚀 ~ payloadJSON:", payloadJSON)
     console.log("The get order from local storage is ", getOrder())
-    const apiUrl = 'http://jokerpalace.de/payment/getpayment';
+    const apiUrl = 'http://localhost:8080/payment/getpayment';
 
           fetch(apiUrl, {
             method: 'POST',
