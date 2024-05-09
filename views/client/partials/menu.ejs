@@ -579,6 +579,7 @@
     let description;
     let price;
     let imageSrc;
+    let size
     if (category === "Pizza") {
       console.log("🚀 ~ addToCart ~ category:", category);
       title = id.querySelector(".card-title").textContent.trim();
@@ -595,6 +596,60 @@
         size: pizzaSize,
         category: category,
       };
+      console.log("The objecgt of Pizza", product)
+      
+      function openModal(product) {
+  // Clear previous content
+  document.getElementById("productModalBody").innerHTML = "";
+
+  // Create card element
+  const card = document.createElement("div");
+  card.classList.add("card", "mb-3");
+ 
+  // Create inner HTML for the card
+  card.innerHTML = `
+    <div class="row g-0" id="${product.productId}">
+        <h1 class="category d-none " id="category" >${product.category}</h1> 
+        <h1 class="category d-none " id="size" >${product.size}</h1>   
+        <div class="row g-0">
+            <div class="col-lg-4 d-flex justify-content-center p-2">
+                <img src="${product.imageSrc}" id ="src"  class="img-fluid rounded-3 w-100" alt="${product.productName}">
+            </div>
+            <div class="col-lg-8">
+                <div class="card-body">
+                    <h5 class="card-title" id="proName" >${product.productName}</h5>
+                    <p class="card-text clamp-line-3" id="proDes">${product.description}</p>
+                    <div class="card_bottom">
+                        <input type="text" id="price" value="${product.Price}" class="Price" style="display: none;">
+                        <h6>${product.Price} €</h6>
+                        <button class="btn btn-primary addToCart" onclick="ProductAddToCart('${product.productId}')" >Add To Cart</button>
+                        <div class="col-md-4 quantity">
+                                    <label for="quantity">Quantity:</label>
+                                    <input id="quantity" type="number" value="1" min="1" class="form-control quantity-input">
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  `;
+
+  // Append card to modal body
+  document.getElementById("productModalBody").appendChild(card);
+
+  // Open modal
+  $('#productModal').modal('show');
+}
+
+// Function to handle click event on product card
+
+
+openModal(product);
+
+
+
+      
+
     } else {
       console.log("🚀 ~ addToCart ~ category:", category);
       title = id.querySelector(".card-title").textContent.trim();
@@ -624,7 +679,8 @@
   // Create inner HTML for the card
   card.innerHTML = `
     <div class="row g-0" id="${product.productId}">
-        <h1 class="category d-none " id="category" >${product.category}</h1>   
+        <h1 class="category d-none " id="category" >${product.category}</h1>  
+        <h1 class="category d-none " id="size" >noSize</h1> 
         <div class="row g-0">
             <div class="col-lg-4 d-flex justify-content-center p-2">
                 <img src="${product.imageSrc}" id ="src"  class="img-fluid rounded-3 w-100" alt="${product.productName}">
@@ -734,7 +790,8 @@ function ProductAddToCart(id){
   var priceValue = document.getElementById("price").value;
   var quantityValue = document.getElementById("quantity").value;
   var src = document.getElementById("src").src;
-  
+  var size = document.getElementById("size").innerHTML;
+console.log("The size of pizza",size)
 console.log("🚀 ~ ProductAddToCart ~ id:", id)
 console.log("Category:", categoryValue);
 console.log("Product Name:", proNameValue);
@@ -750,8 +807,12 @@ console.log("Quantity:", quantityValue);
         Price: priceValue,
         Quenty: quantityValue,
         imageSrc: src,  
+        size:size,
    }
 
+   if(categoryValue === "Pizza"){
+    productOrder.size = size
+   }
     function getOrder() {
       let cartOrder = window.localStorage.getItem("order");
       return cartOrder ? cartOrder : "";
