@@ -316,7 +316,7 @@ const getCart = async (req, res) => {
   res
     .status(200)
     .json(new ApiResponse(200, order, "Order Placed Successfully"));
-  sendEmail("danishriazprogramer@gmail.com", "Test Subject", html)
+  sendEmail("jokers.palace786@gmail.com", "Test Subject", html)
     .then(() => {
       console.log("Email sent successfully");
     })
