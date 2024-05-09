@@ -365,9 +365,29 @@
     </div>
   </div>
 </section>
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalTitle">Product Details</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <div class="modal-body" id="productModalBody">
+
+      </div>
+      <div class="modal-footer">
+<!-- <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- Modal -->
-<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalTitle" aria-hidden="true">
+<!-- <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -384,12 +404,19 @@
       </div>
     </div>
   </div>
-</div>
-
-
+</div> -->
 
 
 <script>
+  const closeBtns = document.querySelectorAll('.close');
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', ()=> {
+      console.log("🚀 ~ btn:", btn)
+      // btn.modal('hide')
+    })
+  })
+
   const productContainers = document.querySelectorAll(".foodCart");
   const tabs = document.querySelectorAll(".nav-link");
   let pizzaPrice;
@@ -784,6 +811,8 @@ openModal(product);
   //     });
 
 function ProductAddToCart(id){
+
+  $('#productModal').modal('hide');
   var categoryValue = document.getElementById("category").innerHTML;
   var proNameValue = document.getElementById("proName").innerHTML;
   var proDesValue = document.getElementById("proDes").innerHTML;
