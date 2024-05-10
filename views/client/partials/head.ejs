@@ -41,7 +41,7 @@
         <div class="d-flex gap-3 align-items-center">
             <div class="d-flex gap-3 d-lg-none">
                 <div class="cart">
-                    <div class="cart__count" id="moblileCart">0</div>
+                    <div class="cart__count" id="mobileCount">0</div>
                     <a href="/api/cart"><i class="fas fa-shopping-cart" ></i>
                     </a>
                 </div>
@@ -76,12 +76,11 @@
     </nav>
 
     <script>
-         cartCountElm = document.getElementById("cart__count");
-         let moblileCart = document.getElementById("moblileCart")
-         let mobile = document.getElementById("moblileCart")
-         console.log("🚀 ~ moblileCart:", moblileCart)
-         Number(mobile.innerHTML)
-         Number(cartCountElm.innerHTML);
+         let  allCartCount = document.getElementById("cart__count");
+         let allCartCountMobile = document.getElementById("mobileCount")
+       
+         Number(allCartCount.innerHTML)
+         Number(allCartCountMobile.innerHTML);
             
 
   function getCartCount() {
@@ -90,15 +89,17 @@
     return cartCount ? parseInt(cartCount) : 0;
   }
 
-  function updateCartCount(count) {
-    window.localStorage.setItem("cartCount", count.toString());
-    cartCountElm.innerHTML = count.toString();
-     mobile.innerHTML = count.toString()
-  }
+//   function updateCartCount(count) {
+//     window.localStorage.setItem("cartCount", count.toString());
+//     cartCountElm.innerHTML = count.toString();
+//      mobile.innerHTML = count.toString()
+//   }
 
   window.onload = function () {
     let cartCount = getCartCount();
-    updateCartCount(cartCount);
+    allCartCount.innerHTML = cartCount;
+    allCartCountMobile.innerHTML = cartCount
+
   };
 
 //   abc()
