@@ -427,7 +427,7 @@
       const tabName = this.textContent.trim();
 
       fetch(
-        `http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(
+        `http://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
           tabName
         )}`
       )
@@ -529,7 +529,7 @@
     const tabName = "Indian Food";
 
     fetch(
-      `http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(
+      `http://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
         tabName
       )}`
     )
@@ -780,7 +780,7 @@ openModal(product);
 
   //   let payloadJSON = JSON.stringify(payload);
 
-  //   let url = "http://localhost:8080/api/user/addToCart";
+  //   let url = "http://jokerpalace.de/api/user/addToCart";
 
   //   fetch(url, {
   //     method: "POST",
@@ -854,7 +854,7 @@ console.log("Quantity:", quantityValue);
 
     let payloadJSON = JSON.stringify(payload);
 
-    let url = "http://localhost:8080/api/user/addToCart";
+    let url = "http://jokerpalace.de/api/user/addToCart";
 
     fetch(url, {
       method: "POST",
