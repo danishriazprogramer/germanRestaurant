@@ -99,7 +99,7 @@
     let orderToken =  getOrder();
     console.log("The get order from local storage is ", getOrder())
 
-      const url = 'http://jokerpalace.de/api/user/getOrdersOnUserSide';
+      const url = 'http://localhost:8080/api/user/getOrdersOnUserSide';
       const payload = {
         "orderToken": orderToken,
       };
@@ -126,6 +126,44 @@
             container.innerHTML = '';
 
             data.orderToken.orders.forEach(order => {
+              if(order.category === "Pizza" ){
+                const productHTML = `
+                    <div class="product row">
+                        <div class="col-md-3">
+                            <img class="cart-img" src="${order.imageSrc}">
+                        </div>
+                        <div class="col-md-8 info">
+                            <div class="row">
+                                <div class="col-md-5 product-name">
+                                    <div class="product-name">
+                                        <div class="brand-color">${order.productName}</div>
+                                        <div class="brand-color">${order.size}</div>
+                                        <div class="product-info">
+                                            <p>${order?.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 quantity">
+                                    <label for="quantity">Quantity:</label>
+                                    <input id="quantity" type="number" disabled value="${order.Quenty}" class="form-control quantity-input">
+                                </div>
+                                <div class="col-md-3 price">
+                                    <span>${order.prodcuPrice}  € </span> 
+                                    <button type="button"  class="btn btn-danger ml2 delItem" onclick="delItem('${order.productId}')"  >Danger</button>  
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += productHTML;
+
+         
+
+              }else{
+
+              
+
                 const productHTML = `
                     <div class="product row">
                         <div class="col-md-3">
@@ -148,11 +186,13 @@
                                 <div class="col-md-3 price">
                                     <span>${order.prodcuPrice}  € </span>
                                 </div>
+                                <button type="button"  class="btn btn-danger ml2 delItem" onclick="delItem('${order.productIdn}')" >Danger</button>
                             </div>
                         </div>
                     </div>
                 `;
                 container.innerHTML += productHTML;
+                  }
             });
 
           let subtotalElement = document.querySelector('.subtotal');
@@ -271,7 +311,7 @@
           console.log("🚀 ~ payloadJSON:", payloadJSON)
           
 
-          const apiUrl = 'http://jokerpalace.de/api/user/getCart';
+          const apiUrl = 'http://localhost:8080/api/user/getCart';
 
           fetch(apiUrl, {
             method: 'POST',
@@ -348,7 +388,7 @@ if (cartCount) {
           let payloadJSON = JSON.stringify(payload);
           console.log("🚀 ~ payloadJSON:", payloadJSON)
     console.log("The get order from local storage is ", getOrder())
-    const apiUrl = 'http://jokerpalace.de/payment/getpayment';
+    const apiUrl = 'http://localhost:8080/payment/getpayment';
 
           fetch(apiUrl, {
             method: 'POST',
@@ -359,6 +399,16 @@ if (cartCount) {
           })
 
   }
+
+
+
+function delItem(id)
+{
+  alert("hyyhyfgygf",id)
+  console.log("The id od del element is ",id)
+  
+}
+
 
   </script>
 </body>

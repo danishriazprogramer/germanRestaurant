@@ -171,7 +171,7 @@ const addToCart = async (req, res) => {
       //console.log("🚀 ~ addToCart ~ tokenDecode:", tokenDecode);
       tokenDecode.orders.forEach((element) => {
 
-         if(element.productId !== order.productId){
+         if(element.productId !== order.productId ){
          let prodcuPrice = (parseFloat(element.Price) *  element.Quenty).toFixed(2); 
          let ProOrder = {
           productName: element.productName,
@@ -181,12 +181,33 @@ const addToCart = async (req, res) => {
           Price: element.Price,
           prodcuPrice:prodcuPrice,
           Quenty:  element.Quenty,
+          size : element.size,
           imageSrc: element.imageSrc,
          } 
 
           orders.push(ProOrder);
 
          } 
+
+         if(element.productId === order.productId && order.size !== element.size)
+          {
+            let prodcuPrice = (parseFloat(element.Price) *  element.Quenty).toFixed(2); 
+            let ProOrder = {
+             productName: element.productName,
+             productId:  element.productId ,
+             category: element.category,
+             description: element.description,
+             Price: element.Price,
+             prodcuPrice:prodcuPrice,
+             Quenty:  element.Quenty,
+             size : element.size,
+             imageSrc: element.imageSrc,
+            } 
+   
+             orders.push(ProOrder);
+      
+
+          }
                  //}
       });
     }
@@ -397,6 +418,10 @@ const getOrdersOnUserSide = async (req, res) => {
   }
 };
 
+const delCartItem = async (req, res) => {
+
+}
+
 export {
   createOrder,
   editOrder,
@@ -406,6 +431,7 @@ export {
   addToCart,
   getCart,
   getOrdersOnUserSide,
+  delCartItem,
 };
 
 

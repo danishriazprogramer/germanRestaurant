@@ -8,6 +8,7 @@ import {
   addToCart,
   getCart,
   getOrdersOnUserSide,
+  delCartItem,
 } from '../../controllers/user/order.controller.js';
 
 const router = new Router();
@@ -20,6 +21,7 @@ router.get('/getOrders/:id', getSingleOrders);
 router.post('/addToCart', addToCart);
 router.post('/getCart', getCart);
 router.post('/getOrdersOnUserSide', getOrdersOnUserSide);
+router.delete("/delCartItem",delCartItem);
 
 
 export default router;
