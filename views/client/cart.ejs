@@ -148,8 +148,7 @@
                                     <input id="quantity" type="number" disabled value="${order.Quenty}" class="form-control quantity-input">
                                 </div>
                                 <div class="col-md-3 price">
-                                    <span>${order.prodcuPrice}  € </span> 
-                                    <button type="button"  class="btn btn-danger ml2 delItem" onclick="delItem('${order.productId}')"  >Danger</button>  
+                                    <span>${order.prodcuPrice}  € </span>
                                     </div>
                                 
                             </div>
@@ -186,7 +185,6 @@
                                 <div class="col-md-3 price">
                                     <span>${order.prodcuPrice}  € </span>
                                 </div>
-                                <button type="button"  class="btn btn-danger ml2 delItem" onclick="delItem('${order.productIdn}')" >Danger</button>
                             </div>
                         </div>
                     </div>
@@ -404,12 +402,36 @@ if (cartCount) {
 
 function delItem(id)
 {
-  alert("hyyhyfgygf",id)
-  console.log("The id od del element is ",id)
   
-}
+  console.log("The id od del element is ",id)
+
+  function getOrder() {
+    let cartOrder = window.localStorage.getItem("order");
+    return cartOrder ? cartOrder : "";
+    }
+    let orderToken1 =  getOrder();
+
+     const payload = {
+             orderToken:orderToken1,
+             id:id
+          } 
+          let payloadJSON = JSON.stringify(payload);
+          console.log("🚀 ~ payloadJSON:", payloadJSON)
+    console.log("The get order from local storage is ", getOrder())
+    const apiUrl = 'http://localhost:8080/api/user/delCartItem';
+
+          fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: payloadJSON,
+          })
+
+        
 
 
+        }
   </script>
 </body>
 </html>

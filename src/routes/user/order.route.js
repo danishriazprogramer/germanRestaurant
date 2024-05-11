@@ -21,7 +21,7 @@ router.get('/getOrders/:id', getSingleOrders);
 router.post('/addToCart', addToCart);
 router.post('/getCart', getCart);
 router.post('/getOrdersOnUserSide', getOrdersOnUserSide);
-router.delete("/delCartItem",delCartItem);
+router.post("/delCartItem",delCartItem);
 
 
 export default router;

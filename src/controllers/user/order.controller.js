@@ -419,7 +419,37 @@ const getOrdersOnUserSide = async (req, res) => {
 };
 
 const delCartItem = async (req, res) => {
+try {
 
+
+  let orderToken = JWT.decode(req.body.orderToken);
+  console.log("🚀 getOrdersOnUserSide: body ", orderToken);
+
+  let responce = []
+  orderToken.forEach(element => {
+    if(element.productId === req.body.id){
+      
+    }else{
+      responce.push(element)
+    }
+   });
+
+  let length = responce.length
+   const payload = {
+    orders: responce,
+    totalQuantity:length,
+  };
+
+  
+   const expiresIn = "5000000000000000000000000h";
+    const token = JWT.sign(payload, secretKey, { expiresIn });
+  
+
+    res.status(201).json(new ApiResponse(201, token, "Order Add to Cart"));
+
+} catch (error) {
+  
+}
 }
 
 export {
