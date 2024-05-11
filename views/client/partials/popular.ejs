@@ -1,4 +1,4 @@
- <section class="container-xxl py-5">
+ <!-- <section class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h5 class="section-title ff-secondary text-center text-primary fw-normal">Best Seller</h5>
@@ -6,22 +6,30 @@
         </div>
 
         <div class="owl-carousel popular-deal-carousel">
-            <div class="item">
+            <div class="item" id="123456" >
+               
                 <div class="card rounded-5 popular-deal__card">
-                    <img src="/assets/img/pizza.webp" class="card-img-top rounded-6 p-3" alt="pizza">
+                    <h1 class="category d-none ">deal</h1>  
+                    <div class="row g-0" >123456</div>
+                       
+                    <img src="/assets/img/burger.webp" class="card-img-top rounded-6 p-3" alt="pizza">
                     <div class="card-body text-center">
-                        <h5 class="card-title text-truncate">Burger Deal</h5>
+                        
+                        <input type="text" value="22.50" class="Price" style="display: none;">
+
+                        <h5 class="card-title text-truncate">Burger Deal 1122</h5>
                         <p class="card-text clamp-line-3">2 x Burger aus der Liste nach Wahl
                             2 x Beilagen aus der Liste nach Wahl
                             1 x Softdrink 1,0 l nach Wahl</p>
+
                             <h6> 22.50 €</h6>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                            <button class="btn btn-primary addToCart"  onclick="addToCart('1234566')" id="clickMe">Add To Cart</button>
                     </div>
                 </div>
             </div>
             <div class="item">
                 <div class="card rounded-5 popular-deal__card">
-                    <img src="/assets/img/pasta.webp" class="card-img-top rounded-6 p-3" alt="pizza">
+                    <img src="/uploads/products/JokerDeal.jpg" class="card-img-top rounded-6 p-3" alt="pizza">
                     <div class="card-body text-center">
                         <h5 class="card-title text-truncate">Joker Deal</h5>
                         <p class="card-text clamp-line-3">3 x Medium Pizzen aus der Liste nach Wahl
@@ -33,7 +41,7 @@
             </div>
             <div class="item">
                 <div class="card rounded-5 popular-deal__card">
-                    <img src="/assets/img/chicken.webp" class="card-img-top rounded-6 p-3" alt="pizza">
+                    <img src="/uploads/products/LoverDeal.jpg" class="card-img-top rounded-6 p-3" alt="pizza">
                     <div class="card-body text-center">
                         <h5 class="card-title text-truncate">Lover Deal</h5>
                         <p class="card-text clamp-line-3">2 x Medium Pizzen aus der Liste nach Wahl
@@ -46,7 +54,7 @@
             </div>
             <div class="item">
                 <div class="card rounded-5 popular-deal__card">
-                    <img src="/assets/img/burger.webp" class="card-img-top rounded-6 p-3" alt="pizza">
+                    <img src="/uploads/products/pastaDeal.jpg" class="card-img-top rounded-6 p-3" alt="pizza">
                     <div class="card-body text-center">
                         <h5 class="card-title text-truncate">Pasta Deal</h5>
                         <p class="card-text clamp-line-3">2 x Pasta aus der Liste nach Wahl
@@ -57,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item">
+            <!-- <div class="item">
                 <div class="card rounded-5 popular-deal__card">
                     <img src="/assets/img/pizza.webp" class="card-img-top rounded-6 p-3" alt="pizza">
                     <div class="card-body text-center">
@@ -71,30 +79,34 @@
             </div>
             <div class="item">
                 <div class="card rounded-5 popular-deal__card">
-                    <img src="/assets/img/burger.webp" class="card-img-top rounded-6 p-3" alt="pizza">
+                    <div class="row g-0" id="${product.unitId}"></div>
+                    <img src="/assets/img/pizza.webp" class="card-img-top rounded-6 p-3" alt="pizza">
                     <div class="card-body text-center">
+                        <h1 class="category d-none ">Deal</h1> 
+                        
                         <h5 class="card-title text-truncate">Burger Deal</h5>
                         <p class="card-text clamp-line-3">2 x Burger aus der Liste nach Wahl
                             2 x Beilagen aus der Liste nach Wahl
                             1 x Softdrink 1,0 l nach Wahl</p>
-                        <h6> 22.50 €</h6>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                            <h6> 22.50 €</h6>
+                        <a href="#" class="btn btn-primary" onclick="addToCart('123456789')">Add to Cart</a>
                     </div>
                 </div>
             </div>
+
             <div class="item">
                 <div class="card rounded-5 popular-deal__card">
-                    <img src="/assets/img/chicken.webp" class="card-img-top rounded-6 p-3" alt="pizza">
+                    <img src="/assets/img/JokerDeal.jpg" class="card-img-top rounded-6 p-3" alt="pizza">
                     <div class="card-body text-center">
                         <h5 class="card-title text-truncate">Joker Deal</h5>
                         <p class="card-text clamp-line-3">3 x Medium Pizzen aus der Liste nach Wahl
                             1 x Softgetränk 1,0 l nach Wahl</p>
                         <h6>  27.50 €</h6>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" class="btn btn-primary" onclick="addToCart('12345678910')" >Add to Cart</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
-<!-- Popular Dishes Start
+<!-- Popular Dishes Start -->
