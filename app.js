@@ -97,7 +97,7 @@ app.post("/api/user/addData", async (req, res) => {
   };
 
   axios
-    .post("http://localhost:8080//api/user/webhook", data)
+    .post("http://jokerpalace.de//api/user/webhook", data)
     .then((response) => {
       console.log(response.data);
       // Once the webhook response is received and processed, send the response to the client
@@ -123,7 +123,7 @@ export { app };
 // server {
 //   listen 80;
 //   location / {
-//       proxy_pass http://localhost:8080/;
+//       proxy_pass http://jokerpalace.de/;
 //       proxy_http_version 1.1;
 //       proxy_set_header Upgrade $http_upgrade;
 //       proxy_set_header Connection 'upgrade';
