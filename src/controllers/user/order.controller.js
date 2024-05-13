@@ -156,11 +156,11 @@ const getSingleOrders = async (req, res) => {
 
 const addToCart = async (req, res) => {
   try {
-//    console.log("🚀 ~ addToCart ~ req:", req.body);
+    //    console.log("🚀 ~ addToCart ~ req:", req.body);
     let { order, orderToken } = req.body;
-  //  console.log("🚀 ~ addToCart ~ body:", req.body);
+    //  console.log("🚀 ~ addToCart ~ body:", req.body);
     //console.log("🚀 ~ addToCart ~ orderToken:", orderToken);
-    console.log("The order object from user ",req.body.order)
+    console.log("The order object from user ", req.body.order)
 
     let totalQuantity = 1;
     let orders = [];
@@ -171,64 +171,63 @@ const addToCart = async (req, res) => {
       //console.log("🚀 ~ addToCart ~ tokenDecode:", tokenDecode);
       tokenDecode.orders.forEach((element) => {
 
-         if(element.productId !== order.productId ){
-         let prodcuPrice = (parseFloat(element.Price) *  element.Quenty).toFixed(2); 
-         let ProOrder = {
-          productName: element.productName,
-          productId:  element.productId ,
-          category: element.category,
-          description: element.description,
-          Price: element.Price,
-          prodcuPrice:prodcuPrice,
-          Quenty:  element.Quenty,
-          size : element.size,
-          imageSrc: element.imageSrc,
-         } 
+        if (element.productId !== order.productId) {
+          let prodcuPrice = (parseFloat(element.Price) * element.Quenty).toFixed(2);
+          let ProOrder = {
+            productName: element.productName,
+            productId: element.productId,
+            category: element.category,
+            description: element.description,
+            Price: element.Price,
+            prodcuPrice: prodcuPrice,
+            Quenty: element.Quenty,
+            size: element.size,
+            imageSrc: element.imageSrc,
+          }
 
           orders.push(ProOrder);
 
-         } 
+        }
 
-         if(element.productId === order.productId && order.size !== element.size)
-          {
-            let prodcuPrice = (parseFloat(element.Price) *  element.Quenty).toFixed(2); 
-            let ProOrder = {
-             productName: element.productName,
-             productId:  element.productId ,
-             category: element.category,
-             description: element.description,
-             Price: element.Price,
-             prodcuPrice:prodcuPrice,
-             Quenty:  element.Quenty,
-             size : element.size,
-             imageSrc: element.imageSrc,
-            } 
-   
-             orders.push(ProOrder);
-      
-
+        if (element.productId === order.productId && order.size !== element.size) {
+          let prodcuPrice = (parseFloat(element.Price) * element.Quenty).toFixed(2);
+          let ProOrder = {
+            productName: element.productName,
+            productId: element.productId,
+            category: element.category,
+            description: element.description,
+            Price: element.Price,
+            prodcuPrice: prodcuPrice,
+            Quenty: element.Quenty,
+            size: element.size,
+            imageSrc: element.imageSrc,
           }
-                 //}
+
+          orders.push(ProOrder);
+
+
+        }
+        //}
       });
     }
-   
-    console.log("The Price and quantiry of order",order.Price,  " ",order.Quenty )
-   let newProdcuPrice = (parseFloat(order.Price) *  order.Quenty).toFixed(2); 
-       order.prodcuPrice = newProdcuPrice
 
-   console.log("the new order is ",order)
-  //  let newOrder = {
-  //         productId:  order.productId ,
-  //         category: order.category,
-  //         description: order.description,
-  //         Price: order.Price,
-  //         prodcuPrice: newProdcuPrice,
-  //         Quenty:  order.Quenty,
-  //         imageSrc: order.imageSrc,
-  //  }
-  
+    console.log("The Price and quantiry of order", order.Price, " ", order.Quenty)
+    let newProdcuPrice = (parseFloat(order.Price) * order.Quenty).toFixed(2);
+    order.prodcuPrice = newProdcuPrice
+
+    console.log("the new order is ", order)
+    //  let newOrder = {
+    //         productId:  order.productId ,
+    //         category: order.category,
+    //         description: order.description,
+    //         Price: order.Price,
+    //         prodcuPrice: newProdcuPrice,
+    //         Quenty:  order.Quenty,
+    //         imageSrc: order.imageSrc,
+    //  }
+
     orders.push(order);
-    console.log("The order objec becode decode",orders)
+    console.log("The order objec becode decode", orders)
     const payload = {
       orders: orders,
       totalQuantity: totalQuantity,
@@ -314,8 +313,9 @@ const getCart = async (req, res) => {
   let total = totalPriceOfProduct;
   let totalPriceAfterDiscount =
     totalPriceOfProduct * (1 - discountPercentage);
-    totalPriceAfterDiscount= totalPriceAfterDiscount
+  totalPriceAfterDiscount = totalPriceAfterDiscount
   const order = {
+    fullName:req.body.fullName,
     email: req.body.email,
     address: req.body.address,
     phone: req.body.phone,
@@ -337,7 +337,7 @@ const getCart = async (req, res) => {
   res
     .status(200)
     .json(new ApiResponse(200, order, "Order Placed Successfully"));
-  sendEmail("jokers.palace786@gmail.com", "Test Subject", html)
+  sendEmail("danishriazprogramer@gmail.com", "Test Subject", html)
     .then(() => {
       console.log("Email sent successfully");
     })
@@ -345,7 +345,7 @@ const getCart = async (req, res) => {
       console.error("Failed to send email:", error);
     });
 
-  };
+};
 
 async function sendEmail(to, subject, html) {
   try {
@@ -391,8 +391,8 @@ const getOrdersOnUserSide = async (req, res) => {
       totalQuantity += parseInt(item.Quenty);
       console.log("The Total quantaty", totalQuantity);
       // Assuming Quenty is quantity
-      totalPriceOfProduct += parseFloat(item.Price) * parseInt(item.Quenty).toFixed(2) ; // Assuming Price is a string like '$15'
-    
+      totalPriceOfProduct += parseFloat(item.Price) * parseInt(item.Quenty).toFixed(2); // Assuming Price is a string like '$15'
+
     }
 
     const discountPercentage = 0.1; // 10% discount
@@ -419,37 +419,37 @@ const getOrdersOnUserSide = async (req, res) => {
 };
 
 const delCartItem = async (req, res) => {
-try {
+  try {
 
 
-  let orderToken = JWT.decode(req.body.orderToken);
-  console.log("🚀 getOrdersOnUserSide: body ", orderToken);
+    let orderToken = JWT.decode(req.body.orderToken);
+    console.log("🚀 getOrdersOnUserSide: body ", orderToken);
 
-  let responce = []
-  orderToken.forEach(element => {
-    if(element.productId === req.body.id){
-      
-    }else{
-      responce.push(element)
-    }
-   });
+    let responce = []
+    orderToken.forEach(element => {
+      if (element.productId === req.body.id) {
 
-  let length = responce.length
-   const payload = {
-    orders: responce,
-    totalQuantity:length,
-  };
+      } else {
+        responce.push(element)
+      }
+    });
 
-  
-   const expiresIn = "5000000000000000000000000h";
+    let length = responce.length
+    const payload = {
+      orders: responce,
+      totalQuantity: length,
+    };
+
+
+    const expiresIn = "5000000000000000000000000h";
     const token = JWT.sign(payload, secretKey, { expiresIn });
-  
+
 
     res.status(201).json(new ApiResponse(201, token, "Order Add to Cart"));
 
-} catch (error) {
-  
-}
+  } catch (error) {
+
+  }
 }
 
 export {
@@ -466,8 +466,8 @@ export {
 
 
 
-  /// sudo certbot --nginx -d jokerpalace.de -d www.jokerpalace.de
-  //  app.use(cors({
-  //   // origin: true,
-  //   credentials: true
-  //   }));
+/// sudo certbot --nginx -d jokerpalace.de -d www.jokerpalace.de
+//  app.use(cors({
+//   // origin: true,
+//   credentials: true
+//   }));
