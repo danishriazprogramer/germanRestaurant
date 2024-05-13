@@ -58,6 +58,10 @@
         <div class="modal-body">
           <form id="checkoutForm">
             <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" placeholder="Enter Full Name" class="form-control" id="fullName" name="fullName" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
               <input type="email" placeholder="Enter Email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
             </div>
@@ -183,7 +187,7 @@
                                     <input id="quantity" type="number" disabled value="${order.Quenty}" class="form-control quantity-input">
                                 </div>
                                 <div class="col-md-3 price">
-                                    <span>${order.prodcuPrice}  € </span>
+                                    <span>${order.prodcuPrice} € </span>
                                 </div>
                             </div>
                         </div>
@@ -223,6 +227,9 @@
       
       $('#checkoutForm').validate({
         rules: {
+          fullName: {
+            required: true,
+          },
           email: {
             required: true,
             email: true
@@ -236,6 +243,9 @@
           }
         },
         messages: {
+          fullName: {
+            required: "Please enter your name",
+          },
           email: {
             required: "Please enter your email address",
             email: "Please enter a valid email address"
@@ -298,8 +308,10 @@
           console.log("🚀 ~ phone:", phone)
 
           var address = document.getElementById("address").value 
+          var fullName = document.getElementById("fullName").value 
           console.log("🚀 ~ address:", address)
           const payload = {
+             fullName :fullName,
              email :email,
              phone:phone,
              address:address, 

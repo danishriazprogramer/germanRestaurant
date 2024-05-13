@@ -97,7 +97,7 @@ app.post("/api/user/addData", async (req, res) => {
   };
 
   axios
-    .post("http://jokerpalace.de//api/user/webhook", data)
+    .post("http://jokerpalace.de/api/user/webhook", data)
     .then((response) => {
       console.log(response.data);
       // Once the webhook response is received and processed, send the response to the client
