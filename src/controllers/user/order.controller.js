@@ -360,7 +360,7 @@ async function sendEmail(to, subject, html) {
 
     // Send mail with defined transport object
     const message = {
-      from: "danishriazprogramer@gmail.com",
+      from: "jokers.palace786@gmail.com",
       to: to,
       subject: "Hi, Joker Palace You Recive New Order",
       html: html,
