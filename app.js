@@ -96,7 +96,11 @@ app.post("/api/user/addData", async (req, res) => {
     userId: 1,
   };
 
+
   axios
+
+  axios.post("https://jokerpalace.de/api/user/webhook", data)
+
     .post("http://jokerpalace.de/api/user/webhook", data)
     .then((response) => {
       console.log(response.data);

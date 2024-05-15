@@ -12,8 +12,10 @@
 </section>
 
 <script>
-    // Fetch data from the API endpoint
-    fetch(`http://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent('Deal')}`)
+
+    // Fetch data from the API end
+    fetch(`https://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent('Deal')}`)
+    
         .then(response => response.json())
         .then(data => {
             console.log("🚀 ~ data:", data);
