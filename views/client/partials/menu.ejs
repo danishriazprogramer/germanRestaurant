@@ -427,7 +427,7 @@
       const tabName = this.textContent.trim();
 
       fetch(
-        `https://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
+        `http://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
           tabName
         )}`
       )
@@ -529,7 +529,7 @@
     const tabName = "Indian Food";
 
     fetch(
-      `https://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
+      `http://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
         tabName
       )}`
     )
@@ -780,7 +780,7 @@ openModal(product);
 
   //   let payloadJSON = JSON.stringify(payload);
 
-  //   let url = "https://jokerpalace.de/api/user/addToCart";
+  //   let url = "http://jokerpalace.de/api/user/addToCart";
 
   //   fetch(url, {
   //     method: "POST",
@@ -854,7 +854,7 @@ console.log("Quantity:", quantityValue);
 
     let payloadJSON = JSON.stringify(payload);
    
-    let url = "https://jokerpalace.de/api/user/addToCart";
+    let url = "http://jokerpalace.de/api/user/addToCart";
               
     fetch(url, {  
       method: "POST",
@@ -890,5 +890,5 @@ console.log("Quantity:", quantityValue);
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js">
   
