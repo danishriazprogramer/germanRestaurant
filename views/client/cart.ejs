@@ -23,19 +23,19 @@
                   </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
-                  <div class="summary"> 
+                  <div class="summary">
                     <h3>Summary</h3>
                     <div class="summary-item"><span class="text">Subtotal</span><span class=" subtotal price"></span></div>
                     <div class="summary-item"><span class="text">Discount</span><span class="discount price"></span></div>
                     <div class="summary-item"><span class="text">Total</span><span class="total price"></span></div>
                     <button type="button" class="btn btn-primary btn-lg btn-block"  data-bs-toggle="modal" data-bs-target="#checkoutModal">Cash On Delivery</button>
 
-                    <!-- <button type="button" class="btn btn-primary btn-lg btn-block"  id="paypal" onclick="paypal()" >PayPal</button> -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block"  id="paypal" onclick="paypal()" >PayPal</button>
 
-    
+  
                   </div>
                 </div>
-              </div> 
+              </div>
             </div>
           </div>
         </section>
@@ -103,7 +103,7 @@
     let orderToken =  getOrder();
     console.log("The get order from local storage is ", getOrder())
 
-      const url = 'https://jokerpalace.de/api/user/getOrdersOnUserSide';
+      const url = 'http://jokerpalace.de/api/user/getOrdersOnUserSide';
       const payload = {
         "orderToken": orderToken,
       };
@@ -321,7 +321,7 @@
           console.log("🚀 ~ payloadJSON:", payloadJSON)
           
 
-          const apiUrl = 'https://jokerpalace.de/api/user/getCart';
+          const apiUrl = 'http://jokerpalace.de/api/user/getCart';
 
           fetch(apiUrl, {
             method: 'POST',
@@ -398,7 +398,7 @@ if (cartCount) {
           let payloadJSON = JSON.stringify(payload);
           console.log("🚀 ~ payloadJSON:", payloadJSON)
     console.log("The get order from local storage is ", getOrder())
-    const apiUrl = 'https://jokerpalace.de/payment/getpayment';
+    const apiUrl = 'http://jokerpalace.de/payment/getpayment';
 
           fetch(apiUrl, {
             method: 'POST',
@@ -430,7 +430,7 @@ function delItem(id)
           let payloadJSON = JSON.stringify(payload);
           console.log("🚀 ~ payloadJSON:", payloadJSON)
     console.log("The get order from local storage is ", getOrder())
-    const apiUrl = 'https://jokerpalace.de/api/user/delCartItem';
+    const apiUrl = 'http://jokerpalace.de/api/user/delCartItem';
 
           fetch(apiUrl, {
             method: 'POST',
