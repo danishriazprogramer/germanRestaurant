@@ -87,28 +87,6 @@ app.post("/api/user/webhook", async (req, res) => {
   res.send(req.body);
 });
 
-app.post("/api/user/addData", async (req, res) => {
-  console.log("The addData is runing");
-
-  const data = {
-    title: "foo",
-    body: "bar",
-    userId: 1,
-  };
-
-  axios
-    .post("http://jokerpalace.de/api/user/webhook", data)
-    .then((response) => {
-      console.log(response.data);
-      // Once the webhook response is received and processed, send the response to the client
-      res.send("The addData is runing");
-    })
-    .catch((error) => {
-      console.log(error);
-      // If an error occurs while sending the webhook request, handle the error and send an appropriate response
-      res.status(500).send("Error occurred while sending data to webhook");
-    });
-});
 
 app.get("/complete-order", (req, res) => {
   res.send("Complete Order Successful");
@@ -123,7 +101,7 @@ export { app };
 // server {
 //   listen 80;
 //   location / {
-//       proxy_pass http://jokerpalace.de/;
+//       proxy_pass https://jokerpalace.de/;
 //       proxy_http_version 1.1;
 //       proxy_set_header Upgrade $http_upgrade;
 //       proxy_set_header Connection 'upgrade';
