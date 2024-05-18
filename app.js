@@ -20,7 +20,16 @@ import payment from "./src/routes/payment/payment.js";
 // App Middlewares
 app.use("/", express.static("public"));
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:8080', // or '*' to allow all origins
+}));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8080'); // or '*'
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
