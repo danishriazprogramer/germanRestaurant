@@ -96,9 +96,10 @@ app.post("/api/user/webhook", async (req, res) => {
   res.send(req.body);
 });
 
-
 app.get("/complete-order", (req, res) => {
-  res.send("Complete Order Successful");
+  console.log("The body of paypal is success responce is  ",req.query.PayerID)
+  res.render("client/success",{PayerID:req.query.PayerID})
+//  res.send("Complete Order Successful");
 });
 
 app.get("/cancel-order", (req, res) => {
@@ -107,14 +108,3 @@ app.get("/cancel-order", (req, res) => {
 
 export { app };
 
-// server {
-//   listen 80;
-//   location / {
-//       proxy_pass https://jokerpalace.de/;
-//       proxy_http_version 1.1;
-//       proxy_set_header Upgrade $http_upgrade;
-//       proxy_set_header Connection 'upgrade';
-//       proxy_set_header Host $host;
-//       proxy_cache_bypass $http_upgrade;
-//   }
-// }

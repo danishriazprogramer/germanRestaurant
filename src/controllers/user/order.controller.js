@@ -294,7 +294,7 @@ const addToCart = async (req, res) => {
 // getCart
 
 const getCart = async (req, res) => {
-
+   console.log("The delivery type is",req.body.deliveryType)
   let orderToken = JWT.decode(req.body.orderToken);
 
 
@@ -314,12 +314,19 @@ const getCart = async (req, res) => {
   let totalPriceAfterDiscount =
     totalPriceOfProduct * (1 - discountPercentage);
   totalPriceAfterDiscount = totalPriceAfterDiscount
+
+
+  console.log("The PayerID is",req.body.payerID)
+  let { payerID } = req.body;
+
   const order = {
     fullName:req.body.fullName,
     email: req.body.email,
     address: req.body.address,
     phone: req.body.phone,
-    paymentMethod: "Cash on Delivery",
+    paymentMethod: req.body.paymentMethod,
+    PayerID : req.body.payerID || "",
+    deliveryType:req.body.deliveryType,
     totalItem: totalQuantity,
     Subtotal: totalPriceOfProduct,
     discount: "10%",
@@ -337,7 +344,8 @@ const getCart = async (req, res) => {
   res
     .status(200)
     .json(new ApiResponse(200, order, "Order Placed Successfully"));
-  sendEmail("jokers.palace786@gmail.com", "Test Subject", html)
+    // jokers.palace786@gmail.com
+  sendEmail("danishriazprogramer@gmail.com", "Test Subject", html)
     .then(() => {
       console.log("Email sent successfully");
     })

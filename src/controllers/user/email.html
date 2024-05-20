@@ -31,6 +31,13 @@
     <p>Address: <%= order.address %></p>
     <p>Phone: <%= order.phone %></p>
     <p>Payment Method: <%= order.paymentMethod %></p>
+    <% if (order.paymentMethod === "paypal") { %>
+      <p>PayerID: <%= order.payerID %></p>
+      <% } else { %>
+      <% } %>
+    
+      
+    <p>Delivery Type: <%= order.deliveryType %></p>
     <p>totalItem: <%= order.totalItem %></p>
     <p>Subtotal: <%= order.Subtotal %></p>
     <p>total: <%= order.total %></p>

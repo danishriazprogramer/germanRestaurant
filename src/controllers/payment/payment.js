@@ -1,11 +1,9 @@
 import axios from "axios";
+import { ApiError } from "../../utils/ApiError.js";
+import { ApiResponse } from "../../utils/ApiResponse.js";
 import { configDotenv } from "dotenv";
 configDotenv();
 import JWT from "jsonwebtoken";
-
-// console.log("the base url is ", process.env.SENDBOX_URL);
-// console.log("the APP_CLIENT_ID is ", process.env.APP_CLIENT_ID);
-// console.log("the SECRET_KEY is ", process.env.SECRET_KEY);
 
 async function generateAccessToken() {
   const response = await axios({
@@ -22,30 +20,31 @@ async function generateAccessToken() {
   return response.data.access_token;
 }
 
-// const accessToken = await generateAccessToken();
-// console.log("🚀 ~ createOrder ~ accessToken:", accessToken);
-
-export const createOrder = async (order, totalQuantity, totalPrice) => {
-  console.log("this is testing");
-  //   console.log("🚀 ~ createOrder ~ order:", order);
-  //   console.log("🚀 ~ createOrder ~ totalQuantity:", totalQuantity);
-  //   console.log("🚀 ~ createOrder ~ totalPrice:", totalPrice);
-
+export const createOrder = async (order, totalPrice) => {
+  // console.log("this is testing");
+  console.log("🚀 ~ createOrder ~ order:", order);
+  // console.log("🚀 ~ createOrder ~ totalQuantity:", totalQuantity);
+  console.log("🚀 ~ the type of order is", typeof totalPrice);
+  totalPrice = totalPrice.toFixed(2);
+  console.log("🚀 ~ the type of order is", typeof totalPrice);
+  console.log("toal proice is ", totalPrice);
   let paypalOrder = [];
-  order.orders.forEach((element) => {
+  order.forEach((element) => {
     //console.log("🚀 ~ createOrder ~ element:", element);
-
+    totalPrice = parseFloat(totalPrice).toFixed(2);
     let orders = {
       name: element.productName,
       description: element.description,
-      quantity: element.Quenty,
+      quantity: "1",
       unit_amount: {
         currency_code: "USD",
-        value: "10.5",
+        value: element.Price,
       },
     };
     paypalOrder.push(orders);
   });
+
+  //console.log("🚀 ~ order.forEach ~ paypalOrder:", paypalOrder);
 
   const accessToken = await generateAccessToken();
   const response = await axios({
@@ -62,11 +61,11 @@ export const createOrder = async (order, totalQuantity, totalPrice) => {
           items: paypalOrder,
           amount: {
             currency_code: "USD",
-            value: "42.0",
+            value: totalPrice,
             breakdown: {
               item_total: {
                 currency_code: "USD",
-                value: "42.0",
+                value: totalPrice,
               },
             },
           },
@@ -82,7 +81,7 @@ export const createOrder = async (order, totalQuantity, totalPrice) => {
       },
     }),
   });
-  //console.log("The response is ", response);
+  console.log("The response is ", response.message);
   return response.data.links.find((link) => link.rel === "approve").href;
 };
 
@@ -103,36 +102,49 @@ export const capturePayment = async (orderId) => {
 
 const getpayment = async (req, res) => {
   try {
-    //console.log("The payment function body is:  ", req.body);
+    // console.log("The payment function body is:  ", req.body);
+    const discountPercentage = 0.1;
 
     let orderToken = JWT.decode(req.body.orderToken);
+    //console.log("🚀 ~ getpayment ~ orderToken:", orderToken);
 
     let totalQuantity = 0;
     let totalPriceOfProduct = 0;
+
+    let arrayForPaypal = [];
     for (const item of orderToken.orders) {
+      //console.log("🚀 ~ getpayment ~ item:", item);
       totalQuantity += parseInt(item.Quenty);
-      totalPriceOfProduct += parseFloat(item.Price);
+      item.Price = (
+        parseFloat(item.Price) *
+        parseInt(item.Quenty) *
+        (1 - discountPercentage)
+      ).toFixed(2);
+      // console.log("The price is " + item.Price);
+      totalPriceOfProduct =
+        parseFloat(totalPriceOfProduct) + parseFloat(item.Price);
+        totalPriceOfProduct.toFixed(2)
+      arrayForPaypal.push(item);
     }
 
-    const discountPercentage = 0.1;
-    let total = totalPriceOfProduct.toFixed(2);
-    let totalPriceAfterDiscount =
-      totalPriceOfProduct * (1 - discountPercentage).toFixed(2);
-    //    console.log("🚀 getOrdersOnUserSide: body ", orderToken);
-    // console.log(
-    //   "🚀 ~ getpayment ~ totalPriceAfterDiscount:",
-    //   totalPriceAfterDiscount
-    // );
-    // console.log("🚀 ~ getpayment ~ total:", total);
+    console.log("The array for paypal ", arrayForPaypal);
+    const createOrderPromise = new Promise((resolve, reject) => {
+      createOrder(arrayForPaypal, totalPriceOfProduct)
+        .then((url) => {
+          resolve(url);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
 
-    const url = await createOrder(
-      orderToken,
-      totalQuantity,
-      totalPriceAfterDiscount
-    );
-    console.log("🚀 ~ getpayment ~ url:", url);
-    await res.redirect(url);
+    // Wait for the promise to resolve
+    const data = await createOrderPromise;
+    console.log("🚀 ~ getpayment ~ data:", data)
+
+    res.status(200).json(new ApiResponse(200, data, "The paypal url is "));
   } catch (error) {
+    console.log("🚀 ~ getpayment ~ error:", error);
     res.send("Error: " + error);
   }
 };

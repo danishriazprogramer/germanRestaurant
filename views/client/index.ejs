@@ -297,7 +297,7 @@
     let tabName = "Deal";
 
     fetch(
-      `https://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
+      `http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(
         tabName
       )}`
     ).then(response => response.json())
