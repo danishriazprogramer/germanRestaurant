@@ -31,7 +31,7 @@
     <p>Address: <%= order.address %></p>
     <p>Phone: <%= order.phone %></p>
     <p>Payment Method: <%= order.paymentMethod %></p>
-    <% if (order.paymentMethod === "paypal") { %>
+      <% if (order.paymentMethod === "paypal") { %>
       <p>PayerID: <%= order.payerID %></p>
       <% } else { %>
       <% } %>
@@ -56,7 +56,7 @@
         </tr>
       </thead>
       <tbody>
-        <% productDetails.orders.forEach(function(product) { %>
+        <% productDetails.forEach(function(product) { %>
         <tr>
           <td><%= product.productName %></td>
           <td><%= product.Price %></td>

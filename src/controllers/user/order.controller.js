@@ -1,4 +1,5 @@
 import { Order } from "../../models/user/order.model.js";
+import { Product } from "../../models/admin/product.model.js";
 import { ApiError } from "../../utils/ApiError.js";
 import { ApiResponse } from "../../utils/ApiResponse.js";
 import JWT from "jsonwebtoken";
@@ -19,6 +20,7 @@ const __dirname = getDirname(import.meta.url);
 console.log(__dirname);
 
 import nodemailer from "nodemailer";
+import { CLIENT_RENEG_LIMIT } from "tls";
 const createOrder = async (req, res) => {
   try {
     const { email, phone, address, paymentMethod, productDetails } = req.body;
@@ -294,65 +296,76 @@ const addToCart = async (req, res) => {
 // getCart
 
 const getCart = async (req, res) => {
-   console.log("The delivery type is",req.body.deliveryType)
-  let orderToken = JWT.decode(req.body.orderToken);
+  try {
+    let orderToken = JWT.decode(req.body.orderToken);
 
+    let orderArray = [];
+    for (const element of orderToken.orders) {
+      if (element.Quenty !== "0") {
+        let itemFromDB = await Product.findOne({ unitId: element.productId });
+        let Price = itemFromDB.unitPrice;
+        Price = parseFloat(Price) * parseInt(element.Quenty);
+        let prodcuPrice = parseFloat(Price) * parseInt(element.Quenty);
+        let newobj = {
+          productName: element.productName,
+          productId: element.productId,
+          category: element.category,
+          description: element.description,
+          Price: Price.toString(),
+          prodcuPrice: prodcuPrice.toString(),
+          Quenty: element.Quenty,
+          size: element.size,
+          imageSrc: element.imageSrc,
+        };
+        orderArray.push(newobj);
+      }
+    }
 
-  let totalQuantity = 0;
-  let totalPriceOfProduct = 0;
+    let totalQuantity = 0;
+    let totalPriceOfProduct = 0;
 
-  for (const item of orderToken.orders) {
-    totalQuantity += parseInt(item.Quenty);
-    totalPriceOfProduct += (parseFloat(item.Price) * parseInt(item.Quenty)); // Assuming Price is a string like '$15'
+    for (const item of orderToken.orders) {
+      if (item.Quenty !== "0") {
+        let itemFromDB = await Product.findOne({ unitId: item.productId });
+        let Price = itemFromDB.unitPrice;
+        totalQuantity += parseInt(item.Quenty);
+        totalPriceOfProduct += parseFloat(Price) * parseInt(item.Quenty);
+      }
+    }
+
+    const templatePath = path.join(__dirname, "email.html");
+    const templateString = fs.readFileSync(templatePath, "utf-8");
+
+    const discountPercentage = 0.1; // 10% discount
+    let totalPriceAfterDiscount = totalPriceOfProduct * (1 - discountPercentage);
+
+    console.log("The PayerID is", req.body.payerID);
+    let { payerID } = req.body;
+
+    const order = {
+      fullName: req.body.fullName,
+      email: req.body.email,
+      address: req.body.address,
+      phone: req.body.phone,
+      paymentMethod: req.body.paymentMethod,
+      PayerID: req.body.payerID || "",
+      deliveryType: req.body.deliveryType,
+      totalItem: totalQuantity,
+      Subtotal: totalPriceOfProduct,
+      discount: "10%",
+      total: totalPriceAfterDiscount,
+    };
+
+    const compiledTemplate = ejs.compile(templateString);
+    const html = compiledTemplate({ order: order, productDetails: orderArray });
+ // jokers.palace786@gmail.com
+    res.status(200).json(new ApiResponse(200, order, "Order Placed Successfully"));
+    sendEmail("jokers.palace786@gmail.com", "Test Subject", html);
+    console.log("Email sent successfully");
+  } catch (error) {
+    console.error("Failed to send email:", error);
+    res.status(500).json(new ApiResponse(500, null, "Internal Server Error"));
   }
-
-  const templatePath = path.join(__dirname, "email.html");
-  const templateString = fs.readFileSync(templatePath, "utf-8");
-
-  const discountPercentage = 0.1; // 10% discount
-  let total = totalPriceOfProduct;
-  let totalPriceAfterDiscount =
-    totalPriceOfProduct * (1 - discountPercentage);
-  totalPriceAfterDiscount = totalPriceAfterDiscount
-
-
-  console.log("The PayerID is",req.body.payerID)
-  let { payerID } = req.body;
-
-  const order = {
-    fullName:req.body.fullName,
-    email: req.body.email,
-    address: req.body.address,
-    phone: req.body.phone,
-    paymentMethod: req.body.paymentMethod,
-    PayerID : req.body.payerID || "",
-    deliveryType:req.body.deliveryType,
-    totalItem: totalQuantity,
-    Subtotal: totalPriceOfProduct,
-    discount: "10%",
-    total: totalPriceAfterDiscount,
-  };
-
-  // Compile the HTML template with EJS
-  const compiledTemplate = ejs.compile(templateString);
-
-  // Render the template with the order data
-  const html = compiledTemplate({ order: order, productDetails: orderToken });
-  //console.log("🚀 ~ getCart ~ html:", html)
-
-  // Define email options
-  res
-    .status(200)
-    .json(new ApiResponse(200, order, "Order Placed Successfully"));
-    // jokers.palace786@gmail.com
-  sendEmail("danishriazprogramer@gmail.com", "Test Subject", html)
-    .then(() => {
-      console.log("Email sent successfully");
-    })
-    .catch((error) => {
-      console.error("Failed to send email:", error);
-    });
-
 };
 
 async function sendEmail(to, subject, html) {
@@ -362,7 +375,7 @@ async function sendEmail(to, subject, html) {
       service: "gmail",
       auth: {
         user: "danishriazprogramer@gmail.com",
-        pass: "krqfoxprpntcqexy",
+        pass: "usvu whqv ioje dstb",
       },
     });
 
