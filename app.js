@@ -20,7 +20,16 @@ import payment from "./src/routes/payment/payment.js";
 // App Middlewares
 app.use("/", express.static("public"));
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:8080', // or '*' to allow all origins
+}));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8080'); // or '*'
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -88,9 +97,10 @@ app.post("/api/user/webhook", async (req, res) => {
 });
 
 
-
 app.get("/complete-order", (req, res) => {
-  res.send("Complete Order Successful");
+  console.log("The body of paypal is success responce is  ",req.query.PayerID)
+  res.render("client/success",{PayerID:req.query.PayerID})
+//  res.send("Complete Order Successful");
 });
 
 app.get("/cancel-order", (req, res) => {
@@ -99,14 +109,3 @@ app.get("/cancel-order", (req, res) => {
 
 export { app };
 
-// server {
-//   listen 80;
-//   location / {
-//       proxy_pass https://jokerpalace.de/;
-//       proxy_http_version 1.1;
-//       proxy_set_header Upgrade $http_upgrade;
-//       proxy_set_header Connection 'upgrade';
-//       proxy_set_header Host $host;
-//       proxy_cache_bypass $http_upgrade;
-//   }
-// }
