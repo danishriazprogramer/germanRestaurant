@@ -17,7 +17,7 @@ function getDirname(importMetaUrl) {
 
 // Example usage:
 const __dirname = getDirname(import.meta.url);
-console.log(__dirname);
+//console.log(__dirname);
 
 import nodemailer from "nodemailer";
 import { CLIENT_RENEG_LIMIT } from "tls";
@@ -401,16 +401,16 @@ async function sendEmail(to, subject, html) {
 
 const getOrdersOnUserSide = async (req, res) => {
   try {
-    console.log("The order body is", req.body);
+    // console.log("The order body is", req.body);
     let orderToken = JWT.decode(req.body.orderToken);
-    console.log("🚀 getOrdersOnUserSide: body ", orderToken);
+    //console.log("🚀 getOrdersOnUserSide: body ", orderToken);
 
     let totalQuantity = 0;
     let totalPriceOfProduct = 0;
 
     for (const item of orderToken.orders) {
       totalQuantity += parseInt(item.Quenty);
-      console.log("The Total quantaty", totalQuantity);
+      //console.log("The Total quantaty", totalQuantity);
       // Assuming Quenty is quantity
       totalPriceOfProduct += parseFloat(item.Price) * parseInt(item.Quenty).toFixed(2); // Assuming Price is a string like '$15'
 
@@ -431,7 +431,7 @@ const getOrdersOnUserSide = async (req, res) => {
       message: "Order generated successfully",
     });
   } catch (error) {
-    console.log("🚀 ~ getOrdersOnUserSide ~ error:", error);
+    //console.log("🚀 ~ getOrdersOnUserSide ~ error:", error);
     res.status(500).json({
       statusCode: 500,
       message: "Internal server error",
@@ -444,7 +444,7 @@ const delCartItem = async (req, res) => {
 
 
     let orderToken = JWT.decode(req.body.orderToken);
-    console.log("🚀 getOrdersOnUserSide: body ", orderToken);
+    //console.log("🚀 getOrdersOnUserSide: body ", orderToken);
 
     let responce = []
     orderToken.forEach(element => {
