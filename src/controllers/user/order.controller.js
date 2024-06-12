@@ -304,15 +304,18 @@ const getCart = async (req, res) => {
       if (element.Quenty !== "0") {
         let itemFromDB = await Product.findOne({ unitId: element.productId });
         let Price = itemFromDB.unitPrice;
-        Price = parseFloat(Price) * parseInt(element.Quenty);
+        if(element.category === "Pizza"){
+          Price = element.Price
+        }
+        Price = parseFloat(Price)
         let prodcuPrice = parseFloat(Price) * parseInt(element.Quenty);
         let newobj = {
           productName: element.productName,
           productId: element.productId,
           category: element.category,
           description: element.description,
-          Price: Price.toString(),
-          prodcuPrice: prodcuPrice.toString(),
+          Price: Price.toFixed(2),
+          prodcuPrice: prodcuPrice.toFixed(2),
           Quenty: element.Quenty,
           size: element.size,
           imageSrc: element.imageSrc,
@@ -327,9 +330,13 @@ const getCart = async (req, res) => {
     for (const item of orderToken.orders) {
       if (item.Quenty !== "0") {
         let itemFromDB = await Product.findOne({ unitId: item.productId });
+      
         let Price = itemFromDB.unitPrice;
+        if(item.category === "Pizza"){
+          Price = item.Price
+        }
         totalQuantity += parseInt(item.Quenty);
-        totalPriceOfProduct += parseFloat(Price) * parseInt(item.Quenty);
+        totalPriceOfProduct += parseFloat(Price) * parseInt(item.Quenty)
       }
     }
 
@@ -338,7 +345,7 @@ const getCart = async (req, res) => {
 
     const discountPercentage = 0.1; // 10% discount
     let totalPriceAfterDiscount = totalPriceOfProduct * (1 - discountPercentage);
-
+    totalPriceAfterDiscount= totalPriceAfterDiscount  
     console.log("The PayerID is", req.body.payerID);
     let { payerID } = req.body;
 
@@ -351,14 +358,15 @@ const getCart = async (req, res) => {
       PayerID: req.body.payerID || "",
       deliveryType: req.body.deliveryType,
       totalItem: totalQuantity,
-      Subtotal: totalPriceOfProduct,
+      Subtotal: totalPriceOfProduct.toFixed(2),
       discount: "10%",
-      total: totalPriceAfterDiscount,
+      total: totalPriceAfterDiscount.toFixed(2),
     };
 
     const compiledTemplate = ejs.compile(templateString);
     const html = compiledTemplate({ order: order, productDetails: orderArray });
  // jokers.palace786@gmail.com
+ // danishriazprogramer@gmail.com
     res.status(200).json(new ApiResponse(200, order, "Order Placed Successfully"));
     sendEmail("jokers.palace786@gmail.com", "Test Subject", html);
     console.log("Email sent successfully");
