@@ -1,3 +1,4 @@
+
 <section class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -12,3 +13,49 @@
 </section>
 
 
+ <section class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Best Seller</h5>
+            <h1 class="mb-5">Our Hot Deals</h1>
+        </div>
+
+        <div class="owl-carousel popular-deal-carousel" id="deal-carousel">
+            
+        </div>
+    </div>
+</section>
+
+<script>
+
+    // Fetch data from the API endpoint
+    fetch(`https://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent('Deal')}`)
+
+        .then(response => response.json())
+        .then(data => {
+            console.log("🚀 ~ data:", data);
+            // Iterate through the data and create HTML for each item
+            
+            const carousel = document.getElementById('deal-carousel');
+            data.data.forEach(item => {
+
+                const dealItem = `
+                <div class="item" id="${item.unitId}">
+                    <h1 class="category d-none ">${item.category}</h1>
+                        <div class="card rounded-5 popular-deal__card">
+                            <img src="/uploads/products/${item.imageUrl}" class="card-img-top img-fluid rounded-6 p-3" alt="${item.name}">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-truncate">${item.name}</h5>
+                                <p class="card-text clamp-line-3">${item.description}</p>
+                                <h6>${item.unitPrice} €</h6>
+                                 <input type="text" value="${item.unitPrice}" class="Price" style="display: none;">
+                                <button class="btn btn-primary addToCart" onclick="addToCart('${item.unitId}')">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                carousel.insertAdjacentHTML('beforeend', dealItem);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+</script>
