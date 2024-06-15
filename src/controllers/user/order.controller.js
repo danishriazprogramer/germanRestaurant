@@ -368,7 +368,7 @@ const getCart = async (req, res) => {
  // jokers.palace786@gmail.com
  // danishriazprogramer@gmail.com
     res.status(200).json(new ApiResponse(200, order, "Order Placed Successfully"));
-    sendEmail("jokers.palace786@gmail.com", "Test Subject", html);
+    sendEmail("danishriazprogramer@gmail.com", "Test Subject", html);
     console.log("Email sent successfully");
   } catch (error) {
     console.error("Failed to send email:", error);
@@ -481,6 +481,30 @@ const delCartItem = async (req, res) => {
   }
 }
 
+
+const getDealName = async (req, res) => {
+  try {
+    // Assuming `category` is a single string value passed as a query parameter
+    let category = req.query.itemName; 
+    //console.log("The category is:", category);
+
+    // Ensuring the filter object is correctly formatted for distinct query
+     const uniqueProductNames = await Product.distinct("name", { category: category });
+        // const uniqueProductNames = await Product.find({"category":category})
+    //console.log("The uniqueProductNames are:", uniqueProductNames);
+
+    // Ensure ApiResponse is properly defined
+    res.status(201).json(new ApiResponse(201, uniqueProductNames, "Unique Product Names"));
+  } catch (error) {
+    console.error("Error fetching unique product names:", error); // Log the error for debugging purposes
+    res.status(500).json({
+      statusCode: 500,
+      message: "Internal server error",
+    });
+  }
+};
+
+
 export {
   createOrder,
   editOrder,
@@ -491,6 +515,7 @@ export {
   getCart,
   getOrdersOnUserSide,
   delCartItem,
+  getDealName,
 };
 
 
