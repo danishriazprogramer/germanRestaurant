@@ -9,6 +9,7 @@ import {
   getCart,
   getOrdersOnUserSide,
   delCartItem,
+  getDealName,
 } from '../../controllers/user/order.controller.js';
 
 const router = new Router();
@@ -22,6 +23,6 @@ router.post('/addToCart', addToCart);
 router.post('/getCart', getCart);
 router.post('/getOrdersOnUserSide', getOrdersOnUserSide);
 router.post("/delCartItem",delCartItem);
-
+router.get("/getDealName",getDealName)
 
 export default router;
