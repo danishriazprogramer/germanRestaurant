@@ -9,5 +9,5 @@ const port = process.env.PORT ||8080;
 connectDataBase(); 
 
 app.listen(port, () => {
-  console.log(`Server is running on => http://localhost`);
+  console.log(`Server is running on => http://localhost`,port);
 });

@@ -999,9 +999,9 @@ card.innerHTML = `
                 <div class="card-body">
                     <h5 class="card-title" id="proName" >${product.productName}</h5>
                     <p class="card-text clamp-line-3" id="proDes">${product.description}</p>
-                    <label for="DealPasta1">Select Pasta:</label>
+                    <label for="DealPasta1">Select Pasta 1:</label>
     <select id="DealPasta1" onchange="getSelectedValue(this)" class="form-control">
-    <option value="">Select Pasta</option>                  
+    <option value="">Select Pasta1</option>                  
     <option value="Alla Panna">Alla Panna Pista</option>
     <option value="Casa">Casa Pista</option>
     <option value="Fleischsauce (100% RindHackfleisch Sauce und Tomaten)">Fleischsauce (100% RindHackfleisch Sauce und Tomaten) Pista</option>
@@ -1012,6 +1012,23 @@ card.innerHTML = `
     <option value="Vegetaria al Forno">Vegetaria al Forno Pista</option>
     <option value="Vegetarische Tortelini">Vegetarische Tortelini Pista</option>
 </select>
+
+
+<label for="DealPasta3">Select Pasta 2:</label>
+    <select id="DealPasta3" onchange="getSelectedValue(this)" class="form-control">
+    <option value="">Select Pasta2</option>                  
+    <option value="Alla Panna">Alla Panna Pista</option>
+    <option value="Casa">Casa Pista</option>
+    <option value="Fleischsauce (100% RindHackfleisch Sauce und Tomaten)">Fleischsauce (100% RindHackfleisch Sauce und Tomaten) Pista</option>
+    <option value="Hackfleisch Lasagne">Hackfleisch Lasagne Pista</option>
+    <option value="Kentucky al Forno">Kentucky al Forno Pista</option>
+    <option value="Pavarotti">Pavarotti Pista</option>
+    <option value="San Marino">San Marino Pista</option>
+    <option value="Vegetaria al Forno">Vegetaria al Forno Pista</option>
+    <option value="Vegetarische Tortelini">Vegetarische Tortelini Pista</option>
+</select>
+
+
 
 <label for="DealPasta2">Select Softgetränk:</label>
 <select id="DealPasta2" onchange="getSelectedValue(this)" class="form-control">    
@@ -1032,6 +1049,7 @@ card.innerHTML = `
 
                      <h1 class="DealPasta1 d-none"></h1>
                      <h1 class="DealPasta2 d-none"></h1>
+                     <h1 class="DealPasta3 d-none"></h1>
                     <div class="card_bottom">
                         <input type="text" id="price" value="${product.Price}" class="Price" style="display: none;">
                         <h6>${product.Price} €</h6>
@@ -1216,6 +1234,10 @@ card.innerHTML = `
              let DealBurger1Element = document.querySelector(".DealPasta2");
              DealBurger1Element.textContent = dropdown.value;
             // alert(DealBurger1Element.textContent);
+             } else if (dropdown.id === "DealPasta3") {
+             let DealBurger1Element = document.querySelector(".DealPasta3");
+             DealBurger1Element.textContent = dropdown.value;
+            // alert(DealBurger1Element.textContent);
              } 
 
 }
@@ -1280,9 +1302,10 @@ card.innerHTML = `
         }else if(proNameValue==="Pasta Deal"){
            var  DealPasta1= document.querySelector(".DealPasta1").innerHTML
            var  DealPasta2= document.querySelector(".DealPasta2").innerHTML
+           var  DealPasta3= document.querySelector(".DealPasta3").innerHTML
            console.log("The name of deal is Pasta Deal")
           
-         productOrder.description = `Du suchst aus ${DealPasta1} und ${DealPasta2}`
+         productOrder.description = `Du suchst aus ${DealPasta1}, ${DealPasta3} und ${DealPasta2}`
 
         }
 
