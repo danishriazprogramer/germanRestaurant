@@ -253,7 +253,7 @@
           const tabName = this.textContent.trim();
 
           fetch(
-            `http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(
+            `https://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
               tabName
             )}`
           )
@@ -355,7 +355,7 @@
         const tabName = "Indian Food";
 
         fetch(
-          `http://localhost:8080/api/admin/getProducts?tabName=${encodeURIComponent(
+          `https://jokerpalace.de/api/admin/getProducts?tabName=${encodeURIComponent(
             tabName
           )}`
         )
@@ -552,7 +552,8 @@
                             <div class="form-group">
                                 <label for="DealBurger1">Select Burger1:</label>
                                 <select id="DealBurger1" onchange="getSelectedValue(this)" class="form-control">
-                                    <option value="Double Decker Burger">Double Decker Burger</option>
+                                  <option value="">Select Burger 1</option>  
+                                  <option value="Double Decker Burger">Double Decker Burger</option>
 <option value="Cheese Burger Light">Cheese Burger Light</option>
 <option value="Chilli Cheese Burger">Chilli Cheese Burger</option>
 <option value="BBQ Burger">BBQ Burger</option>
@@ -572,6 +573,7 @@
                             <div class="form-group">
                                 <label for="DealBurger2">Select Burger2:</label>
                                 <select id="DealBurger2" onchange="getSelectedValue(this)" class="form-control">
+                                  <option value="">Select Burger 2</option>  
 
 <option value="Double Decker Burger">Double Decker Burger</option>
 <option value="Cheese Burger Light">Cheese Burger Light</option>
@@ -589,8 +591,51 @@
                                 </select>
                             </div>        
 
+ <label for="DealBurger3">Select Beilagen 1:</label>
+ <select id="DealBurger3" onchange="getSelectedValue(this)" class="form-control">
+        <option value="">Select Beilagen 1 </option>
+    <option value="Pommes">Pommes</option>
+    <option value="Kroketten">Kroketten</option>
+    <option value="Wedges">Wedges</option>
+    <option value="Curly Fries">Curly Fries</option>
+    <option value="Beilagen Salat">Beilagen Salat</option>
+</select>
+
+<label for="DealBurger4">Select Beilagen 2 :</label>
+ <select id="DealBurger4" onchange="getSelectedValue(this)" class="form-control">
+    <option value="">Select Beilagen 2 </option>
+    <option value="Pommes">Pommes</option>
+    <option value="Kroketten">Kroketten</option>
+    <option value="Wedges">Wedges</option>
+    <option value="Curly Fries">Curly Fries</option>
+    <option value="Beilagen Salat">Beilagen Salat</option>
+</select>
+
+
+<label for="DealBurger5">Select Softgetränk:</label>
+<select id="DealBurger5" onchange="getSelectedValue(this)" class="form-control">    
+    <option value="">Select Softgetränk</option>
+    <option value="Coca-Cola">Coca-Cola</option>
+    <option value="Coca-Cola Zero">Coca-Cola Zero</option>
+    <option value="Fanta">Fanta</option>
+    <option value="Mezzo Mix">Mezzo Mix</option>
+    <option value="Sprite">Sprite</option>
+    <option value="Red Bull">Red Bull</option>
+    <option value="Capri Sun Orange oder Multivitamin">Capri Sun Orange oder Multivitamin</option>
+    <option value="Apfelsaft">Apfelsaft</option>
+    <option value="Bitter Lemon">Bitter Lemon</option>
+    <option value="Ginger Ale">Ginger Ale</option>
+    <option value="Mango Lassi">Mango Lassi</option>
+</select>
+
+
+
                             <h1 class="DealBurger1 d-none"></h1>
                             <h1 class="DealBurger2 d-none"></h1>
+                            <h1 class="DealBurger3 d-none"></h1>
+                            <h1 class="DealBurger4 d-none"></h1>
+                            <h1 class="DealBurger5 d-none"></h1>
+
                     <div class="card_bottom">
                         <input type="text" id="price" value="${product.Price}" class="Price" style="display: none;">
                         <h6>${product.Price} €</h6>
@@ -680,7 +725,7 @@
 
                             <!-- Select menu for burger name -->
                             <div class="form-group">
-                                <label for="DealJoker2">Select Pizzza2:</label>
+                                <label for="DealJoker2">Select Pizza2:</label>
                                <select id="DealJoker2" onchange="getSelectedValue(this)" class="form-control">
     <option value="">BBQ</option>
     <option value="BBQ">BBQ</option>
@@ -775,9 +820,28 @@
                                 </select>
                             </div>
 
+    <label for="DealJoker4">Select Softgetränk:</label>
+<select id="DealJoker4" onchange="getSelectedValue(this)" class="form-control">    
+    <option value="">Select Softgetränk</option>
+    <option value="Coca-Cola">Coca-Cola</option>
+    <option value="Coca-Cola Zero">Coca-Cola Zero</option>
+    <option value="Fanta">Fanta</option>
+    <option value="Mezzo Mix">Mezzo Mix</option>
+    <option value="Sprite">Sprite</option>
+    <option value="Red Bull">Red Bull</option>
+    <option value="Capri Sun Orange oder Multivitamin">Capri Sun Orange oder Multivitamin</option>
+    <option value="Apfelsaft">Apfelsaft</option>
+    <option value="Bitter Lemon">Bitter Lemon</option>
+    <option value="Ginger Ale">Ginger Ale</option>
+    <option value="Mango Lassi">Mango Lassi</option>
+</select>
+
+
                      <h1 class="DealJoker1 d-none"></h1>
                      <h1 class="DealJoker2 d-none"></h1>
-                     <h1 class="DealJoker3 d-none"></h1>         
+                     <h1 class="DealJoker3 d-none"></h1>
+                     <h1 class="DealJoker4 d-none"></h1> 
+                            
 
                     <div class="card_bottom">
                         <input type="text" id="price" value="${product.Price}" class="Price" style="display: none;">
@@ -871,6 +935,7 @@ card.innerHTML = `
               <div class="form-group">
                   <label for="DealLove2">Select Pizzza2:</label>
                   <select id="DealLove2" onchange="getSelectedValue(this)" class="form-control">
+<option value="">Select Pizza2</option>                    
 <option value="">BBQ</option>
 <option value="BBQ">BBQ</option>
 <option value="Bayern">Bayern</option>
@@ -951,7 +1016,7 @@ card.innerHTML = `
                     <h5 class="card-title" id="proName" >${product.productName}</h5>
                     <p class="card-text clamp-line-3" id="proDes">${product.description}</p>
                     <label for="DealPasta1">Select Pasta:</label>
-<select id="DealPasta1" onchange="getSelectedValue(this)" class="form-control">
+    <select id="DealPasta1" onchange="getSelectedValue(this)" class="form-control">
     <option value="">Select Pasta</option>                  
     <option value="Alla Panna">Alla Panna Pista</option>
     <option value="Casa">Casa Pista</option>
@@ -964,7 +1029,25 @@ card.innerHTML = `
     <option value="Vegetarische Tortelini">Vegetarische Tortelini Pista</option>
 </select>
 
+<label for="DealPasta2">Select Softgetränk:</label>
+<select id="DealPasta2" onchange="getSelectedValue(this)" class="form-control">    
+    <option value="">Select Softgetränk</option>
+    <option value="Coca-Cola">Coca-Cola</option>
+    <option value="Coca-Cola Zero">Coca-Cola Zero</option>
+    <option value="Fanta">Fanta</option>
+    <option value="Mezzo Mix">Mezzo Mix</option>
+    <option value="Sprite">Sprite</option>
+    <option value="Red Bull">Red Bull</option>
+    <option value="Capri Sun Orange oder Multivitamin">Capri Sun Orange oder Multivitamin</option>
+    <option value="Apfelsaft">Apfelsaft</option>
+    <option value="Bitter Lemon">Bitter Lemon</option>
+    <option value="Ginger Ale">Ginger Ale</option>
+    <option value="Mango Lassi">Mango Lassi</option>
+</select>
+
+
                      <h1 class="DealPasta1 d-none"></h1>
+                     <h1 class="DealPasta2 d-none"></h1>
                     <div class="card_bottom">
                         <input type="text" id="price" value="${product.Price}" class="Price" style="display: none;">
                         <h6>${product.Price} €</h6>
@@ -1092,7 +1175,22 @@ card.innerHTML = `
              DealBurger1Element.textContent = dropdown.value;
             // alert(DealBurger1Element.textContent);
              }
-        
+      
+             else if (dropdown.id === "DealBurger3") {
+            let DealBurger1Element = document.querySelector(".DealBurger3");
+             DealBurger1Element.textContent = dropdown.value;
+            // alert(DealBurger1Element.textContent);
+             }
+             else if (dropdown.id === "DealBurger4") {
+            let DealBurger1Element = document.querySelector(".DealBurger4");
+             DealBurger1Element.textContent = dropdown.value;
+            // alert(DealBurger1Element.textContent);
+             }
+             else if (dropdown.id === "DealBurger5") {
+            let DealBurger1Element = document.querySelector(".DealBurger5");
+             DealBurger1Element.textContent = dropdown.value;
+            // alert(DealBurger1Element.textContent);
+             }
              else if (dropdown.id === "DealJoker1") {
             let DealBurger1Element = document.querySelector(".DealJoker1");
              DealBurger1Element.textContent = dropdown.value;
@@ -1110,6 +1208,11 @@ card.innerHTML = `
              DealBurger1Element.textContent = dropdown.value;
             // alert(DealBurger1Element.textContent);
              }
+             else if (dropdown.id === "DealJoker4") {
+             let DealBurger1Element = document.querySelector(".DealJoker4");
+             DealBurger1Element.textContent = dropdown.value;
+            // alert(DealBurger1Element.textContent);
+             }
              else if (dropdown.id === "DealLove1") {
              let DealBurger1Element = document.querySelector(".DealLove1");
              DealBurger1Element.textContent = dropdown.value;
@@ -1122,6 +1225,11 @@ card.innerHTML = `
              } 
              else if (dropdown.id === "DealPasta1") {
              let DealBurger1Element = document.querySelector(".DealPasta1");
+             DealBurger1Element.textContent = dropdown.value;
+            // alert(DealBurger1Element.textContent);
+             } 
+             else if (dropdown.id === "DealPasta2") {
+             let DealBurger1Element = document.querySelector(".DealPasta2");
              DealBurger1Element.textContent = dropdown.value;
             // alert(DealBurger1Element.textContent);
              } 
@@ -1158,16 +1266,23 @@ card.innerHTML = `
           if(proNameValue==="Burger Deal"){
            var  bug1= document.querySelector(".DealBurger1").innerHTML
            var  bug2= document.querySelector(".DealBurger2").innerHTML
+           var  beilagen1= document.querySelector(".DealBurger3").innerHTML
+           var  beilagen2= document.querySelector(".DealBurger4").innerHTML
+           var  beilagen3= document.querySelector(".DealBurger5").innerHTML
+
+    
            console.log("The name of deal is Burger Deal")
-           productOrder.description = `${bug1} and ${bug2}`
+           productOrder.description = `Du suchst aus
+ ${bug1} , ${bug2} , ${beilagen1} , ${beilagen2} Und ${beilagen3} `
 
         }else if(proNameValue==="Joker Deal"){
            var  DealJoker1= document.querySelector(".DealJoker1").innerHTML
            var  DealJoker2= document.querySelector(".DealJoker2").innerHTML
            var  DealJoker3= document.querySelector(".DealJoker3").innerHTML
+           var  DealJoker4= document.querySelector(".DealJoker4").innerHTML
            console.log("The name of deal is Joker Deal")
 
-         productOrder.description = `${DealJoker1} , ${DealJoker2} and ${DealJoker3}`
+         productOrder.description = `Du suchst aus  ${DealJoker1} , ${DealJoker2} , ${DealJoker3} und ${DealJoker4} `
 
         }else if(proNameValue==="Lover Deal"){
            var  DealLove1= document.querySelector(".DealLove1").innerHTML
@@ -1176,14 +1291,14 @@ card.innerHTML = `
            
            console.log("The name of deal is lover Deal")
 
-         productOrder.description = `${DealLove1}  and ${DealLove2}`
+         productOrder.description = `Du suchst aus  ${DealLove1}  und ${DealLove2}`
 
         }else if(proNameValue==="Pasta Deal"){
            var  DealPasta1= document.querySelector(".DealPasta1").innerHTML
-           
+           var  DealPasta2= document.querySelector(".DealPasta2").innerHTML
            console.log("The name of deal is Pasta Deal")
           
-         productOrder.description = `${DealPasta1} `
+         productOrder.description = `Du suchst aus ${DealPasta1} und ${DealPasta2}`
 
         }
 
@@ -1206,7 +1321,7 @@ card.innerHTML = `
 
         let payloadJSON = JSON.stringify(payload);
 
-        let url = "http://localhost:8080/api/user/addToCart";
+        let url = "https://jokerpalace.de/api/user/addToCart";
 
         fetch(url, {
           method: "POST",

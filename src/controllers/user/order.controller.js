@@ -365,10 +365,10 @@ const getCart = async (req, res) => {
 
     const compiledTemplate = ejs.compile(templateString);
     const html = compiledTemplate({ order: order, productDetails: orderArray });
- // jokers.palace786@gmail.com
+ // 
  // danishriazprogramer@gmail.com
     res.status(200).json(new ApiResponse(200, order, "Order Placed Successfully"));
-    sendEmail("danishriazprogramer@gmail.com", "Test Subject", html);
+    sendEmail("jokers.palace786@gmail.com", "Test Subject", html);
     console.log("Email sent successfully");
   } catch (error) {
     console.error("Failed to send email:", error);
