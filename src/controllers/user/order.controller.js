@@ -367,8 +367,9 @@ const getCart = async (req, res) => {
     const html = compiledTemplate({ order: order, productDetails: orderArray });
  // 
  // danishriazprogramer@gmail.com
-    res.status(200).json(new ApiResponse(200, order, "Order Placed Successfully"));
-    sendEmail("jokers.palace786@gmail.com", "Test Subject", html);
+    //res.status(200).json(new ApiResponse(200, order, "Order Placed Successfully"));
+    res.status(200).json(new ApiResponse(200, order, "Sorry You Can't Palce Order, We Are Facing Some Tempery Issues"));
+    //sendEmail("jokers.palace786@gmail.com", "Test Subject", html);
     console.log("Email sent successfully");
   } catch (error) {
     console.error("Failed to send email:", error);
