@@ -3189,4 +3189,89 @@
   "updatedAt": {
     "$date": "2024-05-04T15:39:55.064Z"
   }
+},
+{
+  "_id": {
+    "$oid": "666bb9d35a6b699c2ff7df55"
+  },
+  "id": "16",
+  "name": "Lamm Korma",
+  "description": " Lammfleisch mit milder Sauce, Sahne, Mandeln, Kokosraspeln und Cashewkernen",
+  "unitPrice": 17.5,
+  "category": "Deal",
+  "imageUrl": "img-1714226404470-91899494.jpg",
+  "updatedAt": {
+    "$date": "2024-04-29T20:37:17.857Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "661de2ef6cdb2630b4f587e5"
+},
+{
+  "_id": {
+    "$oid": "66423cc5ae152798cdd07132"
+  },
+  "id": "200",
+  "name": "Burger Deal",
+  "description": "   2 x Burger aus der Liste nach Wahl\r\n2 x Beilagen aus der Liste nach Wahl\r\n1 x Softdrink 1,0 l nach Wahl",
+  "unitPrice": 22.5,
+  "category": "Deal",
+  "imageUrl": "img-1717307477439-206878071.jpg",
+  "updatedAt": {
+    "$date": "2024-06-02T05:51:17.447Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "66423cc5ae152798cdd07132"
+},
+{
+  "_id": {
+    "$oid": "66423d3cae152798cdd07133"
+  },
+  "id": "201",
+  "name": "Joker Deal",
+  "description": "   3 x Medium Pizzen aus der Liste nach Wahl\r\n1 x Softgetränk 1,0 l nach Wah",
+  "unitPrice": 27.5,
+  "category": "Deal",
+  "imageUrl": "img-1717307668484-595378416.png",
+  "updatedAt": {
+    "$date": "2024-06-02T05:54:28.491Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "66423d3cae152798cdd07133"
+},
+{
+  "_id": {
+    "$oid": "66423d8aae152798cdd07134"
+  },
+  "id": "203",
+  "name": "Lover Deal",
+  "description": "2 x Medium Pizzen aus der Liste nach Wahl\nMix-Salat mit Pizzabrötchen\nund Essig-Öl oder Joghurt Dressing",
+  "unitPrice": 24.5,
+  "category": "Deal",
+  "imageUrl": "img-1717308018468-714024437.jpg",
+  "updatedAt": {
+    "$date": "2024-06-02T06:00:18.471Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "66423d8aae152798cdd07134"
+},
+{
+  "_id": {
+    "$oid": "66423dcfae152798cdd07135"
+  },
+  "id": "204",
+  "name": "Pasta Deal",
+  "description": "  2 x Pasta aus der Liste nach Wahl\r\n1 x Softgetränk 1,0 l nach Wahl",
+  "unitPrice": 22.55,
+  "category": "Deal",
+  "imageUrl": "img-1717308356169-548936085.jpg",
+  "updatedAt": {
+    "$date": "2024-06-02T06:05:56.171Z"
+  },
+  "discount": 0,
+  "popular": false,
+  "unitId": "66423dcfae152798cdd07135"
 }]

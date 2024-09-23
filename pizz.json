@@ -1,759 +1,90 @@
 [{
   "_id": {
-    "$oid": "66364e9f8992ee6883f7ee6a"
+    "$oid": "667c56444b5e67ea7b2d88a3"
   },
-  "name": "Salami",
-  "category": "Pizza",
-  "Mini": 6.7,
-  "Medium": 9.8,
-  "Maxi": 16.5,
-  "Pan": 8.9,
-  "description": "Herzhaft Rindersalami (100% Rind Chili), Käse",
-  "imageUrl": "Salami.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee6a",
+  "name": "Piña Colada",
+  "description": "frische Ananas, Kokosmilch, Kokopulver",
+  "unitPrice": 5.9,
+  "category": "MOCKTAILS",
+  "imageUrl": "img-1714266754418-518562894.jpg",
   "updatedAt": {
-    "$date": "2024-05-04T15:39:55.058Z"
-  }
+    "$date": "2024-06-26T12:00:00.000Z"
+  },
+  "discount": 0,
+  "popular": false
 },
 {
   "_id": {
-    "$oid": "66364e9f8992ee6883f7ee6b"
+    "$oid": "667c56444b5e67ea7b2d88a4"
   },
-  "name": "Peperoniwurst",
-  "category": "Pizza",
-  "Mini": 6.7,
-  "Medium": 9.8,
-  "Maxi": 16.5,
-  "Pan": 8.9,
-  "description": "Leckere Peperoniwurst, Käse",
-  "imageUrl": "Peperoniwurst.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee6b",
+  "name": "Mint Margherita",
+  "description": "frische Minze, Zitronen, Soda",
+  "unitPrice": 5.9,
+  "category": "MOCKTAILS",
+  "imageUrl": "img-1714266754418-518562895.jpg",
   "updatedAt": {
-    "$date": "2024-05-04T15:39:55.058Z"
-  }
+    "$date": "2024-06-26T12:00:00.000Z"
+  },
+  "discount": 0,
+  "popular": false
 },
 {
   "_id": {
-    "$oid": "66364e9f8992ee6883f7ee6e"
+    "$oid": "667c56444b5e67ea7b2d88a5"
   },
-  "name": "Lover",
-  "category": "Pizza",
-  "Mini": 6.7,
-  "Medium": 9.8,
-  "Maxi": 16.5,
-  "Pan": 8.9,
-  "description": "Schinken, frische Champignons, Käse",
-  "imageUrl": "Lover.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee6e",
+  "name": "Tender Coconut Sunshine",
+  "description": "Kokoswasser, Mango, Zitrone",
+  "unitPrice": 5.9,
+  "category": "MOCKTAILS",
+  "imageUrl": "img-1714266754418-518562896.jpg",
   "updatedAt": {
-    "$date": "2024-05-04T15:39:55.059Z"
-  }
+    "$date": "2024-06-26T12:00:00.000Z"
+  },
+  "discount": 0,
+  "popular": false
 },
 {
   "_id": {
-    "$oid": "66364e9f8992ee6883f7ee6f"
+    "$oid": "667c56444b5e67ea7b2d88a6"
   },
-  "name": "Bayern",
-  "category": "Pizza",
-  "Mini": 6.7,
-  "Medium": 9.8,
-  "Maxi": 16.5,
-  "Pan": 8.9,
-  "description": "Peperoniwurst, rote Zwiebeln, Käse",
-  "imageUrl": "Bayern.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee6f",
+  "name": "Kiwi-Cucumba Cola",
+  "description": "frische Kiwi, Gurken",
+  "unitPrice": 5.9,
+  "category": "MOCKTAILS",
+  "imageUrl": "img-1714266754418-518562897.jpg",
   "updatedAt": {
-    "$date": "2024-05-04T15:39:55.059Z"
-  }
+    "$date": "2024-06-26T12:00:00.000Z"
+  },
+  "discount": 0,
+  "popular": false
 },
 {
   "_id": {
-    "$oid": "66364e9f8992ee6883f7ee82"
+    "$oid": "667c56444b5e67ea7b2d88a7"
   },
-  "name": "Brano Mia",
-  "description": "BBQ Sauce, Hähnchenfilet, Mais, Paprika, rote Zwiebeln, Käse",
-  "category": "Pizza",
-  "Mini": 8.3,
-  "Medium": 12.1,
-  "Maxi": 21.5,
-  "Pan": 10.9,
-  "imageUrl": "Brano Mia.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee82",
+  "name": "Rooh Afza Mojito 1",
+  "description": "Rooh Afza, Zitronensaft, Zitronenstücke",
+  "unitPrice": 5.9,
+  "category": "MOCKTAILS",
+  "imageUrl": "img-1714266754418-518562898.jpg",
   "updatedAt": {
-    "$date": "2024-05-04T15:39:55.062Z"
-  }
+    "$date": "2024-06-26T12:00:00.000Z"
+  },
+  "discount": 0,
+  "popular": false
 },
 {
   "_id": {
-    "$oid": "66364e9f8992ee6883f7ee84"
+    "$oid": "667c56444b5e67ea7b2d88a8"
   },
-  "name": "Döner",
-  "description": "Döner Fleisch, rote Zwiebeln, Käse, Aioli Dip",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Döner.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee84",
+  "name": "Strawberry Lemonade",
+  "description": "frische Erdbeeren, frische Zitronen",
+  "unitPrice": 5.9,
+  "category": "MOCKTAILS",
+  "imageUrl": "img-1714266754418-518562899.jpg",
   "updatedAt": {
-    "$date": "2024-05-04T15:39:55.062Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee85"
+    "$date": "2024-06-26T12:00:00.000Z"
   },
-  "name": "Pizza Land",
-  "description": "Truthanschinken, Champignons, Käse",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Pizza Land.jpg",
   "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee85",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.063Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee7e"
-  },
-  "name": "Bolognese",
-  "description": "Tomaten-Rind Hackfleisch Sauce, Spaghetti, mit Käse überbacken",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Bolognese.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee7e",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.062Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee70"
-  },
-  "name": "Hawaii",
-  "category": "Pizza",
-  "Mini": 6.7,
-  "Medium": 9.8,
-  "Maxi": 16.5,
-  "Pan": 8.9,
-  "description": "Puten Schinken, Ananas, Käse",
-  "imageUrl": "Hawaii.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee70",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.059Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee77"
-  },
-  "name": "Diavolo",
-  "description": "Salami, Peperoniwurst, Schinken, Peperoni, Zwiebeln, Käse",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Diavolo.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee77",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.061Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee81"
-  },
-  "name": "Pizza Zoo",
-  "description": "Fleisch, Sucuk, Fetakäse, rote Zwiebeln, Jalapenos, Käse",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Pizza Zoo.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee81",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.062Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee7b"
-  },
-  "name": "Mango",
-  "description": "Peperoniwurst, Mais, Zwiebeln, Paprika, Käse",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Mango.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee7b",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.061Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee7c"
-  },
-  "name": "Bella",
-  "description": "Frische Tomaten, Mozzarella, frische Basilikum, Käse",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Bella.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee7c",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.061Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee6d"
-  },
-  "name": "Tonno",
-  "category": "Pizza",
-  "Mini": 6.7,
-  "Medium": 9.8,
-  "Maxi": 16.5,
-  "Pan": 8.9,
-  "description": "Thunfisch, rote Zwiebeln, Knoblauch, Käse",
-  "imageUrl": "Tonno.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee6d",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.059Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee75"
-  },
-  "name": "Wow",
-  "category": "Pizza",
-  "Mini": 7.3,
-  "Medium": 10.8,
-  "Maxi": 19.5,
-  "Pan": 9.9,
-  "description": "Sauce Hollandaise, Broccoli, Hähnchenbrustfilet",
-  "imageUrl": "Wow.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee75",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.061Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee76"
-  },
-  "name": "Slice",
-  "category": "Pizza",
-  "Mini": 7.3,
-  "Medium": 10.8,
-  "Maxi": 19.5,
-  "Pan": 9.7,
-  "description": "Sauce Hollandaise, Hähnchenbrustfilet, Cherrytomaten, rote Zwiebeln, Käse",
-  "imageUrl": "Slice.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee76",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.061Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee88"
-  },
-  "name": "Burger",
-  "description": "Rinderhackfleisch (100% Rind), frische Tomaten, Essig Gurken, rote Zwiebeln, anschließend Burger Sauce",
-  "category": "Pizza",
-  "Mini": 8.3,
-  "Medium": 12.1,
-  "Maxi": 21.5,
-  "Pan": 10.9,
-  "imageUrl": "Burger.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee88",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.063Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee8f"
-  },
-  "name": "Slice of Heaven",
-  "description": "Tomaten, on the top rucola, Parmesan",
-  "category": "Pizza",
-  "Mini": 8.4,
-  "Medium": 11.4,
-  "Maxi": 21.5,
-  "Pan": 10.1,
-  "imageUrl": "Slice of Heaven.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee8f",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.064Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee7d"
-  },
-  "name": "Power",
-  "description": "Peperoniwurst (100% Rind Chili) rote Zwiebeln, Oliven, Peperoni, scharfe Sauce, Käse",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Power.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee7d",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.062Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee71"
-  },
-  "name": "Downtown",
-  "category": "Pizza",
-  "Mini": 6.7,
-  "Medium": 9.8,
-  "Maxi": 16.5,
-  "Pan": 8.9,
-  "description": "Salami (100% Rind), Schinken, frische Champignons, Käse",
-  "imageUrl": "Downtown.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee71",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.059Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee79"
-  },
-  "name": "Chic",
-  "description": "Salsa Sauce, rote zwiebeln, frische Tomaten, Peperoni, Paprika, Mais, Champignons, Käse",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 10.9,
-  "imageUrl": "Chic.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee79",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.061Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee83"
-  },
-  "name": "Premium",
-  "description": "Peperoniwurst, frische Tomaten, frische Basilikum, Mozzarella",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Premium.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee83",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.062Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee87"
-  },
-  "name": "Moon",
-  "description": "Geheimnisvolle scharfe Sauce, Chili, Salami (100% Rind), rote Zwiebeln, schwarze Oliven, milde Peperoni",
-  "category": "Pizza",
-  "Mini": 8.3,
-  "Medium": 12.1,
-  "Maxi": 21.5,
-  "Pan": 10.9,
-  "imageUrl": "Moon.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee87",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.063Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee8b"
-  },
-  "name": "Palace",
-  "description": "Sauce Hollandaise, geflügelwürstchen (100% Geflügel), Mais",
-  "category": "Pizza",
-  "Mini": 8.3,
-  "Medium": 12.1,
-  "Maxi": 21.5,
-  "Pan": 10.9,
-  "imageUrl": "Palace.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee8b",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.063Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee8c"
-  },
-  "name": "Broadway",
-  "description": "Truthanschinken, 100% Rindersalami, Käse",
-  "category": "Pizza",
-  "Mini": 8.3,
-  "Medium": 12.1,
-  "Maxi": 21.5,
-  "Pan": 10.9,
-  "imageUrl": "Broadway.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee8c",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.063Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee7f"
-  },
-  "name": "Sucuk",
-  "description": "Sucuk (100% Rind), Paprika, rote Zwiebeln, Weichkäse",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Sucuk.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee7f",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.062Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee86"
-  },
-  "name": "Firebox",
-  "description": "Rote Zwiebeln, 100% Kinderhackfleisch, Eier, Käse",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 11.1,
-  "Pan": 9.9,
-  "imageUrl": "Firebox.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee86",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.063Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee8a"
-  },
-  "name": "Fresh Slice",
-  "description": "Salami (100% Rind), Mais, Paprika, Thunfisch, Jalapenos, rote Zwiebeln, Käse",
-  "category": "Pizza",
-  "Mini": 8.3,
-  "Medium": 12.1,
-  "Maxi": 21.5,
-  "Pan": 10.9,
-  "imageUrl": "Fresh Slice.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee8a",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.063Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee8d"
-  },
-  "name": "Crispy Slices",
-  "description": "100% Rindersalami, Peperoniwurst, Truthanschinken, Käse",
-  "category": "Pizza",
-  "Mini": 8.3,
-  "Medium": 11.4,
-  "Maxi": 21.5,
-  "Pan": 10.9,
-  "imageUrl": "Crispy Slices.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee8d",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.064Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee90"
-  },
-  "name": "Extra Zutat",
-  "category": "Pizza",
-  "Mini": "+0,80",
-  "Medium": "+1,30",
-  "Maxi": "+2,30",
-  "Pan": "+1,00",
-  "imageUrl": "Extra Zutat.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee90",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.064Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee69"
-  },
-  "name": "Margherita",
-  "category": "Pizza",
-  "Mini": 6.1,
-  "Medium": 7.5,
-  "Maxi": 14.3,
-  "Pan": 6.9,
-  "description": "Mit fruchtiger Tomatensauce, und zartschmelzendem Käse",
-  "imageUrl": "Margherita.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee69",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.002Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee6c"
-  },
-  "name": "Schinken",
-  "category": "Pizza",
-  "Mini": 6.7,
-  "Medium": 9.8,
-  "Maxi": 16.5,
-  "Pan": 8.9,
-  "description": "Schinken (100% Puten Schinken), Käse",
-  "imageUrl": "Schinken.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee6c",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.058Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee72"
-  },
-  "name": "French Cheese",
-  "category": "Pizza",
-  "Mini": 7.3,
-  "Medium": 10.8,
-  "Maxi": 19.5,
-  "Pan": 9.9,
-  "description": "Gouda, Mozzarella, Gorgonzola, Fetakäse",
-  "imageUrl": "French Cheese.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee72",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.060Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee73"
-  },
-  "name": "City",
-  "category": "Pizza",
-  "Mini": 7.3,
-  "Medium": 10.8,
-  "Maxi": 19.5,
-  "Pan": 9.9,
-  "description": "Puten Schinken, Rindersalami, Champignons, Käse",
-  "imageUrl": "City.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee73",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.060Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee74"
-  },
-  "name": "Star",
-  "category": "Pizza",
-  "Mini": 7.3,
-  "Medium": 10.8,
-  "Maxi": 19.5,
-  "Pan": 9.9,
-  "description": "Frische Paprika, rote Zwiebeln, Schinken, Salami, Käse",
-  "imageUrl": "Star.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee74",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.060Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee78"
-  },
-  "name": "Half/Half",
-  "description": "Für Doppelt genießer 2 Pizzen nach Wahl, Auf einer Pizza",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Half/Half.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee78",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.061Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee7a"
-  },
-  "name": "Vegetaria",
-  "description": "Broccoli, frische Champignons, frische Tomaten, Mais, frische Paprika, Käse",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "Vegetaria.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee7a",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.061Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee80"
-  },
-  "name": "BBQ",
-  "description": "Rinderhackfleisch (100% Rind), milde Peperoni, Mais, rote Zwiebeln, anschließend BBQ Sauce, Käse",
-  "category": "Pizza",
-  "Mini": 7.9,
-  "Medium": 11.1,
-  "Maxi": 21.5,
-  "Pan": 9.9,
-  "imageUrl": "BBQ.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee80",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.062Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee89"
-  },
-  "name": "Joker",
-  "description": "Sauce Hollandaise, Lachs filet, Spinat, Käse",
-  "category": "Pizza",
-  "Mini": 8.3,
-  "Medium": 12.1,
-  "Maxi": 21.5,
-  "Pan": 10.9,
-  "imageUrl": "Joker.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee89",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.063Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "66364e9f8992ee6883f7ee8e"
-  },
-  "name": "Bliss",
-  "description": "Paprika, rote Zwiebeln, Hähnchengyros, Käse",
-  "category": "Pizza",
-  "Mini": 8.4,
-  "Medium": 11.4,
-  "Maxi": 21.5,
-  "Pan": 10.1,
-  "imageUrl": "Bliss.jpg",
-  "discount": 0,
-  "popular": false,
-  "unitId": "66364e9f8992ee6883f7ee8e",
-  "updatedAt": {
-    "$date": "2024-05-04T15:39:55.064Z"
-  }
+  "popular": false
 }]
